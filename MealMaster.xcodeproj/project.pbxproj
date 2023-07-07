@@ -10,13 +10,13 @@
 		89D3A7DE2A57023700BE11DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A7DD2A57023700BE11DD /* AppDelegate.swift */; };
 		89D3A7E02A57023700BE11DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A7DF2A57023700BE11DD /* SceneDelegate.swift */; };
 		89D3A7E22A57023700BE11DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A7E12A57023700BE11DD /* ViewController.swift */; };
-		89D3A7E52A57023700BE11DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A7E32A57023700BE11DD /* Main.storyboard */; };
 		89D3A7E82A57023700BE11DD /* MealMaster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A7E62A57023700BE11DD /* MealMaster.xcdatamodeld */; };
 		89D3A7EA2A57023800BE11DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A7E92A57023800BE11DD /* Assets.xcassets */; };
 		89D3A7ED2A57023800BE11DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A7EB2A57023800BE11DD /* LaunchScreen.storyboard */; };
 		89D3A7F82A57023900BE11DD /* MealMasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A7F72A57023900BE11DD /* MealMasterTests.swift */; };
 		89D3A8022A57023900BE11DD /* MealMasterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A8012A57023900BE11DD /* MealMasterUITests.swift */; };
 		89D3A8042A57023900BE11DD /* MealMasterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A8032A57023900BE11DD /* MealMasterUITestsLaunchTests.swift */; };
+		89D3A8172A5703D500BE11DD /* Main Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A8162A5703D500BE11DD /* Main Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 		89D3A7DD2A57023700BE11DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D3A7DF2A57023700BE11DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		89D3A7E12A57023700BE11DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		89D3A7E42A57023700BE11DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89D3A7E72A57023700BE11DD /* MealMaster.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealMaster.xcdatamodel; sourceTree = "<group>"; };
 		89D3A7E92A57023800BE11DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89D3A7EC2A57023800BE11DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		89D3A7FD2A57023900BE11DD /* MealMasterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealMasterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D3A8012A57023900BE11DD /* MealMasterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMasterUITests.swift; sourceTree = "<group>"; };
 		89D3A8032A57023900BE11DD /* MealMasterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMasterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		89D3A8162A5703D500BE11DD /* Main Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Main Storyboard.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				89D3A7DC2A57023700BE11DD /* MealMaster */,
-				89D3A7F62A57023900BE11DD /* MealMasterTests */,
-				89D3A8002A57023900BE11DD /* MealMasterUITests */,
+				89D3A8142A57036800BE11DD /* Supporting Files */,
+				89D3A8102A57034600BE11DD /* Tests */,
 				89D3A7DB2A57023700BE11DD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,14 +101,10 @@
 		89D3A7DC2A57023700BE11DD /* MealMaster */ = {
 			isa = PBXGroup;
 			children = (
-				89D3A7DD2A57023700BE11DD /* AppDelegate.swift */,
-				89D3A7DF2A57023700BE11DD /* SceneDelegate.swift */,
-				89D3A7E12A57023700BE11DD /* ViewController.swift */,
-				89D3A7E32A57023700BE11DD /* Main.storyboard */,
-				89D3A7E92A57023800BE11DD /* Assets.xcassets */,
-				89D3A7EB2A57023800BE11DD /* LaunchScreen.storyboard */,
-				89D3A7EE2A57023800BE11DD /* Info.plist */,
-				89D3A7E62A57023700BE11DD /* MealMaster.xcdatamodeld */,
+				89D3A8152A57039800BE11DD /* CoreData */,
+				89D3A8112A57035600BE11DD /* Model */,
+				89D3A8122A57035B00BE11DD /* View */,
+				89D3A8132A57036000BE11DD /* Controller */,
 			);
 			path = MealMaster;
 			sourceTree = "<group>";
@@ -128,6 +124,58 @@
 				89D3A8032A57023900BE11DD /* MealMasterUITestsLaunchTests.swift */,
 			);
 			path = MealMasterUITests;
+			sourceTree = "<group>";
+		};
+		89D3A8102A57034600BE11DD /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				89D3A8002A57023900BE11DD /* MealMasterUITests */,
+				89D3A7F62A57023900BE11DD /* MealMasterTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		89D3A8112A57035600BE11DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		89D3A8122A57035B00BE11DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89D3A7EB2A57023800BE11DD /* LaunchScreen.storyboard */,
+				89D3A8162A5703D500BE11DD /* Main Storyboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		89D3A8132A57036000BE11DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				89D3A7E12A57023700BE11DD /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		89D3A8142A57036800BE11DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89D3A7DD2A57023700BE11DD /* AppDelegate.swift */,
+				89D3A7EE2A57023800BE11DD /* Info.plist */,
+				89D3A7E92A57023800BE11DD /* Assets.xcassets */,
+				89D3A7DF2A57023700BE11DD /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89D3A8152A57039800BE11DD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				89D3A7E62A57023700BE11DD /* MealMaster.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +284,7 @@
 			files = (
 				89D3A7ED2A57023800BE11DD /* LaunchScreen.storyboard in Resources */,
 				89D3A7EA2A57023800BE11DD /* Assets.xcassets in Resources */,
-				89D3A7E52A57023700BE11DD /* Main.storyboard in Resources */,
+				89D3A8172A5703D500BE11DD /* Main Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +349,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		89D3A7E32A57023700BE11DD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				89D3A7E42A57023700BE11DD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		89D3A7EB2A57023800BE11DD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +486,7 @@
 				INFOPLIST_FILE = MealMaster/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +514,7 @@
 				INFOPLIST_FILE = MealMaster/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
