@@ -1,0 +1,6 @@
+framework module Pods_MealMaster {
+  umbrella header "Pods-MealMaster-umbrella.h"
+
+  export *
+  module * { export * }
+}
