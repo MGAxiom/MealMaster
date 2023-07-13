@@ -7,6 +7,8 @@ target 'MealMaster' do
 
   # Pods for MealMaster
 	pod 'SwiftLint'
+	pod 'Alamofire'
+	pod 'AlamofireImage', '~> 4.1'
 
   target 'MealMasterTests' do
     inherit! :search_paths

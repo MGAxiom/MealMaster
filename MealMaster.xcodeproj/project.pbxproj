@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		592EEBCBCE173B652B8897C7 /* Pods_MealMasterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934E5224B4B78C0E7D53D74C /* Pods_MealMasterTests.framework */; };
+		899F63FA2A6037C600BE8E5A /* PlanningCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F63F92A6037C600BE8E5A /* PlanningCollectionViewController.swift */; };
+		899F63FC2A6043CE00BE8E5A /* RecipesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F63FB2A6043CE00BE8E5A /* RecipesTVCell.swift */; };
 		89BBD0C12A587BA0008F0376 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 89BBD0C02A587BA0008F0376 /* FirebaseAnalytics */; };
 		89BBD0C32A587BA0008F0376 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 89BBD0C22A587BA0008F0376 /* FirebaseAnalyticsSwift */; };
 		89BBD0C52A587D04008F0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */; };
@@ -15,7 +17,7 @@
 		89BBD0C72A587D04008F0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */; };
 		89D3A7DE2A57023700BE11DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A7DD2A57023700BE11DD /* AppDelegate.swift */; };
 		89D3A7E02A57023700BE11DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A7DF2A57023700BE11DD /* SceneDelegate.swift */; };
-		89D3A7E22A57023700BE11DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A7E12A57023700BE11DD /* ViewController.swift */; };
+		89D3A7E22A57023700BE11DD /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A7E12A57023700BE11DD /* RecipesViewController.swift */; };
 		89D3A7E82A57023700BE11DD /* MealMaster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A7E62A57023700BE11DD /* MealMaster.xcdatamodeld */; };
 		89D3A7EA2A57023800BE11DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A7E92A57023800BE11DD /* Assets.xcassets */; };
 		89D3A7ED2A57023800BE11DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A7EB2A57023800BE11DD /* LaunchScreen.storyboard */; };
@@ -48,11 +50,13 @@
 		086B0EA194FD96E85D5005D6 /* Pods-MealMasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMasterTests.release.xcconfig"; path = "Target Support Files/Pods-MealMasterTests/Pods-MealMasterTests.release.xcconfig"; sourceTree = "<group>"; };
 		17CCBBC87B7BC98CE6D5AE23 /* Pods_MealMaster_MealMasterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMaster_MealMasterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DC4C38E099CF5504D1B55C6 /* Pods-MealMasterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMasterTests.debug.xcconfig"; path = "Target Support Files/Pods-MealMasterTests/Pods-MealMasterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		899F63F92A6037C600BE8E5A /* PlanningCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCollectionViewController.swift; sourceTree = "<group>"; };
+		899F63FB2A6043CE00BE8E5A /* RecipesTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTVCell.swift; sourceTree = "<group>"; };
 		89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		89D3A7DA2A57023700BE11DD /* MealMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D3A7DD2A57023700BE11DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D3A7DF2A57023700BE11DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		89D3A7E12A57023700BE11DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89D3A7E12A57023700BE11DD /* RecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		89D3A7E72A57023700BE11DD /* MealMaster.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealMaster.xcdatamodel; sourceTree = "<group>"; };
 		89D3A7E92A57023800BE11DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89D3A7EC2A57023800BE11DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 			children = (
 				89D3A7EB2A57023800BE11DD /* LaunchScreen.storyboard */,
 				89D3A8162A5703D500BE11DD /* Main Storyboard.storyboard */,
+				899F63FB2A6043CE00BE8E5A /* RecipesTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,7 +194,8 @@
 		89D3A8132A57036000BE11DD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				89D3A7E12A57023700BE11DD /* ViewController.swift */,
+				89D3A7E12A57023700BE11DD /* RecipesViewController.swift */,
+				899F63F92A6037C600BE8E5A /* PlanningCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 				89D3A7D72A57023700BE11DD /* Frameworks */,
 				89D3A7D82A57023700BE11DD /* Resources */,
 				89BBD0C82A587F19008F0376 /* ShellScript */,
+				BDE33B499947FF249B3B8050 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,6 +287,7 @@
 				89D3A7F92A57023900BE11DD /* Sources */,
 				89D3A7FA2A57023900BE11DD /* Frameworks */,
 				89D3A7FB2A57023900BE11DD /* Resources */,
+				5EAAD067CA87C1D41F26A638 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -412,6 +420,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5EAAD067CA87C1D41F26A638 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6597BB090DE2C091F9AAEB2C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,6 +476,23 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		BDE33B499947FF249B3B8050 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MealMaster/Pods-MealMaster-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MealMaster/Pods-MealMaster-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MealMaster/Pods-MealMaster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -458,10 +500,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89D3A7E22A57023700BE11DD /* ViewController.swift in Sources */,
+				89D3A7E22A57023700BE11DD /* RecipesViewController.swift in Sources */,
 				89D3A7DE2A57023700BE11DD /* AppDelegate.swift in Sources */,
 				89D3A7E82A57023700BE11DD /* MealMaster.xcdatamodeld in Sources */,
+				899F63FC2A6043CE00BE8E5A /* RecipesTVCell.swift in Sources */,
 				89D3A7E02A57023700BE11DD /* SceneDelegate.swift in Sources */,
+				899F63FA2A6037C600BE8E5A /* PlanningCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
