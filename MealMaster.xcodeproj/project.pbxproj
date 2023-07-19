@@ -16,6 +16,7 @@
 		898FC7592A65880300AD7422 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC7582A65880300AD7422 /* Recipe.swift */; };
 		898FC75B2A6588F000AD7422 /* ApiErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC75A2A6588F000AD7422 /* ApiErrors.swift */; };
 		898FC75D2A66DB2500AD7422 /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC75C2A66DB2500AD7422 /* RecipeDetailVC.swift */; };
+		898FC75F2A67ED4300AD7422 /* RecipeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC75E2A67ED4300AD7422 /* RecipeForm.swift */; };
 		899F63FA2A6037C600BE8E5A /* PlanningCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F63F92A6037C600BE8E5A /* PlanningCollectionViewController.swift */; };
 		899F63FC2A6043CE00BE8E5A /* RecipesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F63FB2A6043CE00BE8E5A /* RecipesTVCell.swift */; };
 		899F63FE2A61A71300BE8E5A /* PlanningCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F63FD2A61A71300BE8E5A /* PlanningCollectionViewCell.swift */; };
@@ -67,6 +68,7 @@
 		898FC7582A65880300AD7422 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		898FC75A2A6588F000AD7422 /* ApiErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrors.swift; sourceTree = "<group>"; };
 		898FC75C2A66DB2500AD7422 /* RecipeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
+		898FC75E2A67ED4300AD7422 /* RecipeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeForm.swift; sourceTree = "<group>"; };
 		899F63F92A6037C600BE8E5A /* PlanningCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCollectionViewController.swift; sourceTree = "<group>"; };
 		899F63FB2A6043CE00BE8E5A /* RecipesTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTVCell.swift; sourceTree = "<group>"; };
 		899F63FD2A61A71300BE8E5A /* PlanningCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				89D3A7E12A57023700BE11DD /* RecipesViewController.swift */,
 				898FC75C2A66DB2500AD7422 /* RecipeDetailVC.swift */,
+				898FC75E2A67ED4300AD7422 /* RecipeForm.swift */,
 				899F63F92A6037C600BE8E5A /* PlanningCollectionViewController.swift */,
 			);
 			path = Controller;
@@ -534,6 +537,7 @@
 				89D3A7E82A57023700BE11DD /* MealMaster.xcdatamodeld in Sources */,
 				898FC74F2A657CDB00AD7422 /* CoreDataStack.swift in Sources */,
 				899F63FC2A6043CE00BE8E5A /* RecipesTVCell.swift in Sources */,
+				898FC75F2A67ED4300AD7422 /* RecipeForm.swift in Sources */,
 				898FC7512A657D5D00AD7422 /* RecipeSearch.swift in Sources */,
 				898FC75B2A6588F000AD7422 /* ApiErrors.swift in Sources */,
 				898FC7532A65831100AD7422 /* RecipeJSONDeco.swift in Sources */,

@@ -810,6 +810,7 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JLp-5H-7Hd">
                                 <rect key="frame" x="16" y="310" width="361" height="429"/>
+                                <color key="backgroundColor" red="0.70274263619999999" green="0.78639328480000004" blue="0.48374789950000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" rowHeight="126" id="7rf-6p-n5i" customClass="RecipesTVCell" customModule="MealMaster" customModuleProvider="target">
@@ -1005,7 +1006,7 @@
                         <outlet property="recipesListTV" destination="JLp-5H-7Hd" id="1Vn-YY-eVl"/>
                         <outlet property="searchButton" destination="dI8-M2-VqG" id="qTU-EE-KsY"/>
                         <outlet property="searchTextField" destination="VQe-NO-2Ir" id="owG-zv-u4x"/>
-                        <segue destination="VUg-53-h1t" kind="show" id="Nbm-l4-CFx"/>
+                        <segue destination="VUg-53-h1t" kind="show" identifier="showRecipeDetails" id="Nbm-l4-CFx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Rb-ex-xfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1063,7 +1064,7 @@
         <!--Mealmaster-->
         <scene sceneID="0eN-9C-cy1">
             <objects>
-                <viewController id="VUg-53-h1t" sceneMemberID="viewController">
+                <viewController id="VUg-53-h1t" customClass="RecipeDetailVC" customModule="MealMaster" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cfw-eW-LpB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1185,15 +1186,33 @@
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dcf-YV-gR4">
                                 <rect key="frame" x="0.0" y="408" width="393" height="290"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.9529411793" green="0.88627451660000001" blue="0.70588237050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="290" id="WUo-4Z-5XI"/>
                                 </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ingredientsCell" id="Qzz-jG-4Xk">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qzz-jG-4Xk" id="Pob-3Z-IDx">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.9529411793" green="0.88627451660000001" blue="0.70588237050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VUg-53-h1t" id="QDA-3x-bp3"/>
+                                    <outlet property="delegate" destination="VUg-53-h1t" id="4jy-hh-8Ht"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n6s-5w-uY7">
                                 <rect key="frame" x="80" y="717" width="233" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Get instructions"/>
+                                <connections>
+                                    <action selector="instructionsButton:" destination="VUg-53-h1t" eventType="touchUpInside" id="Wv1-k6-ITm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gwQ-Rn-FPY"/>
@@ -1224,23 +1243,37 @@
                             <barButtonItem title="Item" image="calendar.badge.plus" catalog="system" id="mFH-uf-TaC">
                                 <color key="tintColor" red="0.40000003579999999" green="0.47450977560000002" blue="0.34901961679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
-                                    <segue destination="JVF-Re-nTn" kind="presentation" id="nSs-4Y-8iu"/>
+                                    <action selector="planningButton:" destination="VUg-53-h1t" id="Dwi-fY-zlp"/>
+                                    <segue destination="JVF-Re-nTn" kind="presentation" identifier="planningForm" id="nSs-4Y-8iu"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="star" catalog="system" id="CDz-HR-yaL">
                                 <color key="tintColor" red="0.40000003579999999" green="0.47450977560000002" blue="0.34901961679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="saveFavoriteButton:" destination="VUg-53-h1t" id="9mO-1G-FPc"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="caloriesLabel" destination="RzI-O2-deh" id="7hY-7M-bnO"/>
+                        <outlet property="favoriteButton" destination="CDz-HR-yaL" id="quy-hf-89I"/>
+                        <outlet property="ingredientsTableView" destination="dcf-YV-gR4" id="2uA-HY-70N"/>
+                        <outlet property="nbOfIngLabel" destination="u8u-0g-drs" id="c1X-ze-Ycf"/>
+                        <outlet property="originLabel" destination="kfx-Is-d2B" id="Dwl-FU-3ku"/>
+                        <outlet property="recipeImage" destination="Zlm-UI-X61" id="Qv4-f6-oVt"/>
+                        <outlet property="recipeTitle" destination="TA6-rQ-QWW" id="pcv-7h-cAw"/>
+                        <outlet property="timeLabel" destination="VWj-aZ-brt" id="oVW-uG-7sA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bh8-yF-4W8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3241.9847328244273" y="-2094.3661971830988"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Form-->
         <scene sceneID="1ts-1Q-Tgu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="JVF-Re-nTn" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="JVF-Re-nTn" customClass="RecipeForm" customModule="MealMaster" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ejI-LO-auM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1258,6 +1291,9 @@
                                 <rect key="frame" x="262" y="726" width="85" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmButton:" destination="JVF-Re-nTn" eventType="touchUpInside" id="jKu-Rn-w0K"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CW-KQ-MYU">
                                 <rect key="frame" x="46.000000000000007" y="726" width="76.666666666666686" height="35"/>
@@ -1265,6 +1301,9 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Cancel">
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelButton:" destination="JVF-Re-nTn" eventType="touchUpInside" id="zdf-hN-Da7"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bp-yh-o80">
                                 <rect key="frame" x="46" y="510" width="301" height="216"/>
@@ -1300,6 +1339,10 @@
                             <constraint firstItem="zx1-ZK-GIQ" firstAttribute="trailing" secondItem="0O9-II-jrh" secondAttribute="trailing" constant="46" id="z4P-87-Qhw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="0O9-II-jrh" id="2eR-gM-DSz"/>
+                        <outlet property="mealPicker" destination="7bp-yh-o80" id="Fe0-5P-8vs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCu-ba-A4S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

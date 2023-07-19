@@ -89,8 +89,9 @@ struct RecipeDecodable: Codable {
         }
     }
     let ingredients: [Ingredient]?
-    let calories, totalCO2Emissions: Double?
-    let co2EmissionsClass: String?
+    let calories: Double?
+//    let totalCO2Emissions: Double?
+//    let co2EmissionsClass: String?
     let totalWeight: Double?
     let totalTime: Double?
     var decodedTime: String {
@@ -119,7 +120,7 @@ struct RecipeDecodable: Codable {
             return (data.joined(separator: ","))
         }
     }
-    let mealType: [MealType]?
+    let mealType: [String]?
     let dishType: [String]?
     let totalNutrients, totalDaily: [String: Total]?
     let digest: [Digest]?
