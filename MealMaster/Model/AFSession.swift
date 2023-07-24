@@ -13,11 +13,13 @@ protocol AFSession {
 }
 
 final class SearchSession: AFSession {
-    
+  
     var parameters: [String] = [""]
-    
     func request(with url: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, callback: @escaping (AFDataResponse<Data?>) -> Void) {
-        AF.request(url, method: .get, parameters: parameters, encoding:  URLEncoding.default).validate().response { response in
+        AF.request(url,
+                   method: .get,
+                   parameters: parameters,
+                   encoding:  URLEncoding.default).validate().response { response in
             callback(response)
         }
     }

@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 final class CoreDataCRUD {
 
@@ -29,7 +30,7 @@ final class CoreDataCRUD {
             let recipes = try coreDataStack.viewContext.fetch(request)
             completion(recipes)
         } catch {
-            completion([])
+            alertUser(strMessage: "Error occured while trying to fetch all the recipes")
         }
     }
     
@@ -41,7 +42,7 @@ final class CoreDataCRUD {
         do {
             return try CoreDataStack.sharedInstance.viewContext.fetch(request).first
         } catch {
-            print("error finding details")
+            alertUser(strMessage: "Error trying to fetch recipe details.")
             return nil
         }
     }
@@ -52,7 +53,7 @@ final class CoreDataCRUD {
         do {
             try coreDataStack.viewContext.save()
         } catch {
-            print("Error while trying to save recipe")
+            alertUser(strMessage: "Error while trying to save recipe")
         }
     }
     
@@ -68,6 +69,7 @@ final class CoreDataCRUD {
                 return false
             }
         } catch let error as NSError {
+            alertUser(strMessage: "An error occured while fetching the recipe.")
             print("Could not fetch. \(error), \(error.userInfo)")
             return false
         }
@@ -80,5 +82,14 @@ final class CoreDataCRUD {
         for obj in object {
             coreDataStack.viewContext.delete(obj)
         }
+    }
+}
+
+extension CoreDataCRUD {
+    public func alertUser(strMessage: String) {
+        let myAlert = UIAlertController(title: "Error !", message: strMessage, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+        myAlert.addAction(okAction)
+        UIApplication.shared.delegate?.window??.rootViewController?.present(myAlert, animated: true, completion: nil)
     }
 }

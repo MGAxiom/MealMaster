@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		592EEBCBCE173B652B8897C7 /* Pods_MealMasterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934E5224B4B78C0E7D53D74C /* Pods_MealMasterTests.framework */; };
+		144A9C573A29A75117223D88 /* Pods_MealMaster_MealMasterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E636B9A3C5D73CDBE7A725 /* Pods_MealMaster_MealMasterUITests.framework */; };
+		385F2837E89E6EBC6174EF93 /* Pods_MealMasterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2998ED961F3B671573756F67 /* Pods_MealMasterTests.framework */; };
+		4E3F565817FE067C085D413E /* Pods_MealMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67ACBBBE2F1532482C41BF5 /* Pods_MealMaster.framework */; };
 		898FC74D2A6579F000AD7422 /* AFSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC74C2A6579F000AD7422 /* AFSession.swift */; };
 		898FC74F2A657CDB00AD7422 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC74E2A657CDB00AD7422 /* CoreDataStack.swift */; };
 		898FC7512A657D5D00AD7422 /* RecipeSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC7502A657D5D00AD7422 /* RecipeSearch.swift */; };
-		898FC7532A65831100AD7422 /* RecipeJSONDeco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC7522A65831100AD7422 /* RecipeJSONDeco.swift */; };
+		898FC7532A65831100AD7422 /* RecipeJSONCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC7522A65831100AD7422 /* RecipeJSONCodable.swift */; };
 		898FC7572A6583C300AD7422 /* CoreDataCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC7562A6583C300AD7422 /* CoreDataCRUD.swift */; };
 		898FC7592A65880300AD7422 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC7582A65880300AD7422 /* Recipe.swift */; };
-		898FC75B2A6588F000AD7422 /* ApiErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC75A2A6588F000AD7422 /* ApiErrors.swift */; };
+		898FC75B2A6588F000AD7422 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC75A2A6588F000AD7422 /* Errors.swift */; };
 		898FC75D2A66DB2500AD7422 /* RecipeDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC75C2A66DB2500AD7422 /* RecipeDetailVC.swift */; };
 		898FC75F2A67ED4300AD7422 /* RecipeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC75E2A67ED4300AD7422 /* RecipeForm.swift */; };
 		899F63FA2A6037C600BE8E5A /* PlanningCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F63F92A6037C600BE8E5A /* PlanningCollectionViewController.swift */; };
 		899F63FC2A6043CE00BE8E5A /* RecipesTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F63FB2A6043CE00BE8E5A /* RecipesTVCell.swift */; };
 		899F63FE2A61A71300BE8E5A /* PlanningCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899F63FD2A61A71300BE8E5A /* PlanningCollectionViewCell.swift */; };
-		89BBD0C12A587BA0008F0376 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 89BBD0C02A587BA0008F0376 /* FirebaseAnalytics */; };
-		89BBD0C32A587BA0008F0376 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 89BBD0C22A587BA0008F0376 /* FirebaseAnalyticsSwift */; };
 		89BBD0C52A587D04008F0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */; };
 		89BBD0C62A587D04008F0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */; };
 		89BBD0C72A587D04008F0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */; };
@@ -35,8 +35,6 @@
 		89D3A8022A57023900BE11DD /* MealMasterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A8012A57023900BE11DD /* MealMasterUITests.swift */; };
 		89D3A8042A57023900BE11DD /* MealMasterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A8032A57023900BE11DD /* MealMasterUITestsLaunchTests.swift */; };
 		89D3A8172A5703D500BE11DD /* Main Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A8162A5703D500BE11DD /* Main Storyboard.storyboard */; };
-		A24BA1E9223C52FD8B4A6372 /* Pods_MealMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A964A3688967F3980995FE52 /* Pods_MealMaster.framework */; };
-		DDE21CA2E83247098EDE247B /* Pods_MealMaster_MealMasterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CCBBC87B7BC98CE6D5AE23 /* Pods_MealMaster_MealMasterUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,16 +55,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		086B0EA194FD96E85D5005D6 /* Pods-MealMasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMasterTests.release.xcconfig"; path = "Target Support Files/Pods-MealMasterTests/Pods-MealMasterTests.release.xcconfig"; sourceTree = "<group>"; };
-		17CCBBC87B7BC98CE6D5AE23 /* Pods_MealMaster_MealMasterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMaster_MealMasterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DC4C38E099CF5504D1B55C6 /* Pods-MealMasterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMasterTests.debug.xcconfig"; path = "Target Support Files/Pods-MealMasterTests/Pods-MealMasterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		21F45526C9FD99F741229282 /* Pods-MealMaster-MealMasterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMaster-MealMasterUITests.debug.xcconfig"; path = "Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2998ED961F3B671573756F67 /* Pods_MealMasterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMasterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CAAECEAD089757EDCE926D8 /* Pods-MealMaster-MealMasterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMaster-MealMasterUITests.release.xcconfig"; path = "Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		41A745C5FD641E92102B3F87 /* Pods-MealMasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMasterTests.release.xcconfig"; path = "Target Support Files/Pods-MealMasterTests/Pods-MealMasterTests.release.xcconfig"; sourceTree = "<group>"; };
+		84E636B9A3C5D73CDBE7A725 /* Pods_MealMaster_MealMasterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMaster_MealMasterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		898FC74C2A6579F000AD7422 /* AFSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSession.swift; sourceTree = "<group>"; };
 		898FC74E2A657CDB00AD7422 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		898FC7502A657D5D00AD7422 /* RecipeSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearch.swift; sourceTree = "<group>"; };
-		898FC7522A65831100AD7422 /* RecipeJSONDeco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeJSONDeco.swift; sourceTree = "<group>"; };
+		898FC7522A65831100AD7422 /* RecipeJSONCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeJSONCodable.swift; sourceTree = "<group>"; };
 		898FC7562A6583C300AD7422 /* CoreDataCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCRUD.swift; sourceTree = "<group>"; };
 		898FC7582A65880300AD7422 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		898FC75A2A6588F000AD7422 /* ApiErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiErrors.swift; sourceTree = "<group>"; };
+		898FC75A2A6588F000AD7422 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		898FC75C2A66DB2500AD7422 /* RecipeDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailVC.swift; sourceTree = "<group>"; };
 		898FC75E2A67ED4300AD7422 /* RecipeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeForm.swift; sourceTree = "<group>"; };
 		899F63F92A6037C600BE8E5A /* PlanningCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCollectionViewController.swift; sourceTree = "<group>"; };
@@ -87,12 +87,10 @@
 		89D3A8012A57023900BE11DD /* MealMasterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMasterUITests.swift; sourceTree = "<group>"; };
 		89D3A8032A57023900BE11DD /* MealMasterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMasterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		89D3A8162A5703D500BE11DD /* Main Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Main Storyboard.storyboard"; sourceTree = "<group>"; };
-		8A89AC8DDFE0E2FBC75F378B /* Pods-MealMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMaster.debug.xcconfig"; path = "Target Support Files/Pods-MealMaster/Pods-MealMaster.debug.xcconfig"; sourceTree = "<group>"; };
-		934E5224B4B78C0E7D53D74C /* Pods_MealMasterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMasterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A53A8DF9728674053EA6B7C1 /* Pods-MealMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMaster.release.xcconfig"; path = "Target Support Files/Pods-MealMaster/Pods-MealMaster.release.xcconfig"; sourceTree = "<group>"; };
-		A964A3688967F3980995FE52 /* Pods_MealMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA9EEDF362DCCE5E89207A0E /* Pods-MealMaster-MealMasterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMaster-MealMasterUITests.release.xcconfig"; path = "Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests.release.xcconfig"; sourceTree = "<group>"; };
-		B9F69D6EC38901A53F7E3F3E /* Pods-MealMaster-MealMasterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMaster-MealMasterUITests.debug.xcconfig"; path = "Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8A9015E79BCE8CF70BDDC544 /* Pods-MealMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMaster.debug.xcconfig"; path = "Target Support Files/Pods-MealMaster/Pods-MealMaster.debug.xcconfig"; sourceTree = "<group>"; };
+		959E81A1B334EA4975083EF4 /* Pods-MealMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMaster.release.xcconfig"; path = "Target Support Files/Pods-MealMaster/Pods-MealMaster.release.xcconfig"; sourceTree = "<group>"; };
+		A6BF5756867116300B3E9232 /* Pods-MealMasterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMasterTests.debug.xcconfig"; path = "Target Support Files/Pods-MealMasterTests/Pods-MealMasterTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D67ACBBBE2F1532482C41BF5 /* Pods_MealMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89BBD0C32A587BA0008F0376 /* FirebaseAnalyticsSwift in Frameworks */,
-				89BBD0C12A587BA0008F0376 /* FirebaseAnalytics in Frameworks */,
-				A24BA1E9223C52FD8B4A6372 /* Pods_MealMaster.framework in Frameworks */,
+				4E3F565817FE067C085D413E /* Pods_MealMaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				592EEBCBCE173B652B8897C7 /* Pods_MealMasterTests.framework in Frameworks */,
+				385F2837E89E6EBC6174EF93 /* Pods_MealMasterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,23 +114,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDE21CA2E83247098EDE247B /* Pods_MealMaster_MealMasterUITests.framework in Frameworks */,
+				144A9C573A29A75117223D88 /* Pods_MealMaster_MealMasterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		27DDFC35D6ACC82D8E8B62FE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A964A3688967F3980995FE52 /* Pods_MealMaster.framework */,
-				17CCBBC87B7BC98CE6D5AE23 /* Pods_MealMaster_MealMasterUITests.framework */,
-				934E5224B4B78C0E7D53D74C /* Pods_MealMasterTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		89D3A7D12A57023700BE11DD = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +129,7 @@
 				89D3A8102A57034600BE11DD /* Tests */,
 				89D3A7DB2A57023700BE11DD /* Products */,
 				C58422D42E6E2352FE72FBDE /* Pods */,
-				27DDFC35D6ACC82D8E8B62FE /* Frameworks */,
+				FAB1BB71B720C916D064BD6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,7 +185,7 @@
 			children = (
 				898FC74C2A6579F000AD7422 /* AFSession.swift */,
 				898FC7502A657D5D00AD7422 /* RecipeSearch.swift */,
-				898FC7522A65831100AD7422 /* RecipeJSONDeco.swift */,
+				898FC7522A65831100AD7422 /* RecipeJSONCodable.swift */,
 				898FC7562A6583C300AD7422 /* CoreDataCRUD.swift */,
 			);
 			path = Model;
@@ -235,7 +221,7 @@
 				89D3A7E92A57023800BE11DD /* Assets.xcassets */,
 				89D3A7DF2A57023700BE11DD /* SceneDelegate.swift */,
 				89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */,
-				898FC75A2A6588F000AD7422 /* ApiErrors.swift */,
+				898FC75A2A6588F000AD7422 /* Errors.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -253,14 +239,24 @@
 		C58422D42E6E2352FE72FBDE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8A89AC8DDFE0E2FBC75F378B /* Pods-MealMaster.debug.xcconfig */,
-				A53A8DF9728674053EA6B7C1 /* Pods-MealMaster.release.xcconfig */,
-				B9F69D6EC38901A53F7E3F3E /* Pods-MealMaster-MealMasterUITests.debug.xcconfig */,
-				AA9EEDF362DCCE5E89207A0E /* Pods-MealMaster-MealMasterUITests.release.xcconfig */,
-				6DC4C38E099CF5504D1B55C6 /* Pods-MealMasterTests.debug.xcconfig */,
-				086B0EA194FD96E85D5005D6 /* Pods-MealMasterTests.release.xcconfig */,
+				8A9015E79BCE8CF70BDDC544 /* Pods-MealMaster.debug.xcconfig */,
+				959E81A1B334EA4975083EF4 /* Pods-MealMaster.release.xcconfig */,
+				21F45526C9FD99F741229282 /* Pods-MealMaster-MealMasterUITests.debug.xcconfig */,
+				2CAAECEAD089757EDCE926D8 /* Pods-MealMaster-MealMasterUITests.release.xcconfig */,
+				A6BF5756867116300B3E9232 /* Pods-MealMasterTests.debug.xcconfig */,
+				41A745C5FD641E92102B3F87 /* Pods-MealMasterTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FAB1BB71B720C916D064BD6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D67ACBBBE2F1532482C41BF5 /* Pods_MealMaster.framework */,
+				84E636B9A3C5D73CDBE7A725 /* Pods_MealMaster_MealMasterUITests.framework */,
+				2998ED961F3B671573756F67 /* Pods_MealMasterTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,22 +266,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89D3A8072A57023900BE11DD /* Build configuration list for PBXNativeTarget "MealMaster" */;
 			buildPhases = (
-				6597BB090DE2C091F9AAEB2C /* [CP] Check Pods Manifest.lock */,
+				46992D3909C1C742064301F8 /* [CP] Check Pods Manifest.lock */,
 				89D3A7D62A57023700BE11DD /* Sources */,
 				89D3A7D72A57023700BE11DD /* Frameworks */,
 				89D3A7D82A57023700BE11DD /* Resources */,
 				89BBD0C82A587F19008F0376 /* ShellScript */,
-				BDE33B499947FF249B3B8050 /* [CP] Embed Pods Frameworks */,
+				F39E5B549EBD03C11A6A4B80 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MealMaster;
-			packageProductDependencies = (
-				89BBD0C02A587BA0008F0376 /* FirebaseAnalytics */,
-				89BBD0C22A587BA0008F0376 /* FirebaseAnalyticsSwift */,
-			);
 			productName = MealMaster;
 			productReference = 89D3A7DA2A57023700BE11DD /* MealMaster.app */;
 			productType = "com.apple.product-type.application";
@@ -294,7 +286,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89D3A80A2A57023900BE11DD /* Build configuration list for PBXNativeTarget "MealMasterTests" */;
 			buildPhases = (
-				51A94A9B654D9F0E4A47E510 /* [CP] Check Pods Manifest.lock */,
+				C821920511B38482DAA6AA31 /* [CP] Check Pods Manifest.lock */,
 				89D3A7EF2A57023800BE11DD /* Sources */,
 				89D3A7F02A57023800BE11DD /* Frameworks */,
 				89D3A7F12A57023800BE11DD /* Resources */,
@@ -313,11 +305,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89D3A80D2A57023900BE11DD /* Build configuration list for PBXNativeTarget "MealMasterUITests" */;
 			buildPhases = (
-				332E892A43DE4CEAB06FDA97 /* [CP] Check Pods Manifest.lock */,
+				A3F08D2493B57F801B739301 /* [CP] Check Pods Manifest.lock */,
 				89D3A7F92A57023900BE11DD /* Sources */,
 				89D3A7FA2A57023900BE11DD /* Frameworks */,
 				89D3A7FB2A57023900BE11DD /* Resources */,
-				5EAAD067CA87C1D41F26A638 /* [CP] Embed Pods Frameworks */,
+				76A7AAAE98B6A827C7951957 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -361,9 +353,6 @@
 				Base,
 			);
 			mainGroup = 89D3A7D12A57023700BE11DD;
-			packageReferences = (
-				89BBD0BF2A587BA0008F0376 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
 			productRefGroup = 89D3A7DB2A57023700BE11DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -406,68 +395,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		332E892A43DE4CEAB06FDA97 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MealMaster-MealMasterUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		51A94A9B654D9F0E4A47E510 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MealMasterTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5EAAD067CA87C1D41F26A638 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6597BB090DE2C091F9AAEB2C /* [CP] Check Pods Manifest.lock */ = {
+		46992D3909C1C742064301F8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -489,9 +417,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		89BBD0C82A587F19008F0376 /* ShellScript */ = {
+		76A7AAAE98B6A827C7951957 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89BBD0C82A587F19008F0376 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -502,11 +447,55 @@
 			);
 			outputPaths = (
 			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		A3F08D2493B57F801B739301 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MealMaster-MealMasterUITests-checkManifestLockResult.txt",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
-		BDE33B499947FF249B3B8050 /* [CP] Embed Pods Frameworks */ = {
+		C821920511B38482DAA6AA31 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MealMasterTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F39E5B549EBD03C11A6A4B80 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -539,8 +528,8 @@
 				899F63FC2A6043CE00BE8E5A /* RecipesTVCell.swift in Sources */,
 				898FC75F2A67ED4300AD7422 /* RecipeForm.swift in Sources */,
 				898FC7512A657D5D00AD7422 /* RecipeSearch.swift in Sources */,
-				898FC75B2A6588F000AD7422 /* ApiErrors.swift in Sources */,
-				898FC7532A65831100AD7422 /* RecipeJSONDeco.swift in Sources */,
+				898FC75B2A6588F000AD7422 /* Errors.swift in Sources */,
+				898FC7532A65831100AD7422 /* RecipeJSONCodable.swift in Sources */,
 				89D3A7E02A57023700BE11DD /* SceneDelegate.swift in Sources */,
 				898FC74D2A6579F000AD7422 /* AFSession.swift in Sources */,
 				898FC7592A65880300AD7422 /* Recipe.swift in Sources */,
@@ -709,7 +698,7 @@
 		};
 		89D3A8082A57023900BE11DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A89AC8DDFE0E2FBC75F378B /* Pods-MealMaster.debug.xcconfig */;
+			baseConfigurationReference = 8A9015E79BCE8CF70BDDC544 /* Pods-MealMaster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -738,7 +727,7 @@
 		};
 		89D3A8092A57023900BE11DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A53A8DF9728674053EA6B7C1 /* Pods-MealMaster.release.xcconfig */;
+			baseConfigurationReference = 959E81A1B334EA4975083EF4 /* Pods-MealMaster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -767,7 +756,7 @@
 		};
 		89D3A80B2A57023900BE11DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DC4C38E099CF5504D1B55C6 /* Pods-MealMasterTests.debug.xcconfig */;
+			baseConfigurationReference = A6BF5756867116300B3E9232 /* Pods-MealMasterTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -788,7 +777,7 @@
 		};
 		89D3A80C2A57023900BE11DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 086B0EA194FD96E85D5005D6 /* Pods-MealMasterTests.release.xcconfig */;
+			baseConfigurationReference = 41A745C5FD641E92102B3F87 /* Pods-MealMasterTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -809,7 +798,7 @@
 		};
 		89D3A80E2A57023900BE11DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B9F69D6EC38901A53F7E3F3E /* Pods-MealMaster-MealMasterUITests.debug.xcconfig */;
+			baseConfigurationReference = 21F45526C9FD99F741229282 /* Pods-MealMaster-MealMasterUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -828,7 +817,7 @@
 		};
 		89D3A80F2A57023900BE11DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA9EEDF362DCCE5E89207A0E /* Pods-MealMaster-MealMasterUITests.release.xcconfig */;
+			baseConfigurationReference = 2CAAECEAD089757EDCE926D8 /* Pods-MealMaster-MealMasterUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -885,30 +874,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		89BBD0BF2A587BA0008F0376 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		89BBD0C02A587BA0008F0376 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 89BBD0BF2A587BA0008F0376 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		89BBD0C22A587BA0008F0376 /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 89BBD0BF2A587BA0008F0376 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		89D3A7E62A57023700BE11DD /* MealMaster.xcdatamodeld */ = {
