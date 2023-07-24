@@ -88,7 +88,7 @@ class RecipeDetailVC: UIViewController {
         recipeTitle.text = data?.title
         caloriesLabel.text = data?.calories
         timeLabel.text = data?.time
-        originLabel.text = data?.origin
+        originLabel.text = data?.origin?.capitalized
         nbOfIngLabel.text = nbOfIngs
     }
 }
