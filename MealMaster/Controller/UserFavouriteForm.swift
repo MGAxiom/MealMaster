@@ -1,13 +1,13 @@
 //
-//  RecipeForm.swift
+//  UserFavouriteForm.swift
 //  MealMaster
 //
-//  Created by Maxime Girard on 19/07/2023.
+//  Created by Maxime Girard on 26/07/2023.
 //
 
 import UIKit
 
-class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class UserFavouriteForm: UIViewController {
     let mealArray = ["Breakfast", "Lunch", "Break", "Dinner"]
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var mealPicker: UIPickerView!
@@ -17,7 +17,7 @@ class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         datePicker?.locale = .current
         
     }
-
+    
     @IBAction func confirmButton(_ sender: Any) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
@@ -32,7 +32,7 @@ class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     
-// MARK: - PickerView Setup
+    // MARK: - PickerView Setup
     
     func numberOfComponents(in mealPicker: UIPickerView) -> Int {
         return 1

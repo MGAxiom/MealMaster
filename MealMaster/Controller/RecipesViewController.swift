@@ -16,19 +16,18 @@ class RecipesViewController: UIViewController {
     @IBOutlet weak var recipesListTV: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var randomRecipeView: UIView!
     @IBOutlet weak var activityIndicatorW: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        randomRecipeView.layer.cornerRadius = 10
     }
     
     @IBAction func searchButton(_ sender: Any) {
         self.searchButton.isHidden = true
         self.activityIndicatorW.isHidden = false
         fetchRecipes()
-        
-        
     }
     
     

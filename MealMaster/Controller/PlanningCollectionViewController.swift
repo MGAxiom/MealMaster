@@ -1,5 +1,5 @@
 //
-//  AllergiesCollectionViewController.swift
+//  PlanningCollectionViewController.swift
 //  MealMaster
 //
 //  Created by Maxime Girard on 13/07/2023.
@@ -10,7 +10,7 @@ import UIKit
 
 final class PlanningCollectionViewController: UICollectionViewController {
     
-    // MARK: Properties
+    // MARK: - Properties
 
     private let reuseIdentifier = "DateCell"
     
