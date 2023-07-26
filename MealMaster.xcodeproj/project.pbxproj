@@ -30,6 +30,7 @@
 		89AA69E62A7019ED00F3E687 /* UserFavouriteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA69DE2A7019ED00F3E687 /* UserFavouriteListVC.swift */; };
 		89AA69E82A707E9B00F3E687 /* UserFavouriteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA69E72A707E9B00F3E687 /* UserFavouriteForm.swift */; };
 		89AA69EA2A70805B00F3E687 /* FridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA69E92A70805B00F3E687 /* FridgeViewController.swift */; };
+		89AA69EC2A71328A00F3E687 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA69EB2A71328A00F3E687 /* UserCollectionViewCell.swift */; };
 		89BBD0C52A587D04008F0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */; };
 		89BBD0C62A587D04008F0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */; };
 		89BBD0C72A587D04008F0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */; };
@@ -88,6 +89,7 @@
 		89AA69DE2A7019ED00F3E687 /* UserFavouriteListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFavouriteListVC.swift; sourceTree = "<group>"; };
 		89AA69E72A707E9B00F3E687 /* UserFavouriteForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFavouriteForm.swift; sourceTree = "<group>"; };
 		89AA69E92A70805B00F3E687 /* FridgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeViewController.swift; sourceTree = "<group>"; };
+		89AA69EB2A71328A00F3E687 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
 		89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		89D3A7DA2A57023700BE11DD /* MealMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D3A7DD2A57023700BE11DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				89D3A8162A5703D500BE11DD /* Main Storyboard.storyboard */,
 				899F63FD2A61A71300BE8E5A /* PlanningCollectionViewCell.swift */,
 				899F63FB2A6043CE00BE8E5A /* RecipesTVCell.swift */,
+				89AA69EB2A71328A00F3E687 /* UserCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				89AA69D42A7017A200F3E687 /* Favourite.swift in Sources */,
 				898FC7572A6583C300AD7422 /* CoreDataCRUD.swift in Sources */,
 				89D3A7DE2A57023700BE11DD /* AppDelegate.swift in Sources */,
+				89AA69EC2A71328A00F3E687 /* UserCollectionViewCell.swift in Sources */,
 				898FC75D2A66DB2500AD7422 /* RecipeDetailVC.swift in Sources */,
 				89AA69EA2A70805B00F3E687 /* FridgeViewController.swift in Sources */,
 				89AA69E62A7019ED00F3E687 /* UserFavouriteListVC.swift in Sources */,
