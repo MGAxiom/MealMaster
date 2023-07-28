@@ -8,11 +8,12 @@
 import UIKit
 
 
-final class PlanningCollectionViewController: UICollectionViewController {
+final class PlanningViewController: UICollectionViewController {
     
     // MARK: - Properties
-
-    private let reuseIdentifier = "DateCell"
+    @IBOutlet weak var planningCollectionView: UICollectionView!
+    @IBOutlet weak var planningFlowLayout: UICollectionViewFlowLayout!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,10 @@ final class PlanningCollectionViewController: UICollectionViewController {
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.planningCollectionView.reloadData()
+    }
 
     // MARK: UICollectionViewDataSource
 
@@ -35,7 +40,7 @@ final class PlanningCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DateCell", for: indexPath)
 
         // Configure the cell
 

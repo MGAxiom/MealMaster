@@ -52,13 +52,13 @@ extension UserFavouriteListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         favouriteRecipeDetails = repository.getRecipeDetails(id: favouriteUserData[indexPath.row].title!)
-        self.performSegue(withIdentifier: "showFavouriteDetails", sender: self)
+        self.performSegue(withIdentifier: "showRecipeDetails", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showFavouriteDetails" {
-            let controller = segue.destination as! UserFavouriteDetailsVC
-            controller.details = favouriteRecipeDetails
+        if segue.identifier == "showRecipeDetails" {
+            let controller = segue.destination as! RecipeDetailVC
+            controller.data = favouriteRecipeDetails
         }
     }
 }

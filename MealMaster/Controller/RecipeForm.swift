@@ -8,6 +8,7 @@
 import UIKit
 
 class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    var recipeData: Recipe?
     let mealArray = ["Breakfast", "Lunch", "Break", "Dinner"]
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var mealPicker: UIPickerView!

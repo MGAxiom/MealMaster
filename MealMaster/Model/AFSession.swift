@@ -14,7 +14,7 @@ protocol AFSession {
 
 final class SearchSession: AFSession {
   
-    var parameters: [String] = [""]
+    var parameters: [String] = []
     func request(with url: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, callback: @escaping (AFDataResponse<Data?>) -> Void) {
         AF.request(url,
                    method: .get,

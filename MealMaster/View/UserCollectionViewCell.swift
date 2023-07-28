@@ -12,8 +12,8 @@ class UserCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
     
-    func configureUserCell(label: String, image: UIImage) {
+    func configureUserCell(label: String) {
         cellLabel.text = label
-        cellImage.image = image
+//        cellImage.image = image
     }
 }
