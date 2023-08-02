@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22G74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Favourite" representedClassName=".Favourite" parentEntity="Recipe" syncable="YES" codeGenerationType="category"/>
-    <entity name="PlanningDetails" representedClassName=".PlanningDetails" parentEntity="Recipe" syncable="YES" codeGenerationType="category">
+    <entity name="Favourite" representedClassName=".Favourite" syncable="YES" codeGenerationType="category">
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="favourite" inverseEntity="Recipe"/>
+    </entity>
+    <entity name="PlanningDetails" representedClassName=".PlanningDetails" syncable="YES" codeGenerationType="category">
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="meal" optional="YES" attributeType="String"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="plannings" inverseEntity="Recipe"/>
     </entity>
-    <entity name="Recipe" representedClassName=".Recipe" isAbstract="YES" syncable="YES" codeGenerationType="category">
+    <entity name="Recipe" representedClassName=".Recipe" syncable="YES" codeGenerationType="category">
         <attribute name="calories" optional="YES" attributeType="String"/>
         <attribute name="foods" optional="YES" attributeType="String"/>
         <attribute name="imageUrl" optional="YES" attributeType="String"/>
@@ -14,5 +17,7 @@
         <attribute name="time" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="favourite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Favourite" inverseName="recipe" inverseEntity="Favourite"/>
+        <relationship name="plannings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlanningDetails" inverseName="recipe" inverseEntity="PlanningDetails"/>
     </entity>
 </model>

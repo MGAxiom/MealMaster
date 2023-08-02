@@ -12,8 +12,8 @@ class UserCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
     
-    func configureUserCell(label: String) {
+    func configureUserCell(label: String, allergyAsset: String) {
         cellLabel.text = label
-//        cellImage.image = image
+        cellImage.image = UIImage(named: allergyAsset)
     }
 }

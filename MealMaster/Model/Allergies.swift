@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 class Allergies {
     
     let allergiesValues: [String] = allergiesCases.allCases.map { "\($0.info.name)" }
+    let allergiesImages: [String] = allergiesCases.allCases.map { "\($0.info.imageName)" }
     
     enum allergiesCases: CaseIterable {
         case alcoholCocktail, alcoholFree, celeryFree, crustaceanFree, dairyFree, DASH, eggFree, fishFree, fodmapFree, glutenFree, immunoSupportive, ketoFriendly, kidneyFriendly, kosher, lowFatAbs, lowPotassium, lowSugar, lupineFree, Mediterranean, molluskFree, mustardFree, noOilAdded, paleo, peanutFree, pescatarian, porkFree, redMeatFree, sesameFree, shellfishFree, soyFree, sugarConscious, sulfiteFree, treeNutFree, vegan, vegetarian, wheatFree
@@ -25,7 +27,7 @@ class Allergies {
             case .crustaceanFree:
                 return ("Crustacean-Free", "star")
             case .dairyFree:
-                return ("Dairy-Free", "star")
+                return ("Dairy-Free", "icons8-lactose-free-24")
             case .DASH:
                 return ("DASH", "star")
             case .eggFree:
@@ -35,7 +37,7 @@ class Allergies {
             case .fodmapFree:
                 return ("Fodmap-Free", "star")
             case .glutenFree:
-                return ("Gluten-Free", "star")
+                return ("Gluten-Free", "icons8-no-gluten-24")
             case .immunoSupportive:
                 return ("Immuno-Supportive", "star")
             case .ketoFriendly:
@@ -67,7 +69,7 @@ class Allergies {
             case .pescatarian:
                 return ("Pescatarian", "star")
             case .porkFree:
-                return ("Pork-Free", "star")
+                return ("Pork-Free", "icons8-no-pork-24")
             case .redMeatFree:
                 return ("Red-Meat-Free", "star")
             case .sesameFree:

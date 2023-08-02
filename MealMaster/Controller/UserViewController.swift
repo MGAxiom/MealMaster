@@ -24,7 +24,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             UIView?.layer.cornerRadius = 10
         }
         userPic.layer.cornerRadius = 70
-        print(Allergies().allergiesValues)
+//      print(Allergies().allergiesValues)
     }
     
     override func viewDidLayoutSubviews() {
@@ -59,7 +59,7 @@ extension UserViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionviewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        var columns: CGFloat = 3
+        let columns: CGFloat = 3
         
         let spacing: CGFloat = 5
         let totalHorizontalSpacing = (columns - 1) * spacing
@@ -74,7 +74,9 @@ extension UserViewController: UICollectionViewDelegateFlowLayout {
             return UICollectionViewCell()
         }
         let allergy = Allergies().allergiesValues[indexPath.row]
-        cell.configureUserCell(label: allergy)
+        let asset = Allergies().allergiesImages[indexPath.row]
+        cell.configureUserCell(label: allergy, allergyAsset: asset)
+        cell.layer.borderWidth = 0.5
         return cell
     }
 

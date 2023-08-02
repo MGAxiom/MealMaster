@@ -34,11 +34,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NK7-bE-Vgj">
-                                <rect key="frame" x="0.0" y="103" width="393" height="645"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NK7-bE-Vgj" customClass="PlanningCollectionView" customModule="MealMaster" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="103" width="393" height="651"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aRM-ee-BmJ">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aRM-ee-BmJ">
                                     <size key="itemSize" width="143" height="644"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -46,86 +45,125 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dateCell" id="lBF-2v-JNK" customClass="PlanningCollectionViewCell" customModule="MealMaster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="143" height="644"/>
+                                        <rect key="frame" x="0.0" y="3.6666666666666665" width="143" height="644"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xhb-KF-4ej">
                                             <rect key="frame" x="0.0" y="0.0" width="143" height="644"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 July" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stx-va-OOc">
-                                                    <rect key="frame" x="35" y="10" width="73" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28 July" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stx-va-OOc">
+                                                    <rect key="frame" x="8" y="10" width="127" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wea-Yl-Vu3">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wea-Yl-Vu3">
                                                     <rect key="frame" x="35" y="104" width="73" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="eVD-L8-1wJ"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTb-Cu-xm9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTb-Cu-xm9">
                                                     <rect key="frame" x="48" y="235" width="47" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="7wq-7v-AsC"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KB9-kw-8cV">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KB9-kw-8cV">
                                                     <rect key="frame" x="48" y="366" width="47" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="SAh-qR-eML"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI7-P1-g2n">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI7-P1-g2n">
                                                     <rect key="frame" x="45" y="497" width="53" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="hav-64-e0j"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tf-ML-aUN">
-                                                    <rect key="frame" x="8" y="163" width="127" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tf-ML-aUN">
+                                                    <rect key="frame" x="8" y="155" width="127" height="50"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3I-wU-r5h">
-                                                    <rect key="frame" x="8" y="285" width="127" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3I-wU-r5h">
+                                                    <rect key="frame" x="8" y="286" width="127" height="50"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f94-CI-MZY">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f94-CI-MZY">
                                                     <rect key="frame" x="8" y="417" width="127" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center"/>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTE-hP-sS0">
-                                                    <rect key="frame" x="8" y="554" width="127" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTE-hP-sS0">
+                                                    <rect key="frame" x="8" y="548" width="127" height="50"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="f94-CI-MZY" firstAttribute="top" secondItem="KB9-kw-8cV" secondAttribute="bottom" constant="30" id="18Z-wl-Ov4"/>
+                                                <constraint firstAttribute="trailing" secondItem="stx-va-OOc" secondAttribute="trailing" constant="8" id="1bx-Sa-lnI"/>
                                                 <constraint firstItem="KB9-kw-8cV" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="48" id="3oQ-AC-A2k"/>
                                                 <constraint firstAttribute="trailing" secondItem="wea-Yl-Vu3" secondAttribute="trailing" constant="35" id="4Da-OR-54I"/>
                                                 <constraint firstAttribute="trailing" secondItem="rTb-Cu-xm9" secondAttribute="trailing" constant="48" id="7kK-93-es3"/>
+                                                <constraint firstAttribute="bottom" secondItem="LTE-hP-sS0" secondAttribute="bottom" constant="46" id="A1l-rR-f2l"/>
+                                                <constraint firstItem="LTE-hP-sS0" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="8" id="ADQ-Vj-BEj"/>
+                                                <constraint firstItem="rTb-Cu-xm9" firstAttribute="top" secondItem="1Tf-ML-aUN" secondAttribute="bottom" constant="30" id="EFP-kc-An0"/>
                                                 <constraint firstItem="nI7-P1-g2n" firstAttribute="top" secondItem="KB9-kw-8cV" secondAttribute="bottom" constant="110" id="EI3-X4-8w5"/>
+                                                <constraint firstItem="stx-va-OOc" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="8" id="GkN-7H-AgK"/>
+                                                <constraint firstItem="f94-CI-MZY" firstAttribute="height" secondItem="R3I-wU-r5h" secondAttribute="height" id="HaM-O4-PCf"/>
+                                                <constraint firstItem="R3I-wU-r5h" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="8" id="Iy2-Eq-qMD"/>
+                                                <constraint firstAttribute="trailing" secondItem="f94-CI-MZY" secondAttribute="trailing" constant="8" id="KNL-45-Dcd"/>
                                                 <constraint firstItem="rTb-Cu-xm9" firstAttribute="top" secondItem="wea-Yl-Vu3" secondAttribute="bottom" constant="110" id="LXZ-Xe-0NM"/>
-                                                <constraint firstItem="stx-va-OOc" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="35" id="OMx-6i-SYU"/>
+                                                <constraint firstItem="LTE-hP-sS0" firstAttribute="top" secondItem="nI7-P1-g2n" secondAttribute="bottom" constant="30" id="NKT-k7-OPI"/>
+                                                <constraint firstItem="1Tf-ML-aUN" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="8" id="NhI-fh-zaq"/>
                                                 <constraint firstItem="wea-Yl-Vu3" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="35" id="RQy-rd-zHO"/>
+                                                <constraint firstAttribute="trailing" secondItem="1Tf-ML-aUN" secondAttribute="trailing" constant="8" id="SWe-AG-ZA0"/>
                                                 <constraint firstAttribute="trailing" secondItem="nI7-P1-g2n" secondAttribute="trailing" constant="45" id="U0T-iN-HFk"/>
+                                                <constraint firstItem="1Tf-ML-aUN" firstAttribute="top" secondItem="wea-Yl-Vu3" secondAttribute="bottom" constant="30" id="Uvc-kF-PXb"/>
+                                                <constraint firstItem="nI7-P1-g2n" firstAttribute="top" secondItem="f94-CI-MZY" secondAttribute="bottom" constant="30" id="YKw-GT-Lhb"/>
+                                                <constraint firstItem="R3I-wU-r5h" firstAttribute="height" secondItem="1Tf-ML-aUN" secondAttribute="height" id="ZPJ-RV-WhC"/>
                                                 <constraint firstItem="stx-va-OOc" firstAttribute="top" secondItem="xhb-KF-4ej" secondAttribute="top" constant="10" id="dVr-lI-fS6"/>
                                                 <constraint firstAttribute="trailing" secondItem="KB9-kw-8cV" secondAttribute="trailing" constant="48" id="dzv-JH-ijs"/>
+                                                <constraint firstItem="KB9-kw-8cV" firstAttribute="top" secondItem="R3I-wU-r5h" secondAttribute="bottom" constant="30" id="hLP-cf-tpz"/>
+                                                <constraint firstItem="LTE-hP-sS0" firstAttribute="height" secondItem="f94-CI-MZY" secondAttribute="height" id="hcF-6G-qka"/>
+                                                <constraint firstItem="R3I-wU-r5h" firstAttribute="top" secondItem="rTb-Cu-xm9" secondAttribute="bottom" constant="30" id="jZA-vS-8b0"/>
                                                 <constraint firstItem="KB9-kw-8cV" firstAttribute="top" secondItem="rTb-Cu-xm9" secondAttribute="bottom" constant="110" id="jkX-TM-pmX"/>
+                                                <constraint firstAttribute="trailing" secondItem="LTE-hP-sS0" secondAttribute="trailing" constant="8" id="oB4-gx-aBf"/>
                                                 <constraint firstItem="nI7-P1-g2n" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="45" id="oeW-2q-gVD"/>
+                                                <constraint firstItem="f94-CI-MZY" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="8" id="rQ4-3a-YXy"/>
                                                 <constraint firstItem="wea-Yl-Vu3" firstAttribute="top" secondItem="stx-va-OOc" secondAttribute="bottom" constant="70" id="rkw-tT-EBx"/>
-                                                <constraint firstAttribute="trailing" secondItem="stx-va-OOc" secondAttribute="trailing" constant="35" id="ukS-Kb-9TR"/>
+                                                <constraint firstAttribute="trailing" secondItem="R3I-wU-r5h" secondAttribute="trailing" constant="8" id="rr1-yH-Eu8"/>
                                                 <constraint firstItem="rTb-Cu-xm9" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="48" id="vqP-6u-Zlu"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
                                         <size key="customSize" width="143" height="644"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="stx-va-OOc" id="1Id-o2-CdL"/>
+                                            <outlet property="meal1Button" destination="1Tf-ML-aUN" id="DSb-H5-hQp"/>
+                                            <outlet property="meal2Button" destination="R3I-wU-r5h" id="AbR-cx-dya"/>
+                                            <outlet property="meal3Button" destination="f94-CI-MZY" id="KDc-0G-2rk"/>
+                                            <outlet property="meal4Button" destination="LTE-hP-sS0" id="gFb-bo-BZW"/>
+                                            <outlet property="mealLabel1" destination="wea-Yl-Vu3" id="nal-fW-xnH"/>
+                                            <outlet property="mealLabel2" destination="rTb-Cu-xm9" id="ES1-gE-Doe"/>
+                                            <outlet property="mealLabel3" destination="KB9-kw-8cV" id="OR2-1A-Pkp"/>
+                                            <outlet property="mealLabel4" destination="nI7-P1-g2n" id="gMe-vh-1de"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -136,6 +174,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7us-Qw-WM5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NK7-bE-Vgj" firstAttribute="top" secondItem="7us-Qw-WM5" secondAttribute="top" id="6nE-d2-fpN"/>
+                            <constraint firstItem="NK7-bE-Vgj" firstAttribute="leading" secondItem="7us-Qw-WM5" secondAttribute="leading" id="7i0-kW-b3E"/>
+                            <constraint firstItem="NK7-bE-Vgj" firstAttribute="trailing" secondItem="7us-Qw-WM5" secondAttribute="trailing" id="EAW-An-Xh5"/>
+                            <constraint firstItem="7us-Qw-WM5" firstAttribute="bottom" secondItem="NK7-bE-Vgj" secondAttribute="bottom" constant="15" id="xAg-9S-ler"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fxW-98-QJ9"/>
                     <connections>
@@ -146,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WXv-tn-MXZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2335" y="-1415"/>
+            <point key="canvasLocation" x="2333.5877862595421" y="-1415.4929577464789"/>
         </scene>
         <!--Fridge-->
         <scene sceneID="Prp-uV-vky">
@@ -1537,6 +1581,9 @@
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

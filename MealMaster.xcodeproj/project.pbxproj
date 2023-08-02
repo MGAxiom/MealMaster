@@ -10,6 +10,8 @@
 		144A9C573A29A75117223D88 /* Pods_MealMaster_MealMasterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E636B9A3C5D73CDBE7A725 /* Pods_MealMaster_MealMasterUITests.framework */; };
 		385F2837E89E6EBC6174EF93 /* Pods_MealMasterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2998ED961F3B671573756F67 /* Pods_MealMasterTests.framework */; };
 		4E3F565817FE067C085D413E /* Pods_MealMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67ACBBBE2F1532482C41BF5 /* Pods_MealMaster.framework */; };
+		892A28F32A7451C5003D4C19 /* PlanningCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892A28F22A7451C5003D4C19 /* PlanningCollectionView.swift */; };
+		892A28F52A78180A003D4C19 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892A28F42A78180A003D4C19 /* Extensions.swift */; };
 		8974A0F72A7169DA0044AEE4 /* Allergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8974A0F62A7169DA0044AEE4 /* Allergies.swift */; };
 		8974A0F92A71930D0044AEE4 /* UserCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8974A0F82A71930D0044AEE4 /* UserCollectionView.swift */; };
 		898FC74D2A6579F000AD7422 /* AFSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC74C2A6579F000AD7422 /* AFSession.swift */; };
@@ -68,6 +70,8 @@
 		2CAAECEAD089757EDCE926D8 /* Pods-MealMaster-MealMasterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMaster-MealMasterUITests.release.xcconfig"; path = "Target Support Files/Pods-MealMaster-MealMasterUITests/Pods-MealMaster-MealMasterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		41A745C5FD641E92102B3F87 /* Pods-MealMasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MealMasterTests.release.xcconfig"; path = "Target Support Files/Pods-MealMasterTests/Pods-MealMasterTests.release.xcconfig"; sourceTree = "<group>"; };
 		84E636B9A3C5D73CDBE7A725 /* Pods_MealMaster_MealMasterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MealMaster_MealMasterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		892A28F22A7451C5003D4C19 /* PlanningCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCollectionView.swift; sourceTree = "<group>"; };
+		892A28F42A78180A003D4C19 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8974A0F62A7169DA0044AEE4 /* Allergies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergies.swift; sourceTree = "<group>"; };
 		8974A0F82A71930D0044AEE4 /* UserCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionView.swift; sourceTree = "<group>"; };
 		898FC74C2A6579F000AD7422 /* AFSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSession.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				899F63F92A6037C600BE8E5A /* PlanningViewController.swift */,
 				89AA69E92A70805B00F3E687 /* FridgeViewController.swift */,
 				8974A0F82A71930D0044AEE4 /* UserCollectionView.swift */,
+				892A28F22A7451C5003D4C19 /* PlanningCollectionView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				89D3A7DF2A57023700BE11DD /* SceneDelegate.swift */,
 				89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */,
 				898FC75A2A6588F000AD7422 /* Errors.swift */,
+				892A28F42A78180A003D4C19 /* Extensions.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -564,9 +570,11 @@
 				898FC74D2A6579F000AD7422 /* AFSession.swift in Sources */,
 				898FC7592A65880300AD7422 /* Recipe.swift in Sources */,
 				899F63FE2A61A71300BE8E5A /* PlanningCollectionViewCell.swift in Sources */,
+				892A28F52A78180A003D4C19 /* Extensions.swift in Sources */,
 				89AA69E32A7019ED00F3E687 /* UserViewController.swift in Sources */,
 				899F63FA2A6037C600BE8E5A /* PlanningViewController.swift in Sources */,
 				89AA69D62A7017C000F3E687 /* PlanningDetails.swift in Sources */,
+				892A28F32A7451C5003D4C19 /* PlanningCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

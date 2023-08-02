@@ -9,7 +9,7 @@ import UIKit
 
 class UserFavouriteListVC: UIViewController {
     
-    var favouriteUserData = [Recipe]()
+    var favouriteUserData = [Favourite]()
     let repository = CoreDataCRUD()
     var favouriteRecipeDetails: Recipe?
     
@@ -20,10 +20,11 @@ class UserFavouriteListVC: UIViewController {
         super.viewWillAppear(animated)
         fetchFavouriteRecipes()
         self.favouriteRecipeListTV.reloadData()
+        print(favouriteUserData)
     }
     
     private func fetchFavouriteRecipes() {
-        repository.getAllRecipes(completion: { [weak self] data in
+        repository.readFavouriteData(completion: { [weak self] data in
             self?.favouriteUserData = data
         })
     }
@@ -43,7 +44,11 @@ extension UserFavouriteListVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "favouriteRecipeCell", for: indexPath) as? RecipesTVCell else {
             return UITableViewCell()
         }
-        let recipe = favouriteUserData[indexPath.row]
+        
+        guard let recipe = favouriteUserData[indexPath.row].recipe else {
+            return cell
+        }
+        
         let nbOfIng = String(recipe.foods?.components(separatedBy: ",").count ?? 0)
         cell.configureCell(imageURL: recipe.imageUrl ?? "", title: recipe.title ?? "", description: recipe.foods?.capitalized ?? "", calories: recipe.calories ?? "0", origin: recipe.origin?.capitalized ?? "", ingredients: nbOfIng, time: recipe.time ?? "")
         
@@ -51,7 +56,7 @@ extension UserFavouriteListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        favouriteRecipeDetails = repository.getRecipeDetails(id: favouriteUserData[indexPath.row].title!)
+        favouriteRecipeDetails = repository.getRecipeDetails(id: favouriteUserData[indexPath.row].recipe!.title!)
         self.performSegue(withIdentifier: "showRecipeDetails", sender: self)
     }
     

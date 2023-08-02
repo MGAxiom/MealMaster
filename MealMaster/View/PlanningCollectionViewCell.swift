@@ -13,7 +13,10 @@ class PlanningCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var meal2Button: UIButton!
     @IBOutlet weak var meal3Button: UIButton!
     @IBOutlet weak var meal4Button: UIButton!
-    
+    @IBOutlet weak var mealLabel1: UILabel!
+    @IBOutlet weak var mealLabel2: UILabel!
+    @IBOutlet weak var mealLabel3: UILabel!
+    @IBOutlet weak var mealLabel4: UILabel!
     
     func configurePlanningCell(date: String, meal1: String, meal2: String, meal3: String, meal4: String) {
         dateLabel.text = date
@@ -21,5 +24,9 @@ class PlanningCollectionViewCell: UICollectionViewCell {
         meal2Button.setTitle(meal2, for: .normal)
         meal3Button.setTitle(meal3, for: .normal)
         meal4Button.setTitle(meal4, for: .normal)
+        mealLabel1.text = "Breakfast"
+        mealLabel2.text = "Lunch"
+        mealLabel3.text = "Break"
+        mealLabel4.text = "Dinner"
     }
 }

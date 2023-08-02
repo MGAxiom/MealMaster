@@ -48,8 +48,8 @@ class RecipeDetailVC: UIViewController {
     }
     
     @IBAction func saveFavoriteButton(_ sender: Any) {
-        if repository.checkIfItemExist(id: recipeTitle.text!) == true {
-            presentAlertVC(with: "This recipe is already in your favourites. Do you want to remove it?", recipeName: recipeTitle.text!)
+        if ((data?.favourite) != nil) {
+            presentAlertVC(with: "This recipe is already in your favourites. Do you want to remove it?", favourite: (data?.favourite)!)
         } else {
             saveRecipe()
             checkIfFavorite()
@@ -63,6 +63,7 @@ class RecipeDetailVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "planningForm" {
             let aboutViewController = segue.destination as! RecipeForm
+            aboutViewController.recipeData = data
         }
     }
     
@@ -74,7 +75,8 @@ class RecipeDetailVC: UIViewController {
     }
     
     func checkIfFavorite() {
-        if repository.checkIfItemExist(id: recipeTitle.text!) == true {
+        // TODO : now only check that recipe.favourite exists
+        if ((data?.favourite) != nil) {
             favoriteButton.image = Image(systemName: "star.fill")
         } else {
             favoriteButton.image = Image(systemName: "star")
@@ -111,10 +113,11 @@ extension RecipeDetailVC: UITableViewDelegate, UITableViewDataSource {
 
 extension RecipeDetailVC {
     
-    func presentAlertVC(with message: String, recipeName: String, okCompletion: @escaping (() -> ()) = {}, cancelCompletion: @escaping (() -> ()) = {}, presentCompletion: @escaping (() -> ()) = {}) {
+    func presentAlertVC(with message: String, favourite: Favourite, okCompletion: @escaping (() -> ()) = {}, cancelCompletion: @escaping (() -> ()) = {}, presentCompletion: @escaping (() -> ()) = {}) {
         let alertController = UIAlertController(title: "Ooops !", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) in
-            CoreDataCRUD().deleteRecipe(id: recipeName)
+//            CoreDataCRUD().deleteRecipe(id: recipeName)
+            CoreDataCRUD().deleteFavourite(favorite: favourite)
             self.checkIfFavorite()
             okCompletion()
         }

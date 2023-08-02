@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import CoreData
 
 class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var recipeData: Recipe?
+    let repository = CoreDataCRUD()
     let mealArray = ["Breakfast", "Lunch", "Break", "Dinner"]
+    
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var mealPicker: UIPickerView!
     
@@ -20,11 +24,12 @@ class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
 
     @IBAction func confirmButton(_ sender: Any) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .short
-        let strDate = dateFormatter.string(from: datePicker.date)
+        let strDate = Formatter.date.string(from: datePicker.date)
         let mealIndex = mealPicker.selectedRow(inComponent: 0)
+        let mealSelected = mealArray[mealIndex]
+        repository.addRecipeToMeal(meal: mealSelected, date: strDate, for: recipeData!)
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButton(_ sender: Any) {
