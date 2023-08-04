@@ -59,7 +59,7 @@ extension UserViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionviewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let columns: CGFloat = 3
+        let columns: CGFloat = 4
         
         let spacing: CGFloat = 5
         let totalHorizontalSpacing = (columns - 1) * spacing

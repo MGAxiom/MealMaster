@@ -20,8 +20,13 @@ final class PlanningViewController: UIViewController, UICollectionViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        repository.getMealsPlanned(completion: { [weak self] data in
-            self?.planningData = data
+        repository.getMealsPlanned(completion: { [weak self] result in
+            switch result {
+            case .success(let data):
+                self?.planningData = data
+            case .failure(let failure):
+                self?.handleCoreDataErrorAlert(error: failure)
+            }
         })
         print(planningData)
 //        print(getDaysTitles())

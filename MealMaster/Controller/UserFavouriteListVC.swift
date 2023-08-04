@@ -24,8 +24,13 @@ class UserFavouriteListVC: UIViewController {
     }
     
     private func fetchFavouriteRecipes() {
-        repository.readFavouriteData(completion: { [weak self] data in
-            self?.favouriteUserData = data
+        repository.readFavouriteData(completion: { result in
+            switch result {
+            case .success(let data):
+                self.favouriteUserData = data
+            case .failure(let failure):
+                self.handleCoreDataErrorAlert(error: failure)
+            }
         })
     }
     
@@ -56,7 +61,21 @@ extension UserFavouriteListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        favouriteRecipeDetails = repository.getRecipeDetails(id: favouriteUserData[indexPath.row].recipe!.title!)
+        let recipeResult = repository.getRecipeDetails(id: favouriteUserData[indexPath.row].recipe!.title!)
+        switch recipeResult {
+        case .success(let success):
+            favouriteRecipeDetails = success
+        case .failure(let error):
+            self.handleCoreDataErrorAlert(error: error)
+        }
+//        favouriteRecipeDetails = repository.getRecipeDetails(id: favouriteUserData[indexPath.row].recipe!.title!) { result in
+//            switch result {
+//            case .success(let success):
+//                return success
+//            case .failure(let error):
+//                self.handleCoreDataErrorAlert(error: error)
+//            }
+//        }
         self.performSegue(withIdentifier: "showRecipeDetails", sender: self)
     }
     

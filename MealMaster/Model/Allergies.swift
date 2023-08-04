@@ -14,82 +14,62 @@ class Allergies {
     let allergiesImages: [String] = allergiesCases.allCases.map { "\($0.info.imageName)" }
     
     enum allergiesCases: CaseIterable {
-        case alcoholCocktail, alcoholFree, celeryFree, crustaceanFree, dairyFree, DASH, eggFree, fishFree, fodmapFree, glutenFree, immunoSupportive, ketoFriendly, kidneyFriendly, kosher, lowFatAbs, lowPotassium, lowSugar, lupineFree, Mediterranean, molluskFree, mustardFree, noOilAdded, paleo, peanutFree, pescatarian, porkFree, redMeatFree, sesameFree, shellfishFree, soyFree, sugarConscious, sulfiteFree, treeNutFree, vegan, vegetarian, wheatFree
+        case alcoholFree, celeryFree, crustaceanFree, dairyFree, eggFree, fishFree, fodmapFree, glutenFree, ketoFriendly, kidneyFriendly, kosher, lowSugar, lupineFree, molluskFree, mustardFree, noOilAdded, paleo, peanutFree, porkFree, redMeatFree, sesameFree, shellfishFree, soyFree, sugarConscious, sulfiteFree, wheatFree
         
         var info: (name: String, imageName: String) {
             switch self {
-            case .alcoholCocktail:
-                return ("Alcohol-Cocktail", "star")
             case .alcoholFree:
-                return ("Alcohol-Free", "star")
+                return ("Alcohol-Free", "icons8-no-alcohol-24")
             case .celeryFree:
-                return ("Celery-Free", "star")
+                return ("Celery-Free", "icons8-no-celery-24")
             case .crustaceanFree:
-                return ("Crustacean-Free", "star")
+                return ("Crustacean-Free", "noun-shrimp-free-allergy-5726680")
             case .dairyFree:
                 return ("Dairy-Free", "icons8-lactose-free-24")
-            case .DASH:
-                return ("DASH", "star")
             case .eggFree:
-                return ("Egg-Free", "star")
+                return ("Egg-Free", "icons8-no-eggs-24")
             case .fishFree:
-                return ("Fish-Free", "star")
+                return ("Fish-Free", "icons8-no-fish-24")
             case .fodmapFree:
-                return ("Fodmap-Free", "star")
+                return ("Fodmap-Free", "icons8-no-fructose-24")
             case .glutenFree:
                 return ("Gluten-Free", "icons8-no-gluten-24")
-            case .immunoSupportive:
-                return ("Immuno-Supportive", "star")
             case .ketoFriendly:
-                return ("Keto-Friendly", "star")
+                return ("Keto-Friendly", "noun-keto-2476023")
             case .kidneyFriendly:
-                return ("Kidney-Friendly", "star")
+                return ("Kidney-Friendly", "icons8-kidney-24")
             case .kosher:
-                return ("Kosher", "star")
-            case .lowFatAbs:
-                return ("Low-Fat-Abs", "star")
-            case .lowPotassium:
-                return ("Low-Potassium", "star")
+                return ("Kosher", "icons8-kosher-food-24")
             case .lowSugar:
-                return ("Low-Sugar", "star")
+                return ("Low-Sugar", "icons8-spoon-of-sugar-24")
             case .lupineFree:
-                return ("Lupine-Free", "star")
-            case .Mediterranean:
-                return ("Mediterranean", "star")
+                return ("Lupine-Free", "noun-lupin-free-4576540")
             case .molluskFree:
-                return ("Mollusk-Free", "star")
+                return ("Mollusk-Free", "icons8-nautilus-24")
             case .mustardFree:
-                return ("Mustard-Free", "star")
+                return ("Mustard-Free", "icons8-no-mustard-24")
             case .noOilAdded:
-                return ("No-Oil-Added", "star")
+                return ("No-Oil-Added", "icons8-olive-oil-24")
             case .paleo:
-                return ("Paleo", "star")
+                return ("Paleo", "icons8-paleo-diet-24")
             case .peanutFree:
-                return ("Peanut-Free", "star")
-            case .pescatarian:
-                return ("Pescatarian", "star")
+                return ("Peanut-Free", "icons8-no-peanut-24")
             case .porkFree:
                 return ("Pork-Free", "icons8-no-pork-24")
             case .redMeatFree:
-                return ("Red-Meat-Free", "star")
+                return ("Red-Meat-Free", "icons8-no-meat-24")
             case .sesameFree:
-                return ("Sesame-Free", "star")
+                return ("Sesame-Free", "icons8-no-sesame-24")
             case .shellfishFree:
-                return ("Shellfish-Free", "star")
+                return ("Shellfish-Free", "icons8-no-shellfish-24")
             case .soyFree:
-                return ("Soy-Free", "star")
+                return ("Soy-Free", "icons8-no-soy-24")
             case .sugarConscious:
-                return ("Sugar-Conscious", "star")
+                return ("Sugar-Conscious", "icons8-diabetic-food-24")
             case .sulfiteFree:
-                return ("Sulfite-Free", "star")
-            case .treeNutFree:
-                return ("Tree-Nut-Free", "star")
-            case .vegan:
-                return ("Vegan", "star")
-            case .vegetarian:
-                return ("Vegetarian", "star")
+                return ("Sulfite-Free", "noun-no-sulfate-3801939")
             case .wheatFree:
-                return ("Wheat-Free", "star")
+                return ("Wheat-Free", "noun-wheat-free-3488856")
             }
         }
     }

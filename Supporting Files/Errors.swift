@@ -10,3 +10,15 @@ import Foundation
 enum HTTPError: Error {
     case invalidJson
 }
+
+enum CoreDataError: Error {
+    case failedSave
+    case failedAllFetch
+    case failedDetailsFetch
+    case failedDeletion
+}
+
+enum CoreDataSuccess {
+    case successfullSave
+    case successfullDeletion
+}

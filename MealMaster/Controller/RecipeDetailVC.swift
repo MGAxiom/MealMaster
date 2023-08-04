@@ -71,7 +71,14 @@ class RecipeDetailVC: UIViewController {
         guard data != nil else {
             return
         }
-        repository.saveRecipe(recipe: data!)
+        repository.saveRecipe(recipe: data!) { result in
+            switch result {
+            case .success(let success):
+                self.handleCoreDataSuccessAlert(success: success)
+            case .failure(let error):
+                self.handleCoreDataErrorAlert(error: error)
+            }
+        }
     }
     
     func checkIfFavorite() {
@@ -117,7 +124,14 @@ extension RecipeDetailVC {
         let alertController = UIAlertController(title: "Ooops !", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) in
 //            CoreDataCRUD().deleteRecipe(id: recipeName)
-            CoreDataCRUD().deleteFavourite(favorite: favourite)
+            CoreDataCRUD().deleteFavourite(favorite: favourite) { result in
+                switch result {
+                case .success(let success):
+                    self.handleCoreDataSuccessAlert(success: success)
+                case .failure(let error):
+                    self.handleCoreDataErrorAlert(error: error)
+                }
+            }
             self.checkIfFavorite()
             okCompletion()
         }

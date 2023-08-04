@@ -14,17 +14,35 @@ class RecipesViewController: UIViewController {
     
     
     @IBOutlet weak var recipesListTV: UITableView!
-    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchTextField: UISearchBar!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var randomRecipeView: UIView!
     @IBOutlet weak var activityIndicatorW: UIActivityIndicatorView!
+    @IBOutlet weak var tutorialLabel1: UILabel!
+    
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         randomRecipeView.layer.cornerRadius = 10
+        recipesListTV.layer.cornerRadius = 10
+        searchTextField.searchBarStyle = .minimal
+        tutorialLabel1.text = """
+            1. Start by adding ingredients, or meal names in the search bar
+
+            2. Tap the search button
+
+            3. Scroll through all those delicious recipes
+
+            4. Tap on one of the recipes to get more details
+            """
+        
     }
     
     @IBAction func searchButton(_ sender: Any) {
+        self.tutorialLabel1.isHidden = true
+        self.recipesListTV.isHidden = false
         self.searchButton.isHidden = true
         self.activityIndicatorW.isHidden = false
         fetchRecipes()

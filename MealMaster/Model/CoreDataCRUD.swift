@@ -34,38 +34,37 @@ final class CoreDataCRUD {
 //        }
 //    }
     
-    func readFavouriteData(completion: ([Favourite]) -> Void){
+    func readFavouriteData(completion: @escaping (Result<[Favourite], CoreDataError>) -> Void){
         let request: NSFetchRequest<Favourite> = Favourite.fetchRequest()
         request.relationshipKeyPathsForPrefetching = ["recipe"]
         do {
             let favouriteRecipes = try coreDataStack.viewContext.fetch(request)
-            completion(favouriteRecipes)
+            completion(.success(favouriteRecipes))
         } catch {
-            alertUser(strMessage: "Error occured while trying to fetch all the recipes")
+            completion(.failure(.failedAllFetch))
         }
     }
     
-    func getMealsPlanned(completion: ([PlanningDetails]) -> Void) {
+    func getMealsPlanned(completion: @escaping (Result<[PlanningDetails], CoreDataError>) -> Void) {
         let request: NSFetchRequest<PlanningDetails> = PlanningDetails.fetchRequest()
         
         do {
             let meals = try coreDataStack.viewContext.fetch(request)
-            completion(meals)
+            completion(.success(meals))
         } catch {
-            alertUser(strMessage: "Error occured while trying to fetch all the recipes")
+            completion(.failure(.failedAllFetch))
         }
     }
     
-    func getRecipeDetails(id: String) -> Recipe? {
+    func getRecipeDetails(id: String) -> Result<Recipe?, CoreDataError> {
         let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
         request.fetchLimit = 1
         request.predicate = NSPredicate(format: "title == %@", id)
         
         do {
-            return try CoreDataStack.sharedInstance.viewContext.fetch(request).first
+            return try .success(CoreDataStack.sharedInstance.viewContext.fetch(request).first)
         } catch {
-            alertUser(strMessage: "Error trying to fetch recipe details.")
-            return nil
+            return .failure(.failedDetailsFetch)
         }
     }
     
@@ -78,19 +77,23 @@ final class CoreDataCRUD {
         do {
             try coreDataStack.viewContext.save()
         } catch {
-            alertUser(strMessage: "Error while trying to save recipe")
+//            alertUser(strMessage: "Error while trying to save recipe")
         }
     }
     
-    func saveRecipe(recipe: Recipe) {
+    func saveRecipe(recipe: Recipe, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
         // Insert the Recipe object into the CoreData context (had no context until now)
-        coreDataStack.viewContext.insert(recipe)
+        if recipe.managedObjectContext == nil {
+            coreDataStack.viewContext.insert(recipe)
+        }
         let fav = Favourite(context: coreDataStack.viewContext)
         fav.recipe = recipe
         do {
             try coreDataStack.viewContext.save()
+            completion(.success(.successfullSave))
         } catch {
-            alertUser(strMessage: "Error while trying to save recipe")
+            print(error)
+            completion(.failure(.failedSave))
         }
     }
     
@@ -112,21 +115,14 @@ final class CoreDataCRUD {
 //        }
 //    }
     
-    func deleteFavourite(favorite: Favourite) {
+    func deleteFavourite(favorite: Favourite, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void)  {
         coreDataStack.viewContext.delete(favorite)
         do {
             try coreDataStack.viewContext.save()
+            completion(.success(.successfullDeletion))
         } catch {
-            alertUser(strMessage: "Error while trying to delete favourite")
+            completion(.failure(.failedDeletion))
         }
     }
 }
 
-extension CoreDataCRUD {
-    public func alertUser(strMessage: String) {
-        let myAlert = UIAlertController(title: "Error !", message: strMessage, preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
-        myAlert.addAction(okAction)
-        UIApplication.shared.delegate?.window??.rootViewController?.present(myAlert, animated: true, completion: nil)
-    }
-}

@@ -534,24 +534,29 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="82" height="97"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vuZ-XO-eGd">
-                                                                            <rect key="frame" x="15" y="8" width="52" height="57"/>
-                                                                        </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ME4-TY-yyC">
                                                                             <rect key="frame" x="8" y="73" width="66" height="12"/>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vuZ-XO-eGd">
+                                                                            <rect key="frame" x="20" y="19" width="42" height="40"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="40" id="9NZ-SI-Bo7"/>
+                                                                                <constraint firstAttribute="width" constant="42" id="KZ9-oK-FLv"/>
+                                                                            </constraints>
+                                                                        </imageView>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="ME4-TY-yyC" firstAttribute="top" secondItem="vuZ-XO-eGd" secondAttribute="bottom" constant="8" symbolic="YES" id="Ata-5t-qjr"/>
+                                                                        <constraint firstItem="vuZ-XO-eGd" firstAttribute="leading" secondItem="mxq-We-5Pb" secondAttribute="leading" constant="20" symbolic="YES" id="1w6-Ag-vJC"/>
                                                                         <constraint firstItem="ME4-TY-yyC" firstAttribute="leading" secondItem="mxq-We-5Pb" secondAttribute="leading" constant="8" id="Bzi-du-zND"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="vuZ-XO-eGd" secondAttribute="trailing" constant="15" id="HWB-ZS-SQp"/>
-                                                                        <constraint firstItem="vuZ-XO-eGd" firstAttribute="top" secondItem="mxq-We-5Pb" secondAttribute="top" constant="8" id="RhY-EW-lGq"/>
+                                                                        <constraint firstItem="vuZ-XO-eGd" firstAttribute="top" secondItem="mxq-We-5Pb" secondAttribute="top" constant="19" id="RhY-EW-lGq"/>
                                                                         <constraint firstAttribute="trailing" secondItem="ME4-TY-yyC" secondAttribute="trailing" constant="8" id="cBg-h8-jgu"/>
-                                                                        <constraint firstItem="vuZ-XO-eGd" firstAttribute="leading" secondItem="mxq-We-5Pb" secondAttribute="leading" constant="15" id="iG0-71-QCN"/>
+                                                                        <constraint firstItem="ME4-TY-yyC" firstAttribute="top" secondItem="vuZ-XO-eGd" secondAttribute="bottom" constant="14" id="gB1-e8-iCk"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="vuZ-XO-eGd" secondAttribute="trailing" constant="20" symbolic="YES" id="tHd-1R-fWw"/>
                                                                         <constraint firstAttribute="bottom" secondItem="ME4-TY-yyC" secondAttribute="bottom" constant="12" id="yF9-kt-xQj"/>
+                                                                        <constraint firstItem="vuZ-XO-eGd" firstAttribute="centerX" secondItem="mxq-We-5Pb" secondAttribute="centerX" id="zre-Cg-yj9"/>
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -976,7 +981,7 @@
                                     <constraint firstItem="RHn-Gz-fAf" firstAttribute="centerY" secondItem="fBX-9M-BSM" secondAttribute="centerY" id="wvT-1d-UC5"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JLp-5H-7Hd">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JLp-5H-7Hd">
                                 <rect key="frame" x="16" y="310" width="361" height="429"/>
                                 <color key="backgroundColor" red="0.70274263619999999" green="0.78639328480000004" blue="0.48374789950000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1134,33 +1139,47 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ZB1-fM-ncS">
                                 <rect key="frame" x="328" y="261" width="20" height="20"/>
                             </activityIndicatorView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tomato, Butter Chicken, Salt..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="VQe-NO-2Ir">
-                                <rect key="frame" x="16" y="254" width="263" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <searchBar contentMode="redraw" placeholder="Tomato, Basil, Chicken" translatesAutoresizingMaskIntoConstraints="NO" id="eOC-rw-lKD">
+                                <rect key="frame" x="6" y="249" width="265" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <connections>
+                                    <outlet property="delegate" destination="CKY-b6-P25" id="hYe-84-hUz"/>
+                                </connections>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Start by adding ingredients, or meal names in the search bar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbS-KQ-uef">
+                                <rect key="frame" x="16" y="310" width="361" height="163"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v5D-kJ-8Zw"/>
                         <color key="backgroundColor" red="0.70188464712532461" green="0.78979074653953019" blue="0.48209168252419921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="VQe-NO-2Ir" firstAttribute="top" secondItem="d3h-iH-PLq" secondAttribute="bottom" constant="25" id="9ah-fK-IQX"/>
-                            <constraint firstItem="dI8-M2-VqG" firstAttribute="leading" secondItem="VQe-NO-2Ir" secondAttribute="trailing" constant="20" id="9bP-Ih-ePP"/>
+                            <constraint firstItem="eOC-rw-lKD" firstAttribute="leading" secondItem="v5D-kJ-8Zw" secondAttribute="leading" constant="6" id="0P8-Cj-mjr"/>
+                            <constraint firstItem="DbS-KQ-uef" firstAttribute="top" secondItem="eOC-rw-lKD" secondAttribute="bottom" constant="17" id="Gxa-8f-u1P"/>
+                            <constraint firstItem="dI8-M2-VqG" firstAttribute="leading" secondItem="eOC-rw-lKD" secondAttribute="trailing" constant="28" id="JLP-EN-v8x"/>
                             <constraint firstItem="JLp-5H-7Hd" firstAttribute="bottom" secondItem="v5D-kJ-8Zw" secondAttribute="bottom" constant="-30" id="Mgx-u4-beN"/>
-                            <constraint firstItem="VQe-NO-2Ir" firstAttribute="leading" secondItem="v5D-kJ-8Zw" secondAttribute="leading" constant="16" id="Obs-mc-o73"/>
                             <constraint firstItem="JLp-5H-7Hd" firstAttribute="top" secondItem="ZB1-fM-ncS" secondAttribute="bottom" constant="29" id="Usv-Mj-jT6"/>
                             <constraint firstItem="JLp-5H-7Hd" firstAttribute="top" secondItem="dI8-M2-VqG" secondAttribute="bottom" constant="21" id="W6g-NW-mLb"/>
                             <constraint firstItem="d3h-iH-PLq" firstAttribute="leading" secondItem="v5D-kJ-8Zw" secondAttribute="leading" constant="16" id="Wst-KR-fzg"/>
+                            <constraint firstItem="v5D-kJ-8Zw" firstAttribute="bottom" secondItem="DbS-KQ-uef" secondAttribute="bottom" constant="296" id="XA4-eF-5gD"/>
                             <constraint firstItem="ZB1-fM-ncS" firstAttribute="top" secondItem="d3h-iH-PLq" secondAttribute="bottom" constant="32" id="XQa-1a-pVk"/>
+                            <constraint firstItem="DbS-KQ-uef" firstAttribute="leading" secondItem="v5D-kJ-8Zw" secondAttribute="leading" constant="16" id="ZcJ-7U-Tj0"/>
+                            <constraint firstItem="JLp-5H-7Hd" firstAttribute="top" secondItem="eOC-rw-lKD" secondAttribute="bottom" constant="17" id="boG-5a-Cqr"/>
                             <constraint firstItem="JLp-5H-7Hd" firstAttribute="centerX" secondItem="Plk-6c-XcJ" secondAttribute="centerX" id="ccX-JE-n1h"/>
+                            <constraint firstItem="eOC-rw-lKD" firstAttribute="height" secondItem="dI8-M2-VqG" secondAttribute="height" multiplier="1.25714" id="dt8-f6-v09"/>
+                            <constraint firstItem="v5D-kJ-8Zw" firstAttribute="trailing" secondItem="DbS-KQ-uef" secondAttribute="trailing" constant="16" id="fIN-Uc-dCX"/>
                             <constraint firstItem="d3h-iH-PLq" firstAttribute="top" secondItem="v5D-kJ-8Zw" secondAttribute="top" id="fY7-Nu-QMe"/>
                             <constraint firstItem="v5D-kJ-8Zw" firstAttribute="trailing" secondItem="JLp-5H-7Hd" secondAttribute="trailing" constant="16" id="fc6-o6-HGp"/>
                             <constraint firstItem="dI8-M2-VqG" firstAttribute="top" secondItem="d3h-iH-PLq" secondAttribute="bottom" constant="25" id="lj7-pj-N5D"/>
                             <constraint firstItem="d3h-iH-PLq" firstAttribute="centerX" secondItem="Plk-6c-XcJ" secondAttribute="centerX" id="mDd-cJ-YFS"/>
                             <constraint firstItem="v5D-kJ-8Zw" firstAttribute="trailing" secondItem="d3h-iH-PLq" secondAttribute="trailing" constant="16" id="paR-0m-luN"/>
+                            <constraint firstItem="eOC-rw-lKD" firstAttribute="top" secondItem="d3h-iH-PLq" secondAttribute="bottom" constant="20" id="rbX-vU-tve"/>
                             <constraint firstItem="JLp-5H-7Hd" firstAttribute="leading" secondItem="v5D-kJ-8Zw" secondAttribute="leading" constant="16" id="rd2-Qa-YNU"/>
                             <constraint firstItem="v5D-kJ-8Zw" firstAttribute="trailing" secondItem="dI8-M2-VqG" secondAttribute="trailing" constant="16" id="sxl-uu-vmi"/>
                             <constraint firstItem="v5D-kJ-8Zw" firstAttribute="trailing" secondItem="ZB1-fM-ncS" secondAttribute="trailing" constant="45" id="vvn-0z-0t4"/>
-                            <constraint firstItem="JLp-5H-7Hd" firstAttribute="top" secondItem="VQe-NO-2Ir" secondAttribute="bottom" constant="22" id="wXa-ah-pnH"/>
+                            <constraint firstItem="DbS-KQ-uef" firstAttribute="centerX" secondItem="Plk-6c-XcJ" secondAttribute="centerX" id="zgg-MJ-ami"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Recipes" image="icons8-chef-hat-48 1" selectedImage="icons8-chef-hat-48" id="gxs-Bf-cRd">
@@ -1174,13 +1193,14 @@
                         <outlet property="randomRecipeView" destination="d3h-iH-PLq" id="QBf-R9-PMb"/>
                         <outlet property="recipesListTV" destination="JLp-5H-7Hd" id="1Vn-YY-eVl"/>
                         <outlet property="searchButton" destination="dI8-M2-VqG" id="qTU-EE-KsY"/>
-                        <outlet property="searchTextField" destination="VQe-NO-2Ir" id="owG-zv-u4x"/>
+                        <outlet property="searchTextField" destination="eOC-rw-lKD" id="Ycm-ac-p6X"/>
+                        <outlet property="tutorialLabel1" destination="DbS-KQ-uef" id="tF0-1g-Sod"/>
                         <segue destination="VUg-53-h1t" kind="show" identifier="showRecipeDetails" id="Nbm-l4-CFx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Rb-ex-xfY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2801" y="-2094"/>
+            <point key="canvasLocation" x="2800.7633587786258" y="-2094.3661971830988"/>
         </scene>
         <!--Recipes-->
         <scene sceneID="owg-zH-TEN">
@@ -1536,7 +1556,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="59B-yF-6py"/>
+        <segue reference="Nbm-l4-CFx"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="107"/>
