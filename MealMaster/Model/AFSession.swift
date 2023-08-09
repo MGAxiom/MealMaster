@@ -19,7 +19,7 @@ final class SearchSession: AFSession {
         AF.request(url,
                    method: .get,
                    parameters: parameters,
-                   encoding:  URLEncoding.default).validate().response { response in
+                   encoding: encoding).validate().response { response in
             callback(response)
         }
     }

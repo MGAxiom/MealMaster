@@ -564,6 +564,7 @@
                                                                 <connections>
                                                                     <outlet property="cellImage" destination="vuZ-XO-eGd" id="G1T-NK-E7X"/>
                                                                     <outlet property="cellLabel" destination="ME4-TY-yyC" id="rRG-2G-Myw"/>
+                                                                    <outlet property="cellView" destination="mxq-We-5Pb" id="Cq6-r3-5BB"/>
                                                                 </connections>
                                                             </collectionViewCell>
                                                         </cells>
@@ -1514,8 +1515,8 @@
                                     <outlet property="delegate" destination="JVF-Re-nTn" id="pYY-7y-CQm"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For which meal ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsO-pD-ssE">
-                                <rect key="frame" x="99" y="472" width="195" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For which meal ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsO-pD-ssE">
+                                <rect key="frame" x="50" y="472" width="293" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1527,10 +1528,10 @@
                             <constraint firstItem="zx1-ZK-GIQ" firstAttribute="trailing" secondItem="vBw-1P-FWk" secondAttribute="trailing" constant="46" id="5Bh-vR-SUa"/>
                             <constraint firstItem="bnG-U3-jgh" firstAttribute="leading" secondItem="zx1-ZK-GIQ" secondAttribute="leading" constant="16" id="AX9-Zo-hjR"/>
                             <constraint firstItem="0O9-II-jrh" firstAttribute="leading" secondItem="zx1-ZK-GIQ" secondAttribute="leading" constant="46" id="BRy-wS-vKp"/>
-                            <constraint firstItem="HsO-pD-ssE" firstAttribute="leading" secondItem="zx1-ZK-GIQ" secondAttribute="leading" constant="99" id="DHy-tF-tMh"/>
+                            <constraint firstItem="HsO-pD-ssE" firstAttribute="leading" secondItem="zx1-ZK-GIQ" secondAttribute="leading" constant="50" id="DHy-tF-tMh"/>
                             <constraint firstItem="HsO-pD-ssE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0O9-II-jrh" secondAttribute="bottom" constant="27" id="Da2-jd-12a"/>
                             <constraint firstItem="3CW-KQ-MYU" firstAttribute="leading" secondItem="zx1-ZK-GIQ" secondAttribute="leading" constant="46" id="GGs-bF-sYw"/>
-                            <constraint firstItem="zx1-ZK-GIQ" firstAttribute="trailing" secondItem="HsO-pD-ssE" secondAttribute="trailing" constant="99" id="Jb3-8q-bWF"/>
+                            <constraint firstItem="zx1-ZK-GIQ" firstAttribute="trailing" secondItem="HsO-pD-ssE" secondAttribute="trailing" constant="50" id="Jb3-8q-bWF"/>
                             <constraint firstItem="vBw-1P-FWk" firstAttribute="top" secondItem="7bp-yh-o80" secondAttribute="bottom" id="Mej-uV-Gvs"/>
                             <constraint firstItem="zx1-ZK-GIQ" firstAttribute="bottom" secondItem="3CW-KQ-MYU" secondAttribute="bottom" constant="91" id="Qhu-9i-oh0"/>
                             <constraint firstItem="bnG-U3-jgh" firstAttribute="top" secondItem="zx1-ZK-GIQ" secondAttribute="top" constant="125" id="ZHr-VB-jgF"/>

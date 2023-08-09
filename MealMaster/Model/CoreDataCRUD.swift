@@ -23,17 +23,6 @@ final class CoreDataCRUD {
     
     // MARK: - Repository
     
-//    func getAllRecipes(completion: ([Recipe]) -> Void) {
-//        let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
-//
-//        do {
-//            let recipes = try coreDataStack.viewContext.fetch(request)
-//            completion(recipes)
-//        } catch {
-//            alertUser(strMessage: "Error occured while trying to fetch all the recipes")
-//        }
-//    }
-    
     func readFavouriteData(completion: @escaping (Result<[Favourite], CoreDataError>) -> Void){
         let request: NSFetchRequest<Favourite> = Favourite.fetchRequest()
         request.relationshipKeyPathsForPrefetching = ["recipe"]
@@ -71,8 +60,9 @@ final class CoreDataCRUD {
     func addRecipeToMeal(meal: String, date: String, for recipe: Recipe) {
         // Insert the Recipe object into the CoreData context (had no context until now)
         coreDataStack.viewContext.insert(recipe)
-        let planning = PlanningDetails(context: coreDataStack.viewContext)
-        planning.date = date
+        let planningDetails = PlanningDetails(context: coreDataStack.viewContext)
+        planningDetails.date = date
+        let planning = Planning(context: coreDataStack.viewContext)
         planning.meal = meal
         do {
             try coreDataStack.viewContext.save()
@@ -97,23 +87,8 @@ final class CoreDataCRUD {
         }
     }
     
-//    func checkIfItemExist(id: String) -> Bool {
-//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Recipe")
-//        fetchRequest.fetchLimit = 1
-//        fetchRequest.predicate = NSPredicate(format: "title == %@", id)
-//        do {
-//            let count = try coreDataStack.viewContext.count(for: fetchRequest)
-//            if count > 0 {
-//                return true
-//            } else {
-//                return false
-//            }
-//        } catch let error as NSError {
-//            alertUser(strMessage: "An error occured while fetching the recipe.")
-//            print("Could not fetch. \(error), \(error.userInfo)")
-//            return false
-//        }
-//    }
+    func saveAllergies(allergies: String, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
+    }
     
     func deleteFavourite(favorite: Favourite, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void)  {
         coreDataStack.viewContext.delete(favorite)

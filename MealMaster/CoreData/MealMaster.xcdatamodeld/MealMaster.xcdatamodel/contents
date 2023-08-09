@@ -3,10 +3,14 @@
     <entity name="Favourite" representedClassName=".Favourite" syncable="YES" codeGenerationType="category">
         <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="favourite" inverseEntity="Recipe"/>
     </entity>
+    <entity name="Planning" representedClassName=".Planning" syncable="YES" codeGenerationType="category">
+        <attribute name="meal" optional="YES" attributeType="String"/>
+        <relationship name="planningDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlanningDetails" inverseName="planning" inverseEntity="PlanningDetails"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="planning" inverseEntity="Recipe"/>
+    </entity>
     <entity name="PlanningDetails" representedClassName=".PlanningDetails" syncable="YES" codeGenerationType="category">
         <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="meal" optional="YES" attributeType="String"/>
-        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="plannings" inverseEntity="Recipe"/>
+        <relationship name="planning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Planning" inverseName="planningDetails" inverseEntity="Planning"/>
     </entity>
     <entity name="Recipe" representedClassName=".Recipe" syncable="YES" codeGenerationType="category">
         <attribute name="calories" optional="YES" attributeType="String"/>
@@ -18,6 +22,9 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
         <relationship name="favourite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Favourite" inverseName="recipe" inverseEntity="Favourite"/>
-        <relationship name="plannings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PlanningDetails" inverseName="recipe" inverseEntity="PlanningDetails"/>
+        <relationship name="planning" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Planning" inverseName="recipe" inverseEntity="Planning"/>
+    </entity>
+    <entity name="UserSettings" representedClassName=".UserSettings" syncable="YES" codeGenerationType="category">
+        <attribute name="allergies" optional="YES" attributeType="String"/>
     </entity>
 </model>

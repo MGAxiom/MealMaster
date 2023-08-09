@@ -24,16 +24,11 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             UIView?.layer.cornerRadius = 10
         }
         userPic.layer.cornerRadius = 70
-//      print(Allergies().allergiesValues)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-//        flowLayout.scrollDirection = .vertical
-//        flowLayout.minimumLineSpacing = 2
-//        flowLayout.minimumInteritemSpacing = 2
-//        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +49,7 @@ extension UserViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Allergies.allergiesCases.allCases.count
+        return Allergies.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionviewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -68,16 +63,21 @@ extension UserViewController: UICollectionViewDelegateFlowLayout {
         
         return itemSize
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "allergiesCell" , for: indexPath) as? UserCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let allergy = Allergies().allergiesValues[indexPath.row]
-        let asset = Allergies().allergiesImages[indexPath.row]
-        cell.configureUserCell(label: allergy, allergyAsset: asset)
-        cell.layer.borderWidth = 0.5
+        cell.configureUserCell(
+            allergyCase: Allergies.allCases[indexPath.row]
+        )
         return cell
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("didSelectItemAtIndexPath")
+        if let cell = collectionView.cellForItem(at: indexPath) as? UserCollectionViewCell {
+            cell.toggleSelectedState()
+        }
+    }
 }
