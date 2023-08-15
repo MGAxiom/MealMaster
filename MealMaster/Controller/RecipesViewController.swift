@@ -50,7 +50,7 @@ class RecipesViewController: UIViewController {
     
     
     func fetchRecipes() {
-        RecipeSearch.shared.recipeAPI(userInput: searchTextField.text!, healthCases: ["1"]) { response in
+        RecipeSearch.shared.recipeAPI(userInput: searchTextField.text!) { response in
             switch response {
             case .success(let result):
                 self.apiResult = result
@@ -58,7 +58,7 @@ class RecipesViewController: UIViewController {
                 self.searchButton.isHidden = false
                 self.activityIndicatorW.isHidden = true
             case .failure(let error):
-                print(error)
+                self.handleApiError(error: error)
             }
         }
     }

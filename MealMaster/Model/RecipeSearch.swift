@@ -23,24 +23,25 @@ class RecipeSearch {
         self.session = session
     }
     
-    func recipeAPI(userInput: String, healthCases: [String], callback: @escaping (Result<[Recipe], Error>) -> Void ) {
+    func recipeAPI(userInput: String, callback: @escaping (Result<[Recipe], HTTPError>) -> Void ) {
         let url = "https://api.edamam.com/api/recipes/v2"
         let healthParameters = UserSettings.currentSettings.allergySet
-        let parameters = [
+        var parameters = [
             "q": [userInput],
-            "health": Array(healthParameters),
             "app_key": ["c3401616aad93b34c82de83bbee1c2c7"],
             "app_id": ["4bd1f4d6"],
             "to": ["100"],
             "type": ["public"]
         ]
+        if (!healthParameters.isEmpty) {
+            parameters["health"] = Array(healthParameters)
+        }
         
         // Description of the CoreData Entity
         let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: CoreDataStack.sharedInstance.viewContext)
-        let encoder = URLEncodedFormParameterEncoder(encoder: URLEncodedFormEncoder(arrayEncoding: .noBrackets))
-        let encodingdong = URLEncoding(destination: .methodDependent, arrayEncoding: .noBrackets, boolEncoding: .numeric)
+        let encodingParameters = URLEncoding(destination: .methodDependent, arrayEncoding: .noBrackets, boolEncoding: .numeric)
         
-        session.request(with: url, method: .get, parameters: parameters, encoding: encodingdong) { response in
+        session.request(with: url, method: .get, parameters: parameters, encoding: encodingParameters) { response in
             print(response.request?.url)
             switch response.result {
             case .success(let data):
@@ -68,7 +69,7 @@ class RecipeSearch {
             case .failure(let error):
                 print(AF.request.self)
                 print(error)
-                callback(.failure(error))
+                callback(.failure(HTTPError.commonError(error)))
             }
         }
     }

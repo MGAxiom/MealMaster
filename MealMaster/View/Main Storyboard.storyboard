@@ -58,70 +58,113 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Breakfast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wea-Yl-Vu3">
-                                                    <rect key="frame" x="35" y="104" width="73" height="21"/>
+                                                    <rect key="frame" x="28" y="104" width="87" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="eVD-L8-1wJ"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lunch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTb-Cu-xm9">
-                                                    <rect key="frame" x="48" y="235" width="47" height="21"/>
+                                                    <rect key="frame" x="45" y="235" width="53" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="7wq-7v-AsC"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KB9-kw-8cV">
-                                                    <rect key="frame" x="48" y="366" width="47" height="21"/>
+                                                    <rect key="frame" x="45" y="366" width="53" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="SAh-qR-eML"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nI7-P1-g2n">
-                                                    <rect key="frame" x="45" y="497" width="53" height="21"/>
+                                                    <rect key="frame" x="40" y="497" width="63" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="hav-64-e0j"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tf-ML-aUN">
-                                                    <rect key="frame" x="8" y="155" width="127" height="50"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tf-ML-aUN" customClass="MealButton" customModule="MealMaster" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="140" width="127" height="65"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center"/>
+                                                    <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                                    </buttonConfiguration>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3I-wU-r5h">
-                                                    <rect key="frame" x="8" y="286" width="127" height="50"/>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3I-wU-r5h" customClass="MealButton" customModule="MealMaster" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="271" width="127" height="65"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center"/>
+                                                    <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                                    </buttonConfiguration>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f94-CI-MZY">
-                                                    <rect key="frame" x="8" y="417" width="127" height="50"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f94-CI-MZY" customClass="MealButton" customModule="MealMaster" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="402" width="127" height="65"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center"/>
+                                                    <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                                    </buttonConfiguration>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTE-hP-sS0">
-                                                    <rect key="frame" x="8" y="548" width="127" height="50"/>
+                                                <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTE-hP-sS0" customClass="MealButton" customModule="MealMaster" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="533" width="127" height="65"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center"/>
+                                                    <buttonConfiguration key="configuration" style="tinted" title="Add Meal" titleAlignment="center">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR2-lC-PVP" customClass="MealDeleteButton" customModule="MealMaster" customModuleProvider="target">
+                                                    <rect key="frame" x="35" y="344" width="73" height="12"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="tinted" title="Remove">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
+                                                        <color key="baseBackgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yt3-ec-dku" customClass="MealDeleteButton" customModule="MealMaster" customModuleProvider="target">
+                                                    <rect key="frame" x="35" y="213" width="73" height="12"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="tinted" title="Remove">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
+                                                        <color key="baseBackgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQK-pc-O5Y" customClass="MealDeleteButton" customModule="MealMaster" customModuleProvider="target">
+                                                    <rect key="frame" x="35" y="475" width="73" height="12"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="tinted" title="Remove">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
+                                                        <color key="baseBackgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeL-F4-pkh" customClass="MealDeleteButton" customModule="MealMaster" customModuleProvider="target">
+                                                    <rect key="frame" x="35" y="606" width="73" height="12"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="tinted" title="Remove">
+                                                        <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
+                                                        <color key="baseBackgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </buttonConfiguration>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="f94-CI-MZY" firstAttribute="top" secondItem="KB9-kw-8cV" secondAttribute="bottom" constant="30" id="18Z-wl-Ov4"/>
+                                                <constraint firstItem="f94-CI-MZY" firstAttribute="top" secondItem="KB9-kw-8cV" secondAttribute="bottom" constant="15" id="18Z-wl-Ov4"/>
                                                 <constraint firstAttribute="trailing" secondItem="stx-va-OOc" secondAttribute="trailing" constant="8" id="1bx-Sa-lnI"/>
-                                                <constraint firstItem="KB9-kw-8cV" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="48" id="3oQ-AC-A2k"/>
-                                                <constraint firstAttribute="trailing" secondItem="wea-Yl-Vu3" secondAttribute="trailing" constant="35" id="4Da-OR-54I"/>
-                                                <constraint firstAttribute="trailing" secondItem="rTb-Cu-xm9" secondAttribute="trailing" constant="48" id="7kK-93-es3"/>
+                                                <constraint firstAttribute="bottom" secondItem="AeL-F4-pkh" secondAttribute="bottom" constant="26" id="3Tg-lg-FKM"/>
+                                                <constraint firstItem="KB9-kw-8cV" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="45" id="3oQ-AC-A2k"/>
+                                                <constraint firstAttribute="trailing" secondItem="wea-Yl-Vu3" secondAttribute="trailing" constant="28" id="4Da-OR-54I"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yt3-ec-dku" secondAttribute="trailing" constant="35" id="77H-Xb-Bci"/>
+                                                <constraint firstAttribute="trailing" secondItem="rTb-Cu-xm9" secondAttribute="trailing" constant="45" id="7kK-93-es3"/>
                                                 <constraint firstAttribute="bottom" secondItem="LTE-hP-sS0" secondAttribute="bottom" constant="46" id="A1l-rR-f2l"/>
                                                 <constraint firstItem="LTE-hP-sS0" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="8" id="ADQ-Vj-BEj"/>
+                                                <constraint firstItem="Yt3-ec-dku" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="35" id="E6p-At-lkG"/>
                                                 <constraint firstItem="rTb-Cu-xm9" firstAttribute="top" secondItem="1Tf-ML-aUN" secondAttribute="bottom" constant="30" id="EFP-kc-An0"/>
                                                 <constraint firstItem="nI7-P1-g2n" firstAttribute="top" secondItem="KB9-kw-8cV" secondAttribute="bottom" constant="110" id="EI3-X4-8w5"/>
                                                 <constraint firstItem="stx-va-OOc" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="8" id="GkN-7H-AgK"/>
@@ -129,26 +172,39 @@
                                                 <constraint firstItem="R3I-wU-r5h" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="8" id="Iy2-Eq-qMD"/>
                                                 <constraint firstAttribute="trailing" secondItem="f94-CI-MZY" secondAttribute="trailing" constant="8" id="KNL-45-Dcd"/>
                                                 <constraint firstItem="rTb-Cu-xm9" firstAttribute="top" secondItem="wea-Yl-Vu3" secondAttribute="bottom" constant="110" id="LXZ-Xe-0NM"/>
-                                                <constraint firstItem="LTE-hP-sS0" firstAttribute="top" secondItem="nI7-P1-g2n" secondAttribute="bottom" constant="30" id="NKT-k7-OPI"/>
+                                                <constraint firstItem="LTE-hP-sS0" firstAttribute="top" secondItem="nI7-P1-g2n" secondAttribute="bottom" constant="15" id="NKT-k7-OPI"/>
                                                 <constraint firstItem="1Tf-ML-aUN" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="8" id="NhI-fh-zaq"/>
-                                                <constraint firstItem="wea-Yl-Vu3" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="35" id="RQy-rd-zHO"/>
+                                                <constraint firstAttribute="trailing" secondItem="AeL-F4-pkh" secondAttribute="trailing" constant="35" id="QHd-HX-a5K"/>
+                                                <constraint firstItem="Yt3-ec-dku" firstAttribute="top" secondItem="1Tf-ML-aUN" secondAttribute="bottom" constant="8" id="QYo-Un-OeJ"/>
+                                                <constraint firstItem="wea-Yl-Vu3" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="28" id="RQy-rd-zHO"/>
                                                 <constraint firstAttribute="trailing" secondItem="1Tf-ML-aUN" secondAttribute="trailing" constant="8" id="SWe-AG-ZA0"/>
-                                                <constraint firstAttribute="trailing" secondItem="nI7-P1-g2n" secondAttribute="trailing" constant="45" id="U0T-iN-HFk"/>
-                                                <constraint firstItem="1Tf-ML-aUN" firstAttribute="top" secondItem="wea-Yl-Vu3" secondAttribute="bottom" constant="30" id="Uvc-kF-PXb"/>
+                                                <constraint firstAttribute="trailing" secondItem="nI7-P1-g2n" secondAttribute="trailing" constant="40" id="U0T-iN-HFk"/>
+                                                <constraint firstItem="nI7-P1-g2n" firstAttribute="top" secondItem="FQK-pc-O5Y" secondAttribute="bottom" constant="10" id="Ufa-pe-A4e"/>
+                                                <constraint firstItem="1Tf-ML-aUN" firstAttribute="top" secondItem="wea-Yl-Vu3" secondAttribute="bottom" constant="15" id="Uvc-kF-PXb"/>
+                                                <constraint firstItem="bR2-lC-PVP" firstAttribute="top" secondItem="R3I-wU-r5h" secondAttribute="bottom" constant="8" id="Vtm-Et-N5O"/>
                                                 <constraint firstItem="nI7-P1-g2n" firstAttribute="top" secondItem="f94-CI-MZY" secondAttribute="bottom" constant="30" id="YKw-GT-Lhb"/>
                                                 <constraint firstItem="R3I-wU-r5h" firstAttribute="height" secondItem="1Tf-ML-aUN" secondAttribute="height" id="ZPJ-RV-WhC"/>
                                                 <constraint firstItem="stx-va-OOc" firstAttribute="top" secondItem="xhb-KF-4ej" secondAttribute="top" constant="10" id="dVr-lI-fS6"/>
-                                                <constraint firstAttribute="trailing" secondItem="KB9-kw-8cV" secondAttribute="trailing" constant="48" id="dzv-JH-ijs"/>
+                                                <constraint firstAttribute="trailing" secondItem="KB9-kw-8cV" secondAttribute="trailing" constant="45" id="dzv-JH-ijs"/>
                                                 <constraint firstItem="KB9-kw-8cV" firstAttribute="top" secondItem="R3I-wU-r5h" secondAttribute="bottom" constant="30" id="hLP-cf-tpz"/>
                                                 <constraint firstItem="LTE-hP-sS0" firstAttribute="height" secondItem="f94-CI-MZY" secondAttribute="height" id="hcF-6G-qka"/>
-                                                <constraint firstItem="R3I-wU-r5h" firstAttribute="top" secondItem="rTb-Cu-xm9" secondAttribute="bottom" constant="30" id="jZA-vS-8b0"/>
+                                                <constraint firstItem="AeL-F4-pkh" firstAttribute="top" secondItem="LTE-hP-sS0" secondAttribute="bottom" constant="8" id="iJZ-LT-azE"/>
+                                                <constraint firstItem="rTb-Cu-xm9" firstAttribute="top" secondItem="Yt3-ec-dku" secondAttribute="bottom" constant="10" id="iWn-cS-hdE"/>
+                                                <constraint firstItem="AeL-F4-pkh" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="35" id="jVJ-my-aG3"/>
+                                                <constraint firstItem="R3I-wU-r5h" firstAttribute="top" secondItem="rTb-Cu-xm9" secondAttribute="bottom" constant="15" id="jZA-vS-8b0"/>
                                                 <constraint firstItem="KB9-kw-8cV" firstAttribute="top" secondItem="rTb-Cu-xm9" secondAttribute="bottom" constant="110" id="jkX-TM-pmX"/>
+                                                <constraint firstAttribute="trailing" secondItem="bR2-lC-PVP" secondAttribute="trailing" constant="35" id="k7B-PN-o5b"/>
                                                 <constraint firstAttribute="trailing" secondItem="LTE-hP-sS0" secondAttribute="trailing" constant="8" id="oB4-gx-aBf"/>
-                                                <constraint firstItem="nI7-P1-g2n" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="45" id="oeW-2q-gVD"/>
+                                                <constraint firstItem="nI7-P1-g2n" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="40" id="oeW-2q-gVD"/>
+                                                <constraint firstItem="KB9-kw-8cV" firstAttribute="top" secondItem="bR2-lC-PVP" secondAttribute="bottom" constant="10" id="p0j-3a-k3L"/>
+                                                <constraint firstItem="FQK-pc-O5Y" firstAttribute="top" secondItem="f94-CI-MZY" secondAttribute="bottom" constant="8" id="qQo-Cx-dXn"/>
                                                 <constraint firstItem="f94-CI-MZY" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="8" id="rQ4-3a-YXy"/>
+                                                <constraint firstAttribute="trailing" secondItem="FQK-pc-O5Y" secondAttribute="trailing" constant="35" id="rdj-JW-ffd"/>
                                                 <constraint firstItem="wea-Yl-Vu3" firstAttribute="top" secondItem="stx-va-OOc" secondAttribute="bottom" constant="70" id="rkw-tT-EBx"/>
                                                 <constraint firstAttribute="trailing" secondItem="R3I-wU-r5h" secondAttribute="trailing" constant="8" id="rr1-yH-Eu8"/>
-                                                <constraint firstItem="rTb-Cu-xm9" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="48" id="vqP-6u-Zlu"/>
+                                                <constraint firstItem="bR2-lC-PVP" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="35" id="tNw-bO-vJb"/>
+                                                <constraint firstItem="FQK-pc-O5Y" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="35" id="uto-70-XSU"/>
+                                                <constraint firstItem="rTb-Cu-xm9" firstAttribute="leading" secondItem="xhb-KF-4ej" secondAttribute="leading" constant="45" id="vqP-6u-Zlu"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
@@ -159,6 +215,10 @@
                                             <outlet property="meal2Button" destination="R3I-wU-r5h" id="AbR-cx-dya"/>
                                             <outlet property="meal3Button" destination="f94-CI-MZY" id="KDc-0G-2rk"/>
                                             <outlet property="meal4Button" destination="LTE-hP-sS0" id="gFb-bo-BZW"/>
+                                            <outlet property="mealDelete1" destination="Yt3-ec-dku" id="2Yq-Xp-Ncj"/>
+                                            <outlet property="mealDelete2" destination="bR2-lC-PVP" id="B9s-4M-4Ug"/>
+                                            <outlet property="mealDelete3" destination="FQK-pc-O5Y" id="LH3-ls-NFp"/>
+                                            <outlet property="mealDelete4" destination="AeL-F4-pkh" id="YXv-vw-a4p"/>
                                             <outlet property="mealLabel1" destination="wea-Yl-Vu3" id="nal-fW-xnH"/>
                                             <outlet property="mealLabel2" destination="rTb-Cu-xm9" id="ES1-gE-Doe"/>
                                             <outlet property="mealLabel3" destination="KB9-kw-8cV" id="OR2-1A-Pkp"/>
@@ -457,19 +517,24 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRq-ex-6aL">
                                                 <rect key="frame" x="121.66666666666669" y="30" width="150" height="150"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KrJ-Yt-mrg">
-                                                        <rect key="frame" x="0.0" y="1" width="150" height="148.66666666666666"/>
-                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </imageView>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFO-fD-D8V">
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="changeIconButton:" destination="Clv-DD-MrL" eventType="touchUpInside" id="jwO-vF-xdl"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="KrJ-Yt-mrg" secondAttribute="bottom" id="19I-R1-pIX"/>
                                                     <constraint firstAttribute="height" constant="150" id="6d3-fd-v7K"/>
                                                     <constraint firstAttribute="width" constant="150" id="9pv-KI-8vm"/>
-                                                    <constraint firstAttribute="trailing" secondItem="KrJ-Yt-mrg" secondAttribute="trailing" id="Ck8-yN-xmL"/>
-                                                    <constraint firstItem="KrJ-Yt-mrg" firstAttribute="leading" secondItem="DRq-ex-6aL" secondAttribute="leading" id="qaw-gd-IvC"/>
-                                                    <constraint firstItem="KrJ-Yt-mrg" firstAttribute="top" secondItem="DRq-ex-6aL" secondAttribute="top" id="zNp-ao-F0t"/>
+                                                    <constraint firstAttribute="trailing" secondItem="mFO-fD-D8V" secondAttribute="trailing" id="KM5-Np-PKu"/>
+                                                    <constraint firstItem="mFO-fD-D8V" firstAttribute="leading" secondItem="DRq-ex-6aL" secondAttribute="leading" id="fcv-ug-ULD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="mFO-fD-D8V" secondAttribute="bottom" id="xHE-ZI-dGD"/>
+                                                    <constraint firstItem="mFO-fD-D8V" firstAttribute="top" secondItem="DRq-ex-6aL" secondAttribute="top" id="yhz-XQ-jgN"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Profile 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnQ-Lk-iGf">
@@ -489,6 +554,9 @@
                                                             <segment title="Vegetarien"/>
                                                             <segment title="Vegan"/>
                                                         </segments>
+                                                        <connections>
+                                                            <action selector="dietSegmentControl:" destination="Clv-DD-MrL" eventType="valueChanged" id="EJY-ut-Vyo"/>
+                                                        </connections>
                                                     </segmentedControl>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diet :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXO-Kl-ECd">
                                                         <rect key="frame" x="11" y="14.999999999999998" width="40" height="20.333333333333329"/>
@@ -646,6 +714,7 @@
                                             <constraint firstItem="WnQ-Lk-iGf" firstAttribute="top" secondItem="DRq-ex-6aL" secondAttribute="bottom" constant="20" id="H8L-jN-Tvw"/>
                                             <constraint firstItem="fym-iq-pju" firstAttribute="top" secondItem="b8R-WH-7Zu" secondAttribute="bottom" constant="20" id="IY4-Ed-qH5"/>
                                             <constraint firstItem="lYW-ZY-OPy" firstAttribute="top" secondItem="WnQ-Lk-iGf" secondAttribute="bottom" constant="50" id="JN7-bq-23u"/>
+                                            <constraint firstAttribute="trailing" secondItem="DRq-ex-6aL" secondAttribute="trailing" constant="121.33" id="JwD-fE-Z6D"/>
                                             <constraint firstAttribute="trailing" secondItem="cNd-ZL-BgN" secondAttribute="trailing" constant="80" id="NMD-P6-Ubc"/>
                                             <constraint firstItem="cNd-ZL-BgN" firstAttribute="top" secondItem="fym-iq-pju" secondAttribute="bottom" constant="35" id="PAM-ij-OZg"/>
                                             <constraint firstItem="WnQ-Lk-iGf" firstAttribute="centerX" secondItem="XJp-cO-pCe" secondAttribute="centerX" id="Pol-tP-llP"/>
@@ -654,10 +723,10 @@
                                             <constraint firstItem="cNd-ZL-BgN" firstAttribute="centerX" secondItem="XJp-cO-pCe" secondAttribute="centerX" id="Rip-F0-tfk"/>
                                             <constraint firstAttribute="trailing" secondItem="fym-iq-pju" secondAttribute="trailing" constant="20" id="Snl-OS-cWH"/>
                                             <constraint firstAttribute="height" constant="1200" id="Spr-LN-lav"/>
-                                            <constraint firstItem="DRq-ex-6aL" firstAttribute="centerX" secondItem="XJp-cO-pCe" secondAttribute="centerX" id="ZRS-dG-46h"/>
                                             <constraint firstItem="b8R-WH-7Zu" firstAttribute="top" secondItem="lYW-ZY-OPy" secondAttribute="bottom" constant="20" id="a1B-Rp-VM8"/>
                                             <constraint firstAttribute="trailing" secondItem="b8R-WH-7Zu" secondAttribute="trailing" constant="20" id="dUL-uX-kLD"/>
                                             <constraint firstItem="DRq-ex-6aL" firstAttribute="top" secondItem="XJp-cO-pCe" secondAttribute="top" constant="30" id="eWr-aH-A0Y"/>
+                                            <constraint firstItem="DRq-ex-6aL" firstAttribute="leading" secondItem="XJp-cO-pCe" secondAttribute="leading" constant="121.67" id="egw-s5-htV"/>
                                             <constraint firstAttribute="trailing" secondItem="lYW-ZY-OPy" secondAttribute="trailing" constant="20" id="tgM-XC-gCj"/>
                                             <constraint firstItem="fym-iq-pju" firstAttribute="leading" secondItem="XJp-cO-pCe" secondAttribute="leading" constant="20" id="ueA-VF-Jfy"/>
                                         </constraints>
@@ -690,8 +759,10 @@
                     <connections>
                         <outlet property="allergiesCV" destination="wlj-QW-Y6Q" id="1TL-x7-WKq"/>
                         <outlet property="allergiesView" destination="b8R-WH-7Zu" id="I56-SB-cfu"/>
+                        <outlet property="dietSegment" destination="rWC-wS-Y2B" id="gc1-vJ-bdJ"/>
                         <outlet property="flowLayout" destination="Tig-bg-zmD" id="JSb-XF-oJK"/>
                         <outlet property="nbOfPersonsView" destination="fym-iq-pju" id="AJu-3R-ftA"/>
+                        <outlet property="userIconButton" destination="mFO-fD-D8V" id="yHH-YR-NAK"/>
                         <outlet property="userPic" destination="DRq-ex-6aL" id="1vh-i2-Is8"/>
                         <outlet property="userViews" destination="lYW-ZY-OPy" id="fT4-nw-TWA"/>
                         <segue destination="Hbf-OM-Ayx" kind="show" identifier="favouriteList" id="MBk-tb-dk6"/>
@@ -1557,7 +1628,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Nbm-l4-CFx"/>
+        <segue reference="59B-yF-6py"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="107"/>
@@ -1577,7 +1648,6 @@
         <image name="minus" catalog="system" width="128" height="26"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="121"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="photo.artframe" catalog="system" width="128" height="93"/>
         <image name="plus" catalog="system" width="128" height="113"/>

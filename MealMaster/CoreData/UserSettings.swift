@@ -12,13 +12,13 @@ class UserSettings: NSManagedObject {
     
     private var internalAllergySet: Set<String> {
         get {
-            guard let unwrappedAllergy: String = allergies else {
+            guard let unwrappedAllergy: String = allergies, unwrappedAllergy != "" else {
                     return []
             }
             return Set(unwrappedAllergy.components(separatedBy: ";"))
         }
         set (newAllergySet) {
-            allergies = newAllergySet.joined(separator: ";")
+            allergies = newAllergySet.filter{$0 != ""}.joined(separator: ";")
             do {
                 try CoreDataStack.sharedInstance.viewContext.save()
             } catch {
@@ -56,41 +56,36 @@ class UserSettings: NSManagedObject {
         return userSetting
     }
     
-    func addAllergy(allergy: Allergies) {
+    func addAllergy(allergy: Diet.Allergies) {
         let allergyName = allergy.info.name.lowercased()
         if (internalAllergySet.contains(allergyName)) {
             return
         }
         internalAllergySet.insert(allergyName)
-//        var currentAllergies = allergySet
-//        currentAllergies.insert(allergyName)
-//        allergies = currentAllergies.joined(separator: ";")
-//
-//        do {
-//            try CoreDataStack.sharedInstance.viewContext.save()
-//        } catch {
-//            print("can't add")
-//        }
     }
     
-    func removeAllergy(allergy: Allergies) {
+    func addDiet(diet: Diet) {
+        let dietName = diet.apiInfo
+        if (internalAllergySet.contains(dietName)) {
+            return
+        }
+        let dietsToRemove : Set<String> = Set(
+            Diet.allCases.map {$0.apiInfo}
+        )
+        var tempSet = Set(internalAllergySet).subtracting(dietsToRemove)
+        tempSet.insert(dietName)
+        internalAllergySet = tempSet
+    }
+    
+    func removeAllergy(allergy: Diet.Allergies) {
         let allergyName = allergy.info.name.lowercased()
         if (!internalAllergySet.contains(allergyName)) {
             return
         }
         internalAllergySet.remove(allergyName)
-//        var currentAllergies = allergySet
-//        currentAllergies.remove(allergyName)
-//        allergies = currentAllergies.joined(separator: ";")
-//
-//        do {
-//            try CoreDataStack.sharedInstance.viewContext.save()
-//        } catch {
-//            print("can't remove")
-//        }
     }
     
-    func hasAllergy(allergy: Allergies) -> Bool {
+    func hasAllergy(allergy: Diet.Allergies) -> Bool {
         return internalAllergySet.contains(allergy.info.name.lowercased())
     }
     

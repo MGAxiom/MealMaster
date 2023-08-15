@@ -12,23 +12,18 @@ final class PlanningViewController: UIViewController, UICollectionViewDelegate, 
     
     // MARK: - Properties
     private let repository = CoreDataCRUD()
-    var planningData = [PlanningDetails]()
+//    private var planningData: [PlanningDay] = []
+    private var planningPerDay: [String:PlanningDay?] = [:]
+    var recipeDetails: Recipe?
     let now = Date()
+    
     
     @IBOutlet weak var planningCollectionView: UICollectionView!
     @IBOutlet weak var planningFlowLayout: UICollectionViewFlowLayout!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        repository.getMealsPlanned(completion: { [weak self] result in
-            switch result {
-            case .success(let data):
-                self?.planningData = data
-            case .failure(let failure):
-                self?.handleCoreDataErrorAlert(error: failure)
-            }
-        })
-        print(planningData)
+        print(planningPerDay)
 //        print(getDaysTitles())
 //        print(dates(for: now))
     }
@@ -36,6 +31,19 @@ final class PlanningViewController: UIViewController, UICollectionViewDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.planningCollectionView.reloadData()
+        repository.getMealsPlanned(completion: { result in
+            switch result {
+            case .success(let data):
+                for planningDay: PlanningDay in data {
+                    guard let day = planningDay.date else {
+                        continue
+                    }
+                    self.planningPerDay[day] = planningDay
+                }
+            case .failure(let failure):
+                self.handleCoreDataErrorAlert(error: failure)
+            }
+        })
     }
     
     func dates(for date: Date) -> [String] {
@@ -72,8 +80,45 @@ extension PlanningViewController: UICollectionViewDelegateFlowLayout {
             return UICollectionViewCell()
         }
         let dateString = dates(for: now)[indexPath.row]
-        cell.configurePlanningCell(date: dateString, meal1: "Add Meal", meal2: "Add Meal", meal3: "Add Meal", meal4: "Add Meal")
-        
+        cell.configurePlanningCell(day: planningPerDay[dateString, default: nil], date: dateString, delegate: self)
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRecipeDetails" {
+            let controller = segue.destination as! RecipeDetailVC
+            controller.data = recipeDetails
+        }
+    }
+}
+
+extension PlanningViewController: PlanningCellDelegate {
+    func mealButtonTapped(recipe: Recipe?) {
+        if recipe == nil {
+            self.tabBarController?.selectedIndex = 0
+        } else {
+//            print("recipe = \(recipe)")
+            recipeDetails = recipe
+            self.performSegue(withIdentifier: "showRecipeDetails", sender: self)
+        }
+    }
+    
+    func mealDeleteBtnTapped(meal: PlanningMeal?, cell: UICollectionViewCell) {
+        guard let theMeal = meal else {
+            return
+        }
+        repository.deleteRecipeFromMeal(meal: theMeal, completion: { result in
+            switch result {
+            case .success(let success):
+                self.handleCoreDataSuccessAlert(success: success)
+                guard let index = self.planningCollectionView.indexPath(for: cell) else {
+                    return
+                }
+                self.planningCollectionView.reloadItems(at: [index])
+
+            case .failure(let failure):
+                self.handleCoreDataErrorAlert(error: failure)
+            }
+        }
+    )}
 }

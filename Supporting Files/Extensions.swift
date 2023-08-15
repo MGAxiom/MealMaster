@@ -53,7 +53,10 @@ extension UIViewController {
     func handleCoreDataSuccessAlert(success: CoreDataSuccess) {
         var alertText, alertMessage: String
         switch success {
-        case .successfullSave:
+        case .successfullPlanningSave:
+            alertText = "Success !"
+            alertMessage = "We've added this recipe to your planning"
+        case .successfullFavouriteSave:
             alertText = "Success !"
             alertMessage = "We've added this recipe to your favourites"
         case .successfullDeletion:
@@ -68,3 +71,24 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+extension UIViewController {
+    func handleApiError(error: HTTPError) {
+        var alertText, alertMessage: String
+        switch error {
+        case .invalidJson:
+            alertText = "Error !"
+            alertMessage = "Could not decode the json file"
+        case .commonError(let errorString):
+            alertText = "Error !"
+            alertMessage = "The error \(errorString) occured during the api call"
+            
+        }
+        let alert = UIAlertController(title: alertText, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+

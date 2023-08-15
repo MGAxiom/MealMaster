@@ -27,9 +27,16 @@ class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         let strDate = Formatter.date.string(from: datePicker.date)
         let mealIndex = mealPicker.selectedRow(inComponent: 0)
         let mealSelected = mealArray[mealIndex]
-        repository.addRecipeToMeal(meal: mealSelected, date: strDate, for: recipeData!)
+        repository.addRecipeToMeal(meal: mealSelected, date: strDate, for: recipeData!) { result in
+            switch result {
+            case .success(let success):
+                self.handleCoreDataSuccessAlert(success: success)
+            case .failure(let error):
+                self.handleCoreDataErrorAlert(error: error)
+            }
+        }
         navigationController?.popViewController(animated: true)
-        dismiss(animated: true, completion: nil)
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelButton(_ sender: Any) {

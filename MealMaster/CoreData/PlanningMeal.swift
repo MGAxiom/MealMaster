@@ -8,6 +8,6 @@
 import Foundation
 import CoreData
 
-class Planning: NSManagedObject {
+class PlanningMeal: NSManagedObject {
     
 }

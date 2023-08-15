@@ -8,6 +8,6 @@
 import Foundation
 import CoreData
 
-class PlanningDetails: NSManagedObject {
+class PlanningDay: NSManagedObject {
     
 }

@@ -33,7 +33,6 @@ class RecipeDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpRecipeDetails()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

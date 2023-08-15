@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var userViews: UIView!
     @IBOutlet weak var allergiesView: UIView!
@@ -15,7 +15,9 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var userPic: UIView!
     @IBOutlet weak var allergiesCV: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-    
+    @IBOutlet var userIconButton: UIButton!
+    @IBOutlet var dietSegment: UISegmentedControl!
+    private var diet: Diet?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,21 +26,77 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             UIView?.layer.cornerRadius = 10
         }
         userPic.layer.cornerRadius = 70
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
+        userIconButton.layer.cornerRadius = 70
+        dietSegment.removeAllSegments()
+        configureDietSegment()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.allergiesCV.reloadData()
+    }
+    
+    func configureDietSegment() {
+        Diet.allCases.forEach { diet in
+            dietSegment.insertSegment(
+                action: UIAction(title:diet.info) { (action) in
+                    UserSettings.currentSettings.addDiet(diet: diet)
+                },
+                at: dietSegment.numberOfSegments,
+                animated: false
+            )
+        }
+    }
+    
+    @IBAction func dietSegmentControl(_ sender: Any) {
+//        guard let theDiet = diet else {
+//            return
+//        }
+//        switch dietSegment.selectedSegmentIndex {
+//        case 0:
+//            print(theDiet)
+////            UserSettings.currentSettings.addDiet(diet: theDiet)
+//        case 1:
+//            print(theDiet)
+////            UserSettings.currentSettings.addDiet(diet: theDiet)
+//        case 2:
+//            print(theDiet)
+////            UserSettings.currentSettings.addDiet(diet: theDiet)
+//        case 3:
+//            print(theDiet)
+////            UserSettings.currentSettings.addDiet(diet: theDiet)
+//        default:
+//            break
+//        }
+    }
+    
+    
+    @IBAction func changeIconButton(_ sender: UIButton) {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
     }
     
     @IBAction func favouriteListButton(_ sender: Any) {
         self.performSegue(withIdentifier: "favouriteList", sender: self)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let imagePicked = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as! UIImage
+        userIconButton.imageView?.contentMode = .scaleAspectFill
+        userIconButton.setImage(imagePicked, for: .selected)
+        userIconButton.setImage(imagePicked, for: .normal)
+        userIconButton.imageView?.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
+        
+        picker.dismiss(animated: true, completion: {
+            self.userIconButton.isSelected = true
+        })
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -49,7 +107,7 @@ extension UserViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Allergies.allCases.count
+        return Diet.Allergies.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionviewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -69,7 +127,7 @@ extension UserViewController: UICollectionViewDelegateFlowLayout {
             return UICollectionViewCell()
         }
         cell.configureUserCell(
-            allergyCase: Allergies.allCases[indexPath.row]
+            allergyCase: Diet.Allergies.allCases[indexPath.row]
         )
         return cell
     }
@@ -81,3 +139,5 @@ extension UserViewController: UICollectionViewDelegateFlowLayout {
         }
     }
 }
+
+

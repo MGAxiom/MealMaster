@@ -13,7 +13,7 @@ class UserCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet var cellView: UIView!
 
-    private var allergy: Allergies?
+    private var allergy: Diet.Allergies?
     var isActive: Bool = false
     
     func updateCellBeauty() {
@@ -39,7 +39,7 @@ class UserCollectionViewCell: UICollectionViewCell {
         updateCellBeauty()
     }
     
-    func configureUserCell(allergyCase: Allergies) {
+    func configureUserCell(allergyCase: Diet.Allergies) {
         cellLabel.text = allergyCase.info.name
         cellImage.image = UIImage(named: allergyCase.info.imageName)
         allergy = allergyCase

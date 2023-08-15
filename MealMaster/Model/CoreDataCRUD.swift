@@ -34,12 +34,14 @@ final class CoreDataCRUD {
         }
     }
     
-    func getMealsPlanned(completion: @escaping (Result<[PlanningDetails], CoreDataError>) -> Void) {
-        let request: NSFetchRequest<PlanningDetails> = PlanningDetails.fetchRequest()
-        
+    func getMealsPlanned(completion: @escaping (Result<[PlanningDay], CoreDataError>) -> Void) {
+        let request: NSFetchRequest<PlanningDay> = PlanningDay.fetchRequest()
+        request.sortDescriptors = [
+            NSSortDescriptor(keyPath: \PlanningDay.date, ascending: true)
+        ]
         do {
-            let meals = try coreDataStack.viewContext.fetch(request)
-            completion(.success(meals))
+            let days = try coreDataStack.viewContext.fetch(request)
+            completion(.success(days))
         } catch {
             completion(.failure(.failedAllFetch))
         }
@@ -57,19 +59,69 @@ final class CoreDataCRUD {
         }
     }
     
-    func addRecipeToMeal(meal: String, date: String, for recipe: Recipe) {
-        // Insert the Recipe object into the CoreData context (had no context until now)
-        coreDataStack.viewContext.insert(recipe)
-        let planningDetails = PlanningDetails(context: coreDataStack.viewContext)
-        planningDetails.date = date
-        let planning = Planning(context: coreDataStack.viewContext)
-        planning.meal = meal
+    func getPlanningDay(date: String) -> PlanningDay? {
+        let request: NSFetchRequest<PlanningDay> = PlanningDay.fetchRequest()
+        request.fetchLimit = 1
+        request.predicate = NSPredicate(format: "date == %@", date)
         do {
-            try coreDataStack.viewContext.save()
+            return try CoreDataStack.sharedInstance.viewContext.fetch(request).first
         } catch {
-//            alertUser(strMessage: "Error while trying to save recipe")
+            print("could not fetch day")
+            return nil
         }
     }
+    
+    func addRecipeToMeal(meal: String, date: String, for recipe: Recipe, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
+        // Insert the Recipe object into the CoreData context (had no context until now)
+        if recipe.managedObjectContext == nil {
+            coreDataStack.viewContext.insert(recipe)
+        }
+        var day = getPlanningDay(date: date)
+        if day == nil {
+            day = PlanningDay(context: coreDataStack.viewContext)
+            day!.date = date
+        }
+
+        let planningMeal = PlanningMeal(context: coreDataStack.viewContext)
+        planningMeal.meal = meal
+        planningMeal.recipe = recipe
+        planningMeal.day = day
+        do {
+            try coreDataStack.viewContext.save()
+            completion(.success(.successfullPlanningSave))
+        } catch {
+            print(error)
+            completion(.failure(.failedSave))
+        }
+    }
+    
+    func deleteRecipeFromMeal(meal: PlanningMeal, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
+//        let object = meal
+//        let context: NSManagedObjectContext = coreDataStack.persistentContainer.viewContext
+//        context.delete(object)
+        coreDataStack.viewContext.delete(meal)
+        do {
+            try coreDataStack.viewContext.save()
+            completion(.success(.successfullDeletion))
+        } catch {
+            print(error)
+            completion(.failure(.failedDeletion))
+        }
+    }
+    
+//    func deleteRecipeFromMeal(meal: PlanningMeal, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
+//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "PlanningMeal")
+//        let results = try coreDataStack.viewContext.fetch(fetchRequest)
+//        do {
+//            for managedObject in results {
+//                coreDataStack.viewContext.delete(managedObject)
+//            }
+//        } catch {
+//
+//        }
+//
+//        try coreDataStack.viewContext.save()
+//    }
     
     func saveRecipe(recipe: Recipe, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
         // Insert the Recipe object into the CoreData context (had no context until now)
@@ -80,14 +132,11 @@ final class CoreDataCRUD {
         fav.recipe = recipe
         do {
             try coreDataStack.viewContext.save()
-            completion(.success(.successfullSave))
+            completion(.success(.successfullFavouriteSave))
         } catch {
             print(error)
             completion(.failure(.failedSave))
         }
-    }
-    
-    func saveAllergies(allergies: String, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
     }
     
     func deleteFavourite(favorite: Favourite, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void)  {

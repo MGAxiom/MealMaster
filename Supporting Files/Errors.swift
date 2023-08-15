@@ -9,6 +9,7 @@ import Foundation
 
 enum HTTPError: Error {
     case invalidJson
+    case commonError(Error)
 }
 
 enum CoreDataError: Error {
@@ -19,6 +20,7 @@ enum CoreDataError: Error {
 }
 
 enum CoreDataSuccess {
-    case successfullSave
+    case successfullPlanningSave
+    case successfullFavouriteSave
     case successfullDeletion
 }
