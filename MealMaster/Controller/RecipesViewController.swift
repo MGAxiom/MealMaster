@@ -58,9 +58,15 @@ class RecipesViewController: UIViewController {
                 self.searchButton.isHidden = false
                 self.activityIndicatorW.isHidden = true
             case .failure(let error):
+                self.resetSearchButton()
                 self.handleApiError(error: error)
             }
         }
+    }
+    
+    func resetSearchButton() {
+        searchButton.isHidden = false
+        activityIndicatorW.isHidden = true
     }
 }
 

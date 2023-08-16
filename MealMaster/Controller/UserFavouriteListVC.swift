@@ -68,14 +68,6 @@ extension UserFavouriteListVC: UITableViewDelegate, UITableViewDataSource {
         case .failure(let error):
             self.handleCoreDataErrorAlert(error: error)
         }
-//        favouriteRecipeDetails = repository.getRecipeDetails(id: favouriteUserData[indexPath.row].recipe!.title!) { result in
-//            switch result {
-//            case .success(let success):
-//                return success
-//            case .failure(let error):
-//                self.handleCoreDataErrorAlert(error: error)
-//            }
-//        }
         self.performSegue(withIdentifier: "showRecipeDetails", sender: self)
     }
     

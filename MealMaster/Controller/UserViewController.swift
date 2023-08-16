@@ -48,29 +48,6 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
-    @IBAction func dietSegmentControl(_ sender: Any) {
-//        guard let theDiet = diet else {
-//            return
-//        }
-//        switch dietSegment.selectedSegmentIndex {
-//        case 0:
-//            print(theDiet)
-////            UserSettings.currentSettings.addDiet(diet: theDiet)
-//        case 1:
-//            print(theDiet)
-////            UserSettings.currentSettings.addDiet(diet: theDiet)
-//        case 2:
-//            print(theDiet)
-////            UserSettings.currentSettings.addDiet(diet: theDiet)
-//        case 3:
-//            print(theDiet)
-////            UserSettings.currentSettings.addDiet(diet: theDiet)
-//        default:
-//            break
-//        }
-    }
-    
-    
     @IBAction func changeIconButton(_ sender: UIButton) {
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
@@ -133,7 +110,6 @@ extension UserViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("didSelectItemAtIndexPath")
         if let cell = collectionView.cellForItem(at: indexPath) as? UserCollectionViewCell {
             cell.toggleSelectedState()
         }

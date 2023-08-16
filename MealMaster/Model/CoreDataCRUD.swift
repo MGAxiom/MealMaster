@@ -12,17 +12,14 @@ import UIKit
 final class CoreDataCRUD {
 
     // MARK: - Properties
-    
     private let coreDataStack: CoreDataStack
     
     // MARK: - Init
-    
     init(coreDataStack: CoreDataStack = CoreDataStack.sharedInstance) {
         self.coreDataStack = coreDataStack
     }
     
     // MARK: - Repository
-    
     func readFavouriteData(completion: @escaping (Result<[Favourite], CoreDataError>) -> Void){
         let request: NSFetchRequest<Favourite> = Favourite.fetchRequest()
         request.relationshipKeyPathsForPrefetching = ["recipe"]
@@ -96,9 +93,6 @@ final class CoreDataCRUD {
     }
     
     func deleteRecipeFromMeal(meal: PlanningMeal, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
-//        let object = meal
-//        let context: NSManagedObjectContext = coreDataStack.persistentContainer.viewContext
-//        context.delete(object)
         coreDataStack.viewContext.delete(meal)
         do {
             try coreDataStack.viewContext.save()
@@ -108,20 +102,6 @@ final class CoreDataCRUD {
             completion(.failure(.failedDeletion))
         }
     }
-    
-//    func deleteRecipeFromMeal(meal: PlanningMeal, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
-//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "PlanningMeal")
-//        let results = try coreDataStack.viewContext.fetch(fetchRequest)
-//        do {
-//            for managedObject in results {
-//                coreDataStack.viewContext.delete(managedObject)
-//            }
-//        } catch {
-//
-//        }
-//
-//        try coreDataStack.viewContext.save()
-//    }
     
     func saveRecipe(recipe: Recipe, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
         // Insert the Recipe object into the CoreData context (had no context until now)

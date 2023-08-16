@@ -20,6 +20,7 @@ class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker?.locale = .current
+        datePicker?.minimumDate = Date()
         
     }
 
