@@ -46,17 +46,37 @@ class UserSettings: NSManagedObject {
         }
     }
     
-    private static func createUserSettings() -> UserSettings {
+private static func createUserSettings() -> UserSettings {
         let userSetting = UserSettings(context: CoreDataStack.sharedInstance.viewContext)
         do {
             try CoreDataStack.sharedInstance.viewContext.save()
         } catch {
             print("can't create usersettings")
         }
-        return userSetting
+    return userSetting
     }
     
-    func addAllergy(allergy: Diet.Allergies) {
+    func add(name: String, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
+        self.username = name
+        do {
+            try CoreDataStack.sharedInstance.viewContext.save()
+            completion(.success(.successfullNameSave))
+        } catch {
+            completion(.failure(.failedNameSave))
+        }
+    }
+    
+    func add(photo: String, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
+        self.userphoto = photo
+        do {
+            try CoreDataStack.sharedInstance.viewContext.save()
+            completion(.success(.successfullPhotoSave))
+        } catch {
+            completion(.failure(.failedPhotoSave))
+        }
+    }
+    
+    func add(allergy: Diet.Allergies) {
         let allergyName = allergy.info.name.lowercased()
         if (internalAllergySet.contains(allergyName)) {
             return
@@ -64,7 +84,7 @@ class UserSettings: NSManagedObject {
         internalAllergySet.insert(allergyName)
     }
     
-    func addDiet(diet: Diet) {
+    func add(diet: Diet) {
         let dietName = diet.apiInfo
         if (internalAllergySet.contains(dietName)) {
             return
@@ -77,7 +97,7 @@ class UserSettings: NSManagedObject {
         internalAllergySet = tempSet
     }
     
-    func removeAllergy(allergy: Diet.Allergies) {
+    func remove(allergy: Diet.Allergies) {
         let allergyName = allergy.info.name.lowercased()
         if (!internalAllergySet.contains(allergyName)) {
             return
@@ -85,7 +105,7 @@ class UserSettings: NSManagedObject {
         internalAllergySet.remove(allergyName)
     }
     
-    func hasAllergy(allergy: Diet.Allergies) -> Bool {
+    func has(allergy: Diet.Allergies) -> Bool {
         return internalAllergySet.contains(allergy.info.name.lowercased())
     }
     

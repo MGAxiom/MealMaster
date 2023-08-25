@@ -70,7 +70,7 @@ class RecipeDetailVC: UIViewController {
         guard data != nil else {
             return
         }
-        repository.saveRecipe(recipe: data!) { result in
+        repository.save(recipe: data!) { result in
             switch result {
             case .success(let success):
                 self.handleCoreDataSuccessAlert(success: success)
@@ -122,8 +122,7 @@ extension RecipeDetailVC {
     func presentAlertVC(with message: String, favourite: Favourite, okCompletion: @escaping (() -> ()) = {}, cancelCompletion: @escaping (() -> ()) = {}, presentCompletion: @escaping (() -> ()) = {}) {
         let alertController = UIAlertController(title: "Ooops !", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) in
-//            CoreDataCRUD().deleteRecipe(id: recipeName)
-            CoreDataCRUD().deleteFavourite(favorite: favourite) { result in
+            CoreDataCRUD().delete(favorite: favourite) { result in
                 switch result {
                 case .success(let success):
                     self.handleCoreDataSuccessAlert(success: success)

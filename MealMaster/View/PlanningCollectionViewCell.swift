@@ -10,18 +10,9 @@ import CoreData
 
 class PlanningCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var meal1Button: MealButton!
-    @IBOutlet weak var meal2Button: MealButton!
-    @IBOutlet weak var meal3Button: MealButton!
-    @IBOutlet weak var meal4Button: MealButton!
-    @IBOutlet weak var mealLabel1: UILabel!
-    @IBOutlet weak var mealLabel2: UILabel!
-    @IBOutlet weak var mealLabel3: UILabel!
-    @IBOutlet weak var mealLabel4: UILabel!
-    @IBOutlet var mealDelete1: MealDeleteButton!
-    @IBOutlet var mealDelete2: MealDeleteButton!
-    @IBOutlet var mealDelete3: MealDeleteButton!
-    @IBOutlet var mealDelete4: MealDeleteButton!
+    @IBOutlet var mealLabels: [UILabel] = []
+    @IBOutlet var deleteButton: [MealDeleteButton] = []
+    @IBOutlet var mealButton: [MealButton] = []
     
     
     var day: PlanningDay?
@@ -38,54 +29,36 @@ class PlanningCollectionViewCell: UICollectionViewCell {
     func configurePlanningCell(day: PlanningDay?, date: String, delegate: PlanningCellDelegate) {
         self.delegate = delegate
         self.day = day
-        mealLabel1.text = "Breakfast"
-        mealLabel2.text = "Lunch"
-        mealLabel3.text = "Break"
-        mealLabel4.text = "Dinner"
-        meal1Button.setTitle("Add Meal", for: .normal)
-        meal2Button.setTitle("Add Meal", for: .normal)
-        meal3Button.setTitle("Add Meal", for: .normal)
-        meal4Button.setTitle("Add Meal", for: .normal)
-        meal1Button.addTarget(
-            self,
-            action:#selector(mealButtonPressed),
-            for: .touchUpInside
-        )
-        meal2Button.addTarget(
-            self,
-            action:#selector(mealButtonPressed),
-            for: .touchUpInside
-        )
-        meal3Button.addTarget(
-            self,
-            action:#selector(mealButtonPressed),
-            for: .touchUpInside
-        )
-        meal4Button.addTarget(
-            self,
-            action:#selector(mealButtonPressed),
-            for: .touchUpInside
-        )
-        mealDelete1.addTarget(
-            self,
-            action:#selector(mealDelButtonPressed),
-            for: .touchUpInside
-        )
-        mealDelete2.addTarget(
-            self,
-            action:#selector(mealDelButtonPressed),
-            for: .touchUpInside
-        )
-        mealDelete3.addTarget(
-            self,
-            action:#selector(mealDelButtonPressed),
-            for: .touchUpInside
-        )
-        mealDelete4.addTarget(
-            self,
-            action:#selector(mealDelButtonPressed),
-            for: .touchUpInside
-        )
+        mealLabels[0].text = "Breakfast"
+        mealLabels[1].text = "Lunch"
+        mealLabels[2].text = "Break"
+        mealLabels[3].text = "Dinner"
+        mealLabels.forEach { label in
+            label.font = UIFont.systemFont(ofSize: 16)
+        }
+        mealButton.forEach { button in
+            button.setTitle("Add Meal", for: .normal)
+            button.addTarget(
+                self,
+                action: #selector(mealButtonPressed),
+                for: .touchUpInside)
+            button.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+                var outgoing = incoming
+                outgoing.font = UIFont.systemFont(ofSize: 13)
+                return outgoing
+            }
+            button.clipsToBounds = true
+            button.titleLabel?.clipsToBounds = true
+            button.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        }
+        
+        deleteButton.forEach { button in
+            button.setTitle("Remove", for: .normal)
+            button.addTarget(
+                self,
+                action: #selector(mealDelButtonPressed),
+                for: .touchUpInside)
+        }
         
         guard let planningDay = day else {
             dateLabel.text = date
@@ -98,17 +71,17 @@ class PlanningCollectionViewCell: UICollectionViewCell {
         for planningMeal in meals.allObjects as! [PlanningMeal] {
             switch planningMeal.meal {
             case "Breakfast":
-                meal1Button.recipe = planningMeal.recipe
-                mealDelete1.meal = planningMeal
+                mealButton[0].recipe = planningMeal.recipe
+                deleteButton[0].meal = planningMeal
             case "Lunch":
-                meal2Button.recipe = planningMeal.recipe
-                mealDelete2.meal = planningMeal
+                mealButton[1].recipe = planningMeal.recipe
+                deleteButton[1].meal = planningMeal
             case "Break":
-                meal3Button.recipe = planningMeal.recipe
-                mealDelete3.meal = planningMeal
+                mealButton[2].recipe = planningMeal.recipe
+                deleteButton[2].meal = planningMeal
             case "Dinner":
-                meal4Button.recipe = planningMeal.recipe
-                mealDelete4.meal = planningMeal
+                mealButton[3].recipe = planningMeal.recipe
+                deleteButton[3].meal = planningMeal
             default:
                 break
             }
@@ -117,34 +90,29 @@ class PlanningCollectionViewCell: UICollectionViewCell {
     }
     
     func checkIfPlanned() {
-        if meal1Button.recipe != nil {
-            mealDelete1.isHidden = false
+        if mealButton[0].recipe != nil {
+            deleteButton[0].isHidden = false
         }
-        if meal2Button.recipe != nil {
-            mealDelete2.isHidden = false
+        if mealButton[1].recipe != nil {
+            deleteButton[1].isHidden = false
         }
-        if meal3Button.recipe != nil {
-            mealDelete3.isHidden = false
+        if mealButton[2].recipe != nil {
+            deleteButton[2].isHidden = false
         }
-        if meal4Button.recipe != nil {
-            mealDelete4.isHidden = false
+        if mealButton[3].recipe != nil {
+            deleteButton[3].isHidden = false
         }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        meal1Button.recipe = nil
-        mealDelete1.meal = nil
-        meal2Button.recipe = nil
-        mealDelete2.meal = nil
-        meal3Button.recipe = nil
-        mealDelete3.meal = nil
-        meal4Button.recipe = nil
-        mealDelete4.meal = nil
-        mealDelete1.isHidden = true
-        mealDelete2.isHidden = true
-        mealDelete3.isHidden = true
-        mealDelete4.isHidden = true
+        mealButton.forEach { button in
+            button.recipe = nil
+        }
+        deleteButton.forEach { button in
+            button.meal = nil
+            button.isHidden = true
+        }
     }
 }
 

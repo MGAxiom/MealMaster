@@ -13,7 +13,9 @@ enum HTTPError: Error {
 }
 
 enum CoreDataError: Error {
-    case failedSave
+    case failedRecipeSave
+    case failedPhotoSave
+    case failedNameSave
     case failedAllFetch
     case failedDetailsFetch
     case failedDeletion
@@ -22,5 +24,8 @@ enum CoreDataError: Error {
 enum CoreDataSuccess {
     case successfullPlanningSave
     case successfullFavouriteSave
-    case successfullDeletion
+    case successfullPhotoSave
+    case successfullNameSave
+    case successfullFavouriteDeletion
+    case successfullPlanningDeletion
 }

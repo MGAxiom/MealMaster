@@ -26,5 +26,7 @@
     </entity>
     <entity name="UserSettings" representedClassName=".UserSettings" syncable="YES" codeGenerationType="category">
         <attribute name="allergies" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <attribute name="userphoto" optional="YES" attributeType="String"/>
     </entity>
 </model>

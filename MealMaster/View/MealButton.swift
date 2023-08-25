@@ -19,10 +19,6 @@ class MealButton: UIButton {
             setTitle(recipe?.title, for: .normal)
         }
     }
-//    func setRecipe(recipe: Recipe?) {
-//        self.recipe = recipe
-//        self.setTitle(recipe?.title, for: .normal)
-//    }
 }
 
 class MealDeleteButton: UIButton {

@@ -11,12 +11,12 @@ class UserCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
-    @IBOutlet var cellView: UIView!
+    @IBOutlet weak var cellView: UIView!
 
     private var allergy: Diet.Allergies?
     var isActive: Bool = false
     
-    func updateCellBeauty() {
+    func updateCellBorders() {
         if isActive {
             layer.borderWidth = 2.0
         } else {
@@ -31,19 +31,19 @@ class UserCollectionViewCell: UICollectionViewCell {
         isActive = !isActive
         if isActive {
             // Selected
-            UserSettings.currentSettings.addAllergy(allergy: theAllergy)
+            UserSettings.currentSettings.add(allergy: theAllergy)
         } else {
             // Deselected
-            UserSettings.currentSettings.removeAllergy(allergy: theAllergy)
+            UserSettings.currentSettings.remove(allergy: theAllergy)
         }
-        updateCellBeauty()
+        updateCellBorders()
     }
     
     func configureUserCell(allergyCase: Diet.Allergies) {
         cellLabel.text = allergyCase.info.name
         cellImage.image = UIImage(named: allergyCase.info.imageName)
         allergy = allergyCase
-        isActive = UserSettings.currentSettings.hasAllergy(allergy: allergyCase)
-        updateCellBeauty()
+        isActive = UserSettings.currentSettings.has(allergy: allergyCase)
+        updateCellBorders()
     }
 }

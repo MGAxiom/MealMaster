@@ -13,6 +13,7 @@ class UserFavouriteListVC: UIViewController {
     let repository = CoreDataCRUD()
     var favouriteRecipeDetails: Recipe?
     
+    @IBOutlet var tutorialLabel: UILabel!
     @IBOutlet weak var favouriteRecipeListTV: UITableView!
     
     
@@ -20,7 +21,15 @@ class UserFavouriteListVC: UIViewController {
         super.viewWillAppear(animated)
         fetchFavouriteRecipes()
         self.favouriteRecipeListTV.reloadData()
-        print(favouriteUserData)
+        tutorialLabel.text = """
+            1. To add and see your favourite recipes, go to the Recipes Tab and make a request
+            
+            2. Tap on a recipe to see its details
+            
+            3. Tap the star to add it to your favourites
+            
+            4. Tap the filled star again to remove it from your favourites
+            """
     }
     
     private func fetchFavouriteRecipes() {
@@ -61,7 +70,7 @@ extension UserFavouriteListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let recipeResult = repository.getRecipeDetails(id: favouriteUserData[indexPath.row].recipe!.title!)
+        let recipeResult = repository.getRecipe(id: favouriteUserData[indexPath.row].recipe!.title!)
         switch recipeResult {
         case .success(let success):
             favouriteRecipeDetails = success

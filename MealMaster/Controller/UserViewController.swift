@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var userViews: UIView!
     @IBOutlet weak var allergiesView: UIView!
@@ -16,19 +16,26 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var allergiesCV: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet var userIconButton: UIButton!
+    @IBOutlet var userName: UITextField!
     @IBOutlet var dietSegment: UISegmentedControl!
     private var diet: Diet?
+    var selectedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userName.delegate = self
         let roundViews = [userViews, allergiesView, nbOfPersonsView]
         roundViews.forEach { UIView in
             UIView?.layer.cornerRadius = 10
         }
-        userPic.layer.cornerRadius = 70
-        userIconButton.layer.cornerRadius = 70
+        userName.text = UserSettings.currentSettings.username
+        userPic.layer.cornerRadius = 75
+        userIconButton.layer.cornerRadius = 75
         dietSegment.removeAllSegments()
         configureDietSegment()
+        if let decodedData = Data(base64Encoded: UserSettings.currentSettings.userphoto ?? "", options: .ignoreUnknownCharacters) {
+            let image = UIImage(data: decodedData)
+            userIconButton.setImage(image, for: .normal)}
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,12 +47,27 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         Diet.allCases.forEach { diet in
             dietSegment.insertSegment(
                 action: UIAction(title:diet.info) { (action) in
-                    UserSettings.currentSettings.addDiet(diet: diet)
+                    UserSettings.currentSettings.add(diet: diet)
                 },
                 at: dietSegment.numberOfSegments,
                 animated: false
             )
+            dietSegment.apportionsSegmentWidthsByContent = true
         }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("return pressed")
+        let text = userName.text
+        UserSettings.currentSettings.add(name: text!) { result in
+            switch result {
+            case .success(let success):
+                self.handleCoreDataSuccessAlert(success: success)
+            case .failure(let error):
+                self.handleCoreDataErrorAlert(error: error)
+            }
+        }
+        textField.resignFirstResponder()
+        return false
     }
     
     @IBAction func changeIconButton(_ sender: UIButton) {
@@ -66,9 +88,17 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         userIconButton.setImage(imagePicked, for: .selected)
         userIconButton.setImage(imagePicked, for: .normal)
         userIconButton.imageView?.layer.transform = CATransform3DMakeScale(1.0, 1.0, 1.0)
-        
+        selectedImage = imagePicked
         picker.dismiss(animated: true, completion: {
             self.userIconButton.isSelected = true
+            UserSettings.currentSettings.add(photo: (self.selectedImage?.jpegData(compressionQuality: 1)?.base64EncodedString())!) { result in
+                switch result {
+                case .success(let success):
+                    self.handleCoreDataSuccessAlert(success: success)
+                case .failure(let error):
+                    self.handleCoreDataErrorAlert(error: error)
+                }
+            }
         })
     }
     
@@ -106,6 +136,7 @@ extension UserViewController: UICollectionViewDelegateFlowLayout {
         cell.configureUserCell(
             allergyCase: Diet.Allergies.allCases[indexPath.row]
         )
+        cell.layer.cornerRadius = 5
         return cell
     }
     

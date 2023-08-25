@@ -12,7 +12,6 @@ final class PlanningViewController: UIViewController, UICollectionViewDelegate, 
     
     // MARK: - Properties
     private let repository = CoreDataCRUD()
-//    private var planningData: [PlanningDay] = []
     private var planningPerDay: [String:PlanningDay?] = [:]
     var recipeDetails: Recipe?
     let now = Date()
@@ -24,8 +23,6 @@ final class PlanningViewController: UIViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         print(planningPerDay)
-//        print(getDaysTitles())
-//        print(dates(for: now))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,7 +104,7 @@ extension PlanningViewController: PlanningCellDelegate {
         guard let theMeal = meal else {
             return
         }
-        repository.deleteRecipeFromMeal(meal: theMeal, completion: { result in
+        repository.delete(meal: theMeal, completion: { result in
             switch result {
             case .success(let success):
                 self.handleCoreDataSuccessAlert(success: success)
@@ -115,7 +112,6 @@ extension PlanningViewController: PlanningCellDelegate {
                     return
                 }
                 self.planningCollectionView.reloadItems(at: [index])
-
             case .failure(let failure):
                 self.handleCoreDataErrorAlert(error: failure)
             }

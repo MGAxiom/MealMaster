@@ -28,7 +28,10 @@ class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         let strDate = Formatter.date.string(from: datePicker.date)
         let mealIndex = mealPicker.selectedRow(inComponent: 0)
         let mealSelected = mealArray[mealIndex]
-        repository.addRecipeToMeal(meal: mealSelected, date: strDate, for: recipeData!) { result in
+//        if (PlanningDay().meals?.contains(mealSelected) == true) {
+//            presentAlertVC(with: "This recipe is already in your planning. Do you want to overwrite the other recipe?", recipeName: (recipeData?.title)!)
+//        }
+        repository.add(meal: mealSelected, date: strDate, for: recipeData!) { result in
             switch result {
             case .success(let success):
                 self.handleCoreDataSuccessAlert(success: success)
@@ -59,5 +62,26 @@ class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     func pickerView(_ mealPicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let row = mealArray[row]
         return row
+    }
+}
+
+extension RecipeForm {
+    
+    func presentAlertVC(with message: String, recipeName: String, okCompletion: @escaping (() -> ()) = {}, cancelCompletion: @escaping (() -> ()) = {}, presentCompletion: @escaping (() -> ()) = {}) {
+        let alertController = UIAlertController(title: "Ooops !", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) in
+//            RecipeRepository().deleteRecipe(id: recipeName)
+            okCompletion()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (cancel: UIAlertAction) in
+            cancelCompletion()
+        }
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true) {
+                presentCompletion()
+            }
+        }
     }
 }

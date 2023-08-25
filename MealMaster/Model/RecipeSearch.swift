@@ -49,7 +49,7 @@ class RecipeSearch {
                     let jsondata = try JSONDecoder().decode(RecipeSearchResult.self, from: data!)
                     var recipes: [Recipe] = []
                     for recipeData in jsondata.recipes {
-                        // Create a Recipe object with no context (that will later be added to CoreDataStack.sharedInstance
+                        // Create a Recipe object with no context (that will later be added to CoreDataStack.sharedInstance)
                         let recipe = Recipe(entity: entity!, insertInto: nil)
                         recipe.title = recipeData.label
                         recipe.calories = recipeData.roundedCalories

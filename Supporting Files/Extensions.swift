@@ -28,9 +28,15 @@ extension UIViewController {
     func handleCoreDataErrorAlert(error: CoreDataError) {
         var alertText, alertMessage: String
         switch error {
-        case .failedSave:
+        case .failedRecipeSave:
             alertText = "Error"
             alertMessage = "Error occured while trying to save recipe"
+        case .failedPhotoSave:
+            alertText = "Error"
+            alertMessage = "Error occured while trying to save your photo"
+        case .failedNameSave:
+            alertText = "Error"
+            alertMessage = "Error occured while trying to save your name"
         case .failedAllFetch:
             alertText = "Error"
             alertMessage = "Error occured while trying to fetch all recipes"
@@ -59,9 +65,18 @@ extension UIViewController {
         case .successfullFavouriteSave:
             alertText = "Success !"
             alertMessage = "We've added this recipe to your favourites"
-        case .successfullDeletion:
+        case .successfullNameSave:
+            alertText = "Success !"
+            alertMessage = "We've saved your name successfully"
+        case .successfullPhotoSave:
+            alertText = "Success !"
+            alertMessage = "We've saved your photo successfully"
+        case .successfullFavouriteDeletion:
             alertText = "Success !"
             alertMessage = "This recipe has been deleted from your favourite"
+        case .successfullPlanningDeletion:
+            alertText = "Success !"
+            alertMessage = "This recipe has been deleted from your planning"
 
         }
         let alert = UIAlertController(title: alertText, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
