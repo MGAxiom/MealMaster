@@ -30,6 +30,7 @@ class UserFavouriteListVC: UIViewController {
             
             4. Tap the filled star again to remove it from your favourites
             """
+        self.checkFavRecipes()
     }
     
     private func fetchFavouriteRecipes() {
@@ -41,6 +42,16 @@ class UserFavouriteListVC: UIViewController {
                 self.handleCoreDataErrorAlert(error: failure)
             }
         })
+    }
+    
+    func checkFavRecipes() {
+        if self.favouriteUserData.count > 0 {
+            self.tutorialLabel.isHidden = true
+            self.favouriteRecipeListTV.isHidden = false
+        } else {
+            self.tutorialLabel.isHidden = false
+            self.favouriteRecipeListTV.isHidden = true
+        }
     }
     
 }

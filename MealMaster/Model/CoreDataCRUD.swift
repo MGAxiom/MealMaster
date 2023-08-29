@@ -44,6 +44,17 @@ final class CoreDataCRUD {
         }
     }
     
+//    func getMealsPlanned(date: String) -> PlanningDay? {
+//        let request: NSFetchRequest<PlanningDay> = PlanningDay.fetchRequest()
+//        request.predicate = NSPredicate(format: "date == %@", date)
+//        do {
+//            return try coreDataStack.viewContext.fetch(request)
+//        } catch {
+//            print("oulala")
+//        }
+//    }
+    
+    
     func getRecipe(id: String) -> Result<Recipe?, CoreDataError> {
         let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
         request.fetchLimit = 1
@@ -66,6 +77,29 @@ final class CoreDataCRUD {
             print("could not fetch day")
             return nil
         }
+    }
+    
+    func checkIfPlanned(date: String, meal: String) -> Bool {
+        let day = get(date: date)
+        if day != nil {
+            let request:  NSFetchRequest<PlanningMeal> = PlanningMeal.fetchRequest()
+            request.predicate = NSPredicate(format: "meal == %@", meal)
+            do {
+                let count = try CoreDataStack.sharedInstance.viewContext.count(for: request)
+                if count > 0 {
+                    print("fetch request has")
+                    return true
+                } else {
+                    print("fetch request hasn't")
+                    return false
+                }
+            } catch {
+                print("fetch request false")
+                return false
+            }
+        }
+        print("did not if")
+        return false
     }
     
     func add(meal: String, date: String, for recipe: Recipe, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {

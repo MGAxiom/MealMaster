@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class RecipesViewController: UIViewController {
     
     var apiResult: [Recipe] = []
+    var randomAPIResult: [Recipe] = []
     var recipeDetails: Recipe?
     
     
@@ -20,11 +22,22 @@ class RecipesViewController: UIViewController {
     @IBOutlet weak var activityIndicatorW: UIActivityIndicatorView!
     @IBOutlet weak var tutorialLabel1: UILabel!
     
+    //MARK: RandomRecipe
+    @IBOutlet var randomImage: UIImageView!
+    @IBOutlet var randomTitle: UILabel!
+    @IBOutlet var randomDescription: UILabel!
+    @IBOutlet var randomKCAL: UILabel!
+    @IBOutlet var randomIngredients: UILabel!
+    @IBOutlet var randomCuisine: UILabel!
+    @IBOutlet var randomeTime: UILabel!
+    
+    
 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        randomImage.layer.cornerRadius = 10
         randomRecipeView.layer.cornerRadius = 10
         recipesListTV.layer.cornerRadius = 10
         searchTextField.searchBarStyle = .minimal
@@ -38,6 +51,11 @@ class RecipesViewController: UIViewController {
             4. Tap on one of the recipes to get more details
             """
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        randomRecipe()
     }
     
     @IBAction func searchButton(_ sender: Any) {
@@ -59,6 +77,25 @@ class RecipesViewController: UIViewController {
                 self.activityIndicatorW.isHidden = true
             case .failure(let error):
                 self.resetSearchButton()
+                self.handleApiError(error: error)
+            }
+        }
+    }
+    
+    func randomRecipe() {
+        RecipeSearch.shared.randomRecipeAPI() { response in
+            switch response {
+            case .success(let result):
+                self.randomAPIResult = result
+                let url = URL(string: self.randomAPIResult[0].imageUrl ?? "")!
+                print("\(url)")
+                self.randomImage.af.setImage(withURL: url)
+                self.randomKCAL.text = self.randomAPIResult[0].calories
+                self.randomTitle.text = self.randomAPIResult[0].title
+                self.randomCuisine.text = self.randomAPIResult[0].origin?.capitalized
+                self.randomDescription.text = self.randomAPIResult[0].foods?.capitalized
+                self.randomeTime.text = self.randomAPIResult[0].time
+            case .failure(let error):
                 self.handleApiError(error: error)
             }
         }
