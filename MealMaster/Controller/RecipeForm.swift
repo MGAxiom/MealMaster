@@ -33,13 +33,11 @@ class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
             let planningDay = repository.get(date: strDate)
             presentAlertVC(with: "This recipe is already in your planning. Do you want to overwrite the other recipe?", recipeName: (recipeData?.title)!, day: planningDay, mealName: mealSelected, date: strDate, index: mealIndex)
         } else {
-            repository.add(meal: mealSelected, date: strDate, for: recipeData!) { result in
-                switch result {
-                case .success(let success):
-                    self.handleCoreDataSuccessAlert(success: success)
-                case .failure(let error):
-                    self.handleCoreDataErrorAlert(error: error)
-                }
+            do {
+                try repository.add(meal: mealSelected, date: strDate, for: recipeData!)
+            } catch {
+                let error = CoreDataError.failedMealSave
+                self.handleCoreDataErrorAlert(error: error)
             }
             navigationController?.popViewController(animated: true)
             self.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -77,22 +75,18 @@ extension RecipeForm {
             let meal2Delete = day?.meals?.first(where: { meal in
                 return (meal as! PlanningMeal).meal == mealName
             })
-            self.repository.delete(meal: meal2Delete as! PlanningMeal) { result in
-                switch result {
-                case .success(let success):
-                    self.handleCoreDataSuccessAlert(success: success)
-                case .failure(let error):
-                    self.handleCoreDataErrorAlert(error: error)
-                }
+            do {
+                try self.repository.delete(meal: meal2Delete as! PlanningMeal)
+            } catch {
+                let error = CoreDataError.failedDeletion
+                self.handleCoreDataErrorAlert(error: error)
             }
-            self.repository.add(meal: mealName, date: date, for: self.recipeData!) {
-                result in
-                switch result {
-                case .success(let success):
-                    self.handleCoreDataSuccessAlert(success: success)
-                case .failure(let error):
-                    self.handleCoreDataErrorAlert(error: error)
-                }
+            
+            do {
+                try self.repository.add(meal: mealName, date: date, for: self.recipeData!)
+            } catch {
+                let error = CoreDataError.failedMealSave
+                self.handleCoreDataErrorAlert(error: error)
             }
             okCompletion()
         }

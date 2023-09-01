@@ -18,6 +18,7 @@
 		89693E8C2A9E405000CB6FB9 /* FoodSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89693E8B2A9E405000CB6FB9 /* FoodSearch.swift */; };
 		8974A0F72A7169DA0044AEE4 /* Allergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8974A0F62A7169DA0044AEE4 /* Allergies.swift */; };
 		8974A0F92A71930D0044AEE4 /* UserCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8974A0F82A71930D0044AEE4 /* UserCollectionView.swift */; };
+		897A93882AA0C5FE00471718 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A93872AA0C5FE00471718 /* FoodTableViewCell.swift */; };
 		89807EE82A86A727007050B9 /* PlanningCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89807EE72A86A727007050B9 /* PlanningCellDelegate.swift */; };
 		89807EEA2A86AF35007050B9 /* MealButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89807EE92A86AF35007050B9 /* MealButton.swift */; };
 		898FC74D2A6579F000AD7422 /* AFSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC74C2A6579F000AD7422 /* AFSession.swift */; };
@@ -84,6 +85,7 @@
 		89693E8B2A9E405000CB6FB9 /* FoodSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearch.swift; sourceTree = "<group>"; };
 		8974A0F62A7169DA0044AEE4 /* Allergies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergies.swift; sourceTree = "<group>"; };
 		8974A0F82A71930D0044AEE4 /* UserCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionView.swift; sourceTree = "<group>"; };
+		897A93872AA0C5FE00471718 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		89807EE72A86A727007050B9 /* PlanningCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCellDelegate.swift; sourceTree = "<group>"; };
 		89807EE92A86AF35007050B9 /* MealButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealButton.swift; sourceTree = "<group>"; };
 		898FC74C2A6579F000AD7422 /* AFSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSession.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				89AA69EB2A71328A00F3E687 /* UserCollectionViewCell.swift */,
 				899F63FB2A6043CE00BE8E5A /* RecipesTVCell.swift */,
 				89807EE92A86AF35007050B9 /* MealButton.swift */,
+				897A93872AA0C5FE00471718 /* FoodTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				89D3A7DE2A57023700BE11DD /* AppDelegate.swift in Sources */,
 				89AA69EC2A71328A00F3E687 /* UserCollectionViewCell.swift in Sources */,
 				898FC75D2A66DB2500AD7422 /* RecipeDetailVC.swift in Sources */,
+				897A93882AA0C5FE00471718 /* FoodTableViewCell.swift in Sources */,
 				8974A0F72A7169DA0044AEE4 /* Allergies.swift in Sources */,
 				89AA69EA2A70805B00F3E687 /* FridgeViewController.swift in Sources */,
 				89AA69E62A7019ED00F3E687 /* UserFavouriteListVC.swift in Sources */,

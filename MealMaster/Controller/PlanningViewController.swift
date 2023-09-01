@@ -104,17 +104,15 @@ extension PlanningViewController: PlanningCellDelegate {
         guard let theMeal = meal else {
             return
         }
-        repository.delete(meal: theMeal, completion: { result in
-            switch result {
-            case .success(let success):
-                self.handleCoreDataSuccessAlert(success: success)
-                guard let index = self.planningCollectionView.indexPath(for: cell) else {
-                    return
-                }
-                self.planningCollectionView.reloadItems(at: [index])
-            case .failure(let failure):
-                self.handleCoreDataErrorAlert(error: failure)
+        do {
+            try repository.delete(meal: theMeal)
+            guard let index = self.planningCollectionView.indexPath(for: cell) else {
+                return
             }
+            self.planningCollectionView.reloadItems(at: [index])
+        } catch {
+            let error = CoreDataError.failedDeletion
+            self.handleCoreDataErrorAlert(error: error)
         }
-    )}
+    }
 }

@@ -31,6 +31,9 @@ extension UIViewController {
         case .failedRecipeSave:
             alertText = "Error"
             alertMessage = "Error occured while trying to save recipe"
+        case .failedMealSave:
+            alertText = "Error"
+            alertMessage = "Error occured while trying to save the meal in the planning"
         case .failedPhotoSave:
             alertText = "Error"
             alertMessage = "Error occured while trying to save your photo"

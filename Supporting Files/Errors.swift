@@ -19,6 +19,7 @@ enum CoreDataError: Error {
     case failedAllFetch
     case failedDetailsFetch
     case failedDeletion
+    case failedMealSave
 }
 
 enum CoreDataSuccess {

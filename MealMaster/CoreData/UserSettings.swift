@@ -56,24 +56,14 @@ private static func createUserSettings() -> UserSettings {
     return userSetting
     }
     
-    func add(name: String, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
+    func add(name: String) throws {
         self.username = name
-        do {
-            try CoreDataStack.sharedInstance.viewContext.save()
-            completion(.success(.successfullNameSave))
-        } catch {
-            completion(.failure(.failedNameSave))
-        }
+        try CoreDataStack.sharedInstance.viewContext.save()
     }
     
-    func add(photo: String, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
+    func add(photo: String) throws {
         self.userphoto = photo
-        do {
-            try CoreDataStack.sharedInstance.viewContext.save()
-            completion(.success(.successfullPhotoSave))
-        } catch {
-            completion(.failure(.failedPhotoSave))
-        }
+        try CoreDataStack.sharedInstance.viewContext.save()
     }
     
     func add(allergy: Diet.Allergies) {

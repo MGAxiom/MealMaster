@@ -20,15 +20,20 @@ final class CoreDataCRUD {
     }
     
     // MARK: - Repository
-    func readFavouriteData(completion: @escaping (Result<[Favourite], CoreDataError>) -> Void){
+//    func readFavouriteData(completion: @escaping (Result<[Favourite], CoreDataError>) -> Void){
+//        let request: NSFetchRequest<Favourite> = Favourite.fetchRequest()
+//        request.relationshipKeyPathsForPrefetching = ["recipe"]
+//        do {
+//            let favouriteRecipes = try coreDataStack.viewContext.fetch(request)
+//            completion(.success(favouriteRecipes))
+//        } catch {
+//            completion(.failure(.failedAllFetch))
+//        }
+//    }
+    func readFavouriteData() throws -> [Favourite] {
         let request: NSFetchRequest<Favourite> = Favourite.fetchRequest()
         request.relationshipKeyPathsForPrefetching = ["recipe"]
-        do {
-            let favouriteRecipes = try coreDataStack.viewContext.fetch(request)
-            completion(.success(favouriteRecipes))
-        } catch {
-            completion(.failure(.failedAllFetch))
-        }
+        return try coreDataStack.viewContext.fetch(request)
     }
     
     func getMealsPlanned(completion: @escaping (Result<[PlanningDay], CoreDataError>) -> Void) {
@@ -43,17 +48,6 @@ final class CoreDataCRUD {
             completion(.failure(.failedAllFetch))
         }
     }
-    
-//    func getMealsPlanned(date: String) -> PlanningDay? {
-//        let request: NSFetchRequest<PlanningDay> = PlanningDay.fetchRequest()
-//        request.predicate = NSPredicate(format: "date == %@", date)
-//        do {
-//            return try coreDataStack.viewContext.fetch(request)
-//        } catch {
-//            print("oulala")
-//        }
-//    }
-    
     
     func getRecipe(id: String) -> Result<Recipe?, CoreDataError> {
         let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
@@ -102,7 +96,7 @@ final class CoreDataCRUD {
         return false
     }
     
-    func add(meal: String, date: String, for recipe: Recipe, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
+    func add(meal: String, date: String, for recipe: Recipe) throws {
         // Insert the Recipe object into the CoreData context (had no context until now)
         if recipe.managedObjectContext == nil {
             coreDataStack.viewContext.insert(recipe)
@@ -117,50 +111,38 @@ final class CoreDataCRUD {
         planningMeal.meal = meal
         planningMeal.recipe = recipe
         planningMeal.day = day
-        do {
-            try coreDataStack.viewContext.save()
-            completion(.success(.successfullPlanningSave))
-        } catch {
-            print(error)
-            completion(.failure(.failedRecipeSave))
-        }
+        try coreDataStack.viewContext.save()
     }
     
-    func delete(meal: PlanningMeal, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
+    func delete(meal: PlanningMeal) throws {
         coreDataStack.viewContext.delete(meal)
-        do {
-            try coreDataStack.viewContext.save()
-            completion(.success(.successfullPlanningDeletion))
-        } catch {
-            print(error)
-            completion(.failure(.failedDeletion))
-        }
+        try coreDataStack.viewContext.save()
     }
     
-    func save(recipe: Recipe, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void) {
+    func save(recipe: Recipe) throws {
         // Insert the Recipe object into the CoreData context (had no context until now)
         if recipe.managedObjectContext == nil {
             coreDataStack.viewContext.insert(recipe)
         }
         let fav = Favourite(context: coreDataStack.viewContext)
         fav.recipe = recipe
-        do {
-            try coreDataStack.viewContext.save()
-            completion(.success(.successfullFavouriteSave))
-        } catch {
-            print(error)
-            completion(.failure(.failedRecipeSave))
-        }
+        try coreDataStack.viewContext.save()
     }
     
-    func delete(favorite: Favourite, completion: @escaping (Result<CoreDataSuccess, CoreDataError>) -> Void)  {
+    func delete(favorite: Favourite) throws  {
         coreDataStack.viewContext.delete(favorite)
-        do {
-            try coreDataStack.viewContext.save()
-            completion(.success(.successfullFavouriteDeletion))
-        } catch {
-            completion(.failure(.failedDeletion))
-        }
+        try coreDataStack.viewContext.save()
+    }
+    
+    func save(food: Food) throws {
+        // Insert the Recipe object into the CoreData context (had no context until now)
+        coreDataStack.viewContext.insert(food)
+        try coreDataStack.viewContext.save()
+    }
+    
+    func delete(food: Food) throws  {
+        coreDataStack.viewContext.delete(food)
+        try coreDataStack.viewContext.save()
     }
 }
 

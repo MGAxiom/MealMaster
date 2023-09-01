@@ -62,7 +62,7 @@ enum CategoryLabel: String, Codable {
 
 // MARK: - Nutrients
 struct Nutrients: Codable {
-    let enercKcal: Int?
+    let enercKcal: Double?
     let procnt, fat, chocdf, fibtg: Double?
     
     enum CodingKeys: String, CodingKey {

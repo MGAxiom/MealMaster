@@ -24,21 +24,15 @@ class FoodSearch {
     }
     
     func foodAPI(userInput: String, callback: @escaping (Result<[Food], HTTPError>) -> Void ) {
-        let url = "https://api.edamam.com/api/recipes/v2"
-        let healthParameters = UserSettings.currentSettings.allergySet
+        let url = "https://api.edamam.com/api/food-database/v2/parser"
         var parameters = [
-            "q": [userInput],
-            "app_key": ["c3401616aad93b34c82de83bbee1c2c7"],
-            "app_id": ["4bd1f4d6"],
-            "to": ["100"],
-            "type": ["public"]
+            "ingr": [userInput],
+            "app_key": ["b906cefffc4ebe498b42d62c5f9e556d"],
+            "app_id": ["8798566c"],
+            "nutrition-type": ["cooking"]
         ]
-        if (!healthParameters.isEmpty) {
-            parameters["health"] = Array(healthParameters)
-        }
-        
         // Description of the CoreData Entity
-        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: CoreDataStack.sharedInstance.viewContext)
+        let entity = NSEntityDescription.entity(forEntityName: "Food", in: CoreDataStack.sharedInstance.viewContext)
         let encodingParameters = URLEncoding(destination: .methodDependent, arrayEncoding: .noBrackets, boolEncoding: .numeric)
         
         session.request(with: url, method: .get, parameters: parameters, encoding: encodingParameters) { response in
@@ -46,6 +40,7 @@ class FoodSearch {
             switch response.result {
             case .success(let data):
                 do {
+                    
                     let jsondata = try JSONDecoder().decode(FoodSearchResult.self, from: data!)
                     var foods: [Food] = []
                     for foodData in jsondata.foods {
@@ -54,6 +49,7 @@ class FoodSearch {
                         food.category = foodData.category
                         food.image = foodData.image
                         food.label = foodData.label
+                        food.brand = foodData.brand
                         foods.append(food)
                     }
                     callback(.success(foods))

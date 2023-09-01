@@ -34,14 +34,7 @@ class UserFavouriteListVC: UIViewController {
     }
     
     private func fetchFavouriteRecipes() {
-        repository.readFavouriteData(completion: { result in
-            switch result {
-            case .success(let data):
-                self.favouriteUserData = data
-            case .failure(let failure):
-                self.handleCoreDataErrorAlert(error: failure)
-            }
-        })
+                self.favouriteUserData = try! repository.readFavouriteData()
     }
     
     func checkFavRecipes() {

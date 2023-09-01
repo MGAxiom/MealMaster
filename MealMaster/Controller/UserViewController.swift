@@ -11,7 +11,6 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     @IBOutlet weak var userViews: UIView!
     @IBOutlet weak var allergiesView: UIView!
-    @IBOutlet weak var nbOfPersonsView: UIView!
     @IBOutlet weak var userPic: UIView!
     @IBOutlet weak var allergiesCV: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
@@ -24,7 +23,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userName.delegate = self
-        let roundViews = [userViews, allergiesView, nbOfPersonsView]
+        let roundViews = [userViews, allergiesView]
         roundViews.forEach { UIView in
             UIView?.layer.cornerRadius = 10
         }
@@ -58,13 +57,11 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("return pressed")
         let text = userName.text
-        UserSettings.currentSettings.add(name: text!) { result in
-            switch result {
-            case .success(let success):
-                self.handleCoreDataSuccessAlert(success: success)
-            case .failure(let error):
-                self.handleCoreDataErrorAlert(error: error)
-            }
+        do {
+            try UserSettings.currentSettings.add(name: text!)
+        } catch {
+            let error = CoreDataError.failedNameSave
+            self.handleCoreDataErrorAlert(error: error)
         }
         textField.resignFirstResponder()
         return false
@@ -91,13 +88,11 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         selectedImage = imagePicked
         picker.dismiss(animated: true, completion: {
             self.userIconButton.isSelected = true
-            UserSettings.currentSettings.add(photo: (self.selectedImage?.jpegData(compressionQuality: 1)?.base64EncodedString())!) { result in
-                switch result {
-                case .success(let success):
-                    self.handleCoreDataSuccessAlert(success: success)
-                case .failure(let error):
-                    self.handleCoreDataErrorAlert(error: error)
-                }
+            do {
+                try UserSettings.currentSettings.add(photo: (self.selectedImage?.jpegData(compressionQuality: 1)?.base64EncodedString())!)
+            } catch {
+                let error = CoreDataError.failedPhotoSave
+                self.handleCoreDataErrorAlert(error: error)
             }
         })
     }
