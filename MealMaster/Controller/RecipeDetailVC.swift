@@ -73,8 +73,7 @@ class RecipeDetailVC: UIViewController {
         do {
             try repository.save(recipe: data!)
         } catch {
-            let error = CoreDataError.failedRecipeSave
-            self.handleCoreDataErrorAlert(error: error)
+            self.handleCoreDataErrorAlert(error: .failedRecipeSave)
         }
     }
     
@@ -120,19 +119,10 @@ extension RecipeDetailVC {
     func presentAlertVC(with message: String, favourite: Favourite, okCompletion: @escaping (() -> ()) = {}, cancelCompletion: @escaping (() -> ()) = {}, presentCompletion: @escaping (() -> ()) = {}) {
         let alertController = UIAlertController(title: "Ooops !", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) in
-//            do {
-//                try CoreDataCRUD().delete(favorite: favourite)
-//            } catch let error as CoreDataError where error == .failedDeletion {
-//                self.handleCoreDataErrorAlert(error: error)
-////                throw CoreDataError.failedDeletion
-////                let error = CoreDataError.failedDeletion
-////                self.handleCoreDataErrorAlert(error: error)
-//            }
             do {
                 try CoreDataCRUD().delete(favorite: favourite)
             } catch {
-                let error = CoreDataError.failedDeletion
-                self.handleCoreDataErrorAlert(error: error)
+                self.handleCoreDataErrorAlert(error: .failedDeletion)
             }
             self.checkIfFavorite()
             okCompletion()

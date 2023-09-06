@@ -28,19 +28,17 @@ final class PlanningViewController: UIViewController, UICollectionViewDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.planningCollectionView.reloadData()
-        repository.getMealsPlanned(completion: { result in
-            switch result {
-            case .success(let data):
-                for planningDay: PlanningDay in data {
-                    guard let day = planningDay.date else {
-                        continue
-                    }
-                    self.planningPerDay[day] = planningDay
+        do {
+            let data = try repository.getMealsPlanned()
+            for planningDay: PlanningDay in data {
+                guard let day = planningDay.date else {
+                    continue
                 }
-            case .failure(let failure):
-                self.handleCoreDataErrorAlert(error: failure)
+                self.planningPerDay[day] = planningDay
             }
-        })
+        } catch {
+            self.handleCoreDataErrorAlert(error: .failedAllFetch)
+        }
     }
     
     func dates(for date: Date) -> [String] {
@@ -94,7 +92,6 @@ extension PlanningViewController: PlanningCellDelegate {
         if recipe == nil {
             self.tabBarController?.selectedIndex = 0
         } else {
-//            print("recipe = \(recipe)")
             recipeDetails = recipe
             self.performSegue(withIdentifier: "showRecipeDetails", sender: self)
         }
@@ -111,8 +108,7 @@ extension PlanningViewController: PlanningCellDelegate {
             }
             self.planningCollectionView.reloadItems(at: [index])
         } catch {
-            let error = CoreDataError.failedDeletion
-            self.handleCoreDataErrorAlert(error: error)
+            self.handleCoreDataErrorAlert(error: .failedDeletion)
         }
     }
 }

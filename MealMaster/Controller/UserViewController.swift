@@ -55,13 +55,11 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("return pressed")
         let text = userName.text
         do {
             try UserSettings.currentSettings.add(name: text!)
         } catch {
-            let error = CoreDataError.failedNameSave
-            self.handleCoreDataErrorAlert(error: error)
+            self.handleCoreDataErrorAlert(error: .failedNameSave)
         }
         textField.resignFirstResponder()
         return false
@@ -91,8 +89,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             do {
                 try UserSettings.currentSettings.add(photo: (self.selectedImage?.jpegData(compressionQuality: 1)?.base64EncodedString())!)
             } catch {
-                let error = CoreDataError.failedPhotoSave
-                self.handleCoreDataErrorAlert(error: error)
+                self.handleCoreDataErrorAlert(error: .failedPhotoSave)
             }
         })
     }

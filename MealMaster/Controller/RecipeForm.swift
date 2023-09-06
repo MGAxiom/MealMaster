@@ -28,20 +28,23 @@ class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         let strDate = Formatter.date.string(from: datePicker.date)
         let mealIndex = mealPicker.selectedRow(inComponent: 0)
         let mealSelected = mealArray[mealIndex]
-        if repository.checkIfPlanned(date: strDate, meal: mealSelected) == true {
-            print("lol")
-            let planningDay = repository.get(date: strDate)
-            presentAlertVC(with: "This recipe is already in your planning. Do you want to overwrite the other recipe?", recipeName: (recipeData?.title)!, day: planningDay, mealName: mealSelected, date: strDate, index: mealIndex)
-        } else {
-            do {
-                try repository.add(meal: mealSelected, date: strDate, for: recipeData!)
-            } catch {
-                let error = CoreDataError.failedMealSave
-                self.handleCoreDataErrorAlert(error: error)
+        do {
+            if try repository.checkIfPlanned(date: strDate, meal: mealSelected) == true {
+                let planningDay = try repository.get(date: strDate)
+                presentAlertVC(with: "This recipe is already in your planning. Do you want to overwrite the other recipe?", recipeName: (recipeData?.title)!, day: planningDay, mealName: mealSelected, date: strDate, index: mealIndex)
+            } else {
+                do {
+                    try repository.add(meal: mealSelected, date: strDate, for: recipeData!)
+                } catch {
+                    self.handleCoreDataErrorAlert(error: .failedMealSave)
+                }
+                navigationController?.popViewController(animated: true)
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
             }
-            navigationController?.popViewController(animated: true)
-            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        } catch {
+            self.handleCoreDataErrorAlert(error: .failedCheck)
         }
+        
     }
     
     @IBAction func cancelButton(_ sender: Any) {
@@ -70,13 +73,14 @@ extension RecipeForm {
     
     func presentAlertVC(with message: String, recipeName: String, day: PlanningDay?,mealName: String, date: String, index: Int, okCompletion: @escaping (() -> ()) = {}, cancelCompletion: @escaping (() -> ()) = {}, presentCompletion: @escaping (() -> ()) = {}) {
         let alertController = UIAlertController(title: "Ooops !", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action: UIAlertAction) in
-//            let meal2Delete = day?.meals?.allObjects[index]
+        let okAction = UIAlertAction(title: "Update", style: .default) { (action: UIAlertAction) in
             let meal2Delete = day?.meals?.first(where: { meal in
                 return (meal as! PlanningMeal).meal == mealName
             })
             do {
                 try self.repository.delete(meal: meal2Delete as! PlanningMeal)
+                self.navigationController?.popViewController(animated: true)
+                self.dismiss(animated: true, completion: nil)
             } catch {
                 let error = CoreDataError.failedDeletion
                 self.handleCoreDataErrorAlert(error: error)
@@ -85,8 +89,7 @@ extension RecipeForm {
             do {
                 try self.repository.add(meal: mealName, date: date, for: self.recipeData!)
             } catch {
-                let error = CoreDataError.failedMealSave
-                self.handleCoreDataErrorAlert(error: error)
+                self.handleCoreDataErrorAlert(error: .failedMealSave)
             }
             okCompletion()
         }

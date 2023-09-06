@@ -19,6 +19,7 @@
 		8974A0F72A7169DA0044AEE4 /* Allergies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8974A0F62A7169DA0044AEE4 /* Allergies.swift */; };
 		8974A0F92A71930D0044AEE4 /* UserCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8974A0F82A71930D0044AEE4 /* UserCollectionView.swift */; };
 		897A93882AA0C5FE00471718 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A93872AA0C5FE00471718 /* FoodTableViewCell.swift */; };
+		897A938A2AA32CC400471718 /* FridgeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A93892AA32CC400471718 /* FridgeSearchViewController.swift */; };
 		89807EE82A86A727007050B9 /* PlanningCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89807EE72A86A727007050B9 /* PlanningCellDelegate.swift */; };
 		89807EEA2A86AF35007050B9 /* MealButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89807EE92A86AF35007050B9 /* MealButton.swift */; };
 		898FC74D2A6579F000AD7422 /* AFSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898FC74C2A6579F000AD7422 /* AFSession.swift */; };
@@ -39,6 +40,9 @@
 		89AA69E62A7019ED00F3E687 /* UserFavouriteListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA69DE2A7019ED00F3E687 /* UserFavouriteListVC.swift */; };
 		89AA69EA2A70805B00F3E687 /* FridgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA69E92A70805B00F3E687 /* FridgeViewController.swift */; };
 		89AA69EC2A71328A00F3E687 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AA69EB2A71328A00F3E687 /* UserCollectionViewCell.swift */; };
+		89ACC6A52AA60C1D008C1E4A /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ACC6A42AA60C1D008C1E4A /* Food.swift */; };
+		89ACC6A92AA79366008C1E4A /* FridgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ACC6A82AA79366008C1E4A /* FridgeTableViewCell.swift */; };
+		89ACC6AB2AA79712008C1E4A /* FridgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ACC6AA2AA79712008C1E4A /* FridgeButton.swift */; };
 		89BBD0C52A587D04008F0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */; };
 		89BBD0C62A587D04008F0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */; };
 		89BBD0C72A587D04008F0376 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */; };
@@ -86,6 +90,7 @@
 		8974A0F62A7169DA0044AEE4 /* Allergies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allergies.swift; sourceTree = "<group>"; };
 		8974A0F82A71930D0044AEE4 /* UserCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionView.swift; sourceTree = "<group>"; };
 		897A93872AA0C5FE00471718 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
+		897A93892AA32CC400471718 /* FridgeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeSearchViewController.swift; sourceTree = "<group>"; };
 		89807EE72A86A727007050B9 /* PlanningCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningCellDelegate.swift; sourceTree = "<group>"; };
 		89807EE92A86AF35007050B9 /* MealButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealButton.swift; sourceTree = "<group>"; };
 		898FC74C2A6579F000AD7422 /* AFSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AFSession.swift; sourceTree = "<group>"; };
@@ -106,6 +111,9 @@
 		89AA69DE2A7019ED00F3E687 /* UserFavouriteListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFavouriteListVC.swift; sourceTree = "<group>"; };
 		89AA69E92A70805B00F3E687 /* FridgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeViewController.swift; sourceTree = "<group>"; };
 		89AA69EB2A71328A00F3E687 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		89ACC6A42AA60C1D008C1E4A /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		89ACC6A82AA79366008C1E4A /* FridgeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeTableViewCell.swift; sourceTree = "<group>"; };
+		89ACC6AA2AA79712008C1E4A /* FridgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeButton.swift; sourceTree = "<group>"; };
 		89BBD0C42A587D03008F0376 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		89D3A7DA2A57023700BE11DD /* MealMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D3A7DD2A57023700BE11DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -236,8 +244,10 @@
 				899F63FD2A61A71300BE8E5A /* PlanningCollectionViewCell.swift */,
 				89AA69EB2A71328A00F3E687 /* UserCollectionViewCell.swift */,
 				899F63FB2A6043CE00BE8E5A /* RecipesTVCell.swift */,
-				89807EE92A86AF35007050B9 /* MealButton.swift */,
 				897A93872AA0C5FE00471718 /* FoodTableViewCell.swift */,
+				89ACC6A82AA79366008C1E4A /* FridgeTableViewCell.swift */,
+				89807EE92A86AF35007050B9 /* MealButton.swift */,
+				89ACC6AA2AA79712008C1E4A /* FridgeButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -252,6 +262,7 @@
 				898FC75E2A67ED4300AD7422 /* RecipeForm.swift */,
 				899F63F92A6037C600BE8E5A /* PlanningViewController.swift */,
 				89AA69E92A70805B00F3E687 /* FridgeViewController.swift */,
+				897A93892AA32CC400471718 /* FridgeSearchViewController.swift */,
 				8974A0F82A71930D0044AEE4 /* UserCollectionView.swift */,
 				892A28F22A7451C5003D4C19 /* PlanningCollectionView.swift */,
 			);
@@ -283,6 +294,7 @@
 				89AA69D52A7017C000F3E687 /* PlanningDay.swift */,
 				892A28F62A8292F8003D4C19 /* UserSettings.swift */,
 				892A28F82A83A566003D4C19 /* PlanningMeal.swift */,
+				89ACC6A42AA60C1D008C1E4A /* Food.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -570,12 +582,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89ACC6A92AA79366008C1E4A /* FridgeTableViewCell.swift in Sources */,
+				897A938A2AA32CC400471718 /* FridgeSearchViewController.swift in Sources */,
 				89D3A7E22A57023700BE11DD /* RecipesViewController.swift in Sources */,
 				89AA69D42A7017A200F3E687 /* Favourite.swift in Sources */,
 				898FC7572A6583C300AD7422 /* CoreDataCRUD.swift in Sources */,
 				89D3A7DE2A57023700BE11DD /* AppDelegate.swift in Sources */,
 				89AA69EC2A71328A00F3E687 /* UserCollectionViewCell.swift in Sources */,
 				898FC75D2A66DB2500AD7422 /* RecipeDetailVC.swift in Sources */,
+				89ACC6A52AA60C1D008C1E4A /* Food.swift in Sources */,
 				897A93882AA0C5FE00471718 /* FoodTableViewCell.swift in Sources */,
 				8974A0F72A7169DA0044AEE4 /* Allergies.swift in Sources */,
 				89AA69EA2A70805B00F3E687 /* FridgeViewController.swift in Sources */,
@@ -593,6 +608,7 @@
 				898FC7532A65831100AD7422 /* RecipeJSONCodable.swift in Sources */,
 				89D3A7E02A57023700BE11DD /* SceneDelegate.swift in Sources */,
 				898FC74D2A6579F000AD7422 /* AFSession.swift in Sources */,
+				89ACC6AB2AA79712008C1E4A /* FridgeButton.swift in Sources */,
 				892A28F92A83A566003D4C19 /* PlanningMeal.swift in Sources */,
 				898FC7592A65880300AD7422 /* Recipe.swift in Sources */,
 				899F63FE2A61A71300BE8E5A /* PlanningCollectionViewCell.swift in Sources */,

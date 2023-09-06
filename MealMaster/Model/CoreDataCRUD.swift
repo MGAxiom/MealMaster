@@ -20,79 +20,80 @@ final class CoreDataCRUD {
     }
     
     // MARK: - Repository
-//    func readFavouriteData(completion: @escaping (Result<[Favourite], CoreDataError>) -> Void){
-//        let request: NSFetchRequest<Favourite> = Favourite.fetchRequest()
-//        request.relationshipKeyPathsForPrefetching = ["recipe"]
-//        do {
-//            let favouriteRecipes = try coreDataStack.viewContext.fetch(request)
-//            completion(.success(favouriteRecipes))
-//        } catch {
-//            completion(.failure(.failedAllFetch))
-//        }
-//    }
     func readFavouriteData() throws -> [Favourite] {
         let request: NSFetchRequest<Favourite> = Favourite.fetchRequest()
         request.relationshipKeyPathsForPrefetching = ["recipe"]
         return try coreDataStack.viewContext.fetch(request)
     }
     
-    func getMealsPlanned(completion: @escaping (Result<[PlanningDay], CoreDataError>) -> Void) {
+    func readFoodData() throws -> [Food] {
+        let request: NSFetchRequest<Food> = Food.fetchRequest()
+        request.returnsObjectsAsFaults = false
+        return try coreDataStack.viewContext.fetch(request)
+    }
+    
+    func readFridgeDetails(name: String) throws -> [Food] {
+        let request: NSFetchRequest<Food> = Food.fetchRequest()
+        request.predicate = NSPredicate(format: "label == %@", name)
+        return try coreDataStack.viewContext.fetch(request)
+    }
+    
+    func getFridgeDetails(name: String) throws -> Food {
+        let request: NSFetchRequest<Food> = Food.fetchRequest()
+        request.fetchLimit = 1
+        request.predicate = NSPredicate(format: "label == %@", name)
+        return try coreDataStack.viewContext.fetch(request).first!
+    }
+    
+    func getMealsPlanned() throws -> [PlanningDay] {
         let request: NSFetchRequest<PlanningDay> = PlanningDay.fetchRequest()
         request.sortDescriptors = [
             NSSortDescriptor(keyPath: \PlanningDay.date, ascending: true)
         ]
-        do {
-            let days = try coreDataStack.viewContext.fetch(request)
-            completion(.success(days))
-        } catch {
-            completion(.failure(.failedAllFetch))
-        }
+        return try coreDataStack.viewContext.fetch(request)
     }
     
-    func getRecipe(id: String) -> Result<Recipe?, CoreDataError> {
+    func getRecipe(id: String) throws -> Recipe? {
         let request: NSFetchRequest<Recipe> = Recipe.fetchRequest()
         request.fetchLimit = 1
         request.predicate = NSPredicate(format: "title == %@", id)
-        
-        do {
-            return try .success(CoreDataStack.sharedInstance.viewContext.fetch(request).first)
-        } catch {
-            return .failure(.failedDetailsFetch)
-        }
+        return try coreDataStack.viewContext.fetch(request).first
     }
     
-    func get(date: String) -> PlanningDay? {
+    func get(date: String) throws -> PlanningDay? {
         let request: NSFetchRequest<PlanningDay> = PlanningDay.fetchRequest()
         request.fetchLimit = 1
         request.predicate = NSPredicate(format: "date == %@", date)
-        do {
-            return try CoreDataStack.sharedInstance.viewContext.fetch(request).first
-        } catch {
-            print("could not fetch day")
-            return nil
-        }
+        return try coreDataStack.viewContext.fetch(request).first
     }
     
-    func checkIfPlanned(date: String, meal: String) -> Bool {
-        let day = get(date: date)
-        if day != nil {
+    func checkIfPlanned(date: String, meal: String) throws -> Bool {
+        var tempDay: PlanningDay?
+        do {
+            tempDay = try get(date: date)
+        } catch {
+            tempDay = nil
+        }
+        if tempDay != nil {
             let request:  NSFetchRequest<PlanningMeal> = PlanningMeal.fetchRequest()
             request.predicate = NSPredicate(format: "meal == %@", meal)
-            do {
-                let count = try CoreDataStack.sharedInstance.viewContext.count(for: request)
-                if count > 0 {
-                    print("fetch request has")
-                    return true
-                } else {
-                    print("fetch request hasn't")
-                    return false
-                }
-            } catch {
-                print("fetch request false")
+            let count = try CoreDataStack.sharedInstance.viewContext.count(for: request)
+            if count > 0 {
+                return true
+            } else {
                 return false
             }
         }
-        print("did not if")
+        return false
+    }
+    
+    func checkIfInFridge(name: String, brand: String) throws -> Bool {
+        let request:  NSFetchRequest<Food> = Food.fetchRequest()
+        request.predicate = NSPredicate(format: "label == %@", name)
+        let count = try coreDataStack.viewContext.count(for: request)
+        if count > 0 {
+            return true
+        }
         return false
     }
     
@@ -101,7 +102,7 @@ final class CoreDataCRUD {
         if recipe.managedObjectContext == nil {
             coreDataStack.viewContext.insert(recipe)
         }
-        var day = get(date: date)
+        var day = try get(date: date)
         if day == nil {
             day = PlanningDay(context: coreDataStack.viewContext)
             day!.date = date
@@ -134,9 +135,10 @@ final class CoreDataCRUD {
         try coreDataStack.viewContext.save()
     }
     
-    func save(food: Food) throws {
+    func save(food: Food, quantity: String) throws {
         // Insert the Recipe object into the CoreData context (had no context until now)
         coreDataStack.viewContext.insert(food)
+        food.quantity = quantity
         try coreDataStack.viewContext.save()
     }
     
@@ -144,5 +146,15 @@ final class CoreDataCRUD {
         coreDataStack.viewContext.delete(food)
         try coreDataStack.viewContext.save()
     }
+    
+    func update(name: String, with quantity: String) throws {
+        let request: NSFetchRequest<Food> = Food.fetchRequest()
+        request.predicate = NSPredicate(format: "label = %@", name as String)
+        let result = try? coreDataStack.viewContext.fetch(request)
+        let finalResult = result?.first
+        finalResult?.quantity = quantity
+        try coreDataStack.viewContext.save()
+    }
+     
 }
 

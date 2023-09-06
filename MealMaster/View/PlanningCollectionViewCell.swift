@@ -116,3 +116,4 @@ class PlanningCollectionViewCell: UICollectionViewCell {
     }
 }
 
+

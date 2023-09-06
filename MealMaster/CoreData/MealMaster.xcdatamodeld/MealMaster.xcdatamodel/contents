@@ -3,11 +3,12 @@
     <entity name="Favourite" representedClassName=".Favourite" syncable="YES" codeGenerationType="category">
         <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="favourite" inverseEntity="Recipe"/>
     </entity>
-    <entity name="Food" representedClassName="Food" syncable="YES" codeGenerationType="class">
+    <entity name="Food" representedClassName=".Food" syncable="YES" codeGenerationType="category">
         <attribute name="brand" optional="YES" attributeType="String"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="label" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="YES" attributeType="String"/>
     </entity>
     <entity name="PlanningDay" representedClassName=".PlanningDay" syncable="YES" codeGenerationType="category">
         <attribute name="date" optional="YES" attributeType="String"/>

@@ -74,12 +74,11 @@ extension UserFavouriteListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let recipeResult = repository.getRecipe(id: favouriteUserData[indexPath.row].recipe!.title!)
-        switch recipeResult {
-        case .success(let success):
-            favouriteRecipeDetails = success
-        case .failure(let error):
-            self.handleCoreDataErrorAlert(error: error)
+        do {
+            let recipeResult = try repository.getRecipe(id: favouriteUserData[indexPath.row].recipe!.title!)
+            favouriteRecipeDetails = recipeResult
+        } catch {
+            self.handleCoreDataErrorAlert(error: .failedDetailsFetch)
         }
         self.performSegue(withIdentifier: "showRecipeDetails", sender: self)
     }

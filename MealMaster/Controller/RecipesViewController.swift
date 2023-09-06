@@ -31,10 +31,6 @@ class RecipesViewController: UIViewController {
     @IBOutlet var randomCuisine: UILabel!
     @IBOutlet var randomeTime: UILabel!
     
-    
-
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         randomImage.layer.cornerRadius = 10
@@ -50,7 +46,8 @@ class RecipesViewController: UIViewController {
 
             4. Tap on one of the recipes to get more details
             """
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        randomRecipeView.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,7 +85,6 @@ class RecipesViewController: UIViewController {
             case .success(let result):
                 self.randomAPIResult = result
                 let url = URL(string: self.randomAPIResult[0].imageUrl ?? "")!
-                print("\(url)")
                 self.randomImage.af.setImage(withURL: url)
                 self.randomKCAL.text = self.randomAPIResult[0].calories
                 self.randomTitle.text = self.randomAPIResult[0].title
@@ -99,6 +95,11 @@ class RecipesViewController: UIViewController {
                 self.handleApiError(error: error)
             }
         }
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        recipeDetails = randomAPIResult.first
+        self.performSegue(withIdentifier: "showRecipeDetails", sender: self)
     }
     
     func resetSearchButton() {

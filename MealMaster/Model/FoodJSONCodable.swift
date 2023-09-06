@@ -109,7 +109,7 @@ struct ParsedFood: Codable {
     let foodID, label, knownAs: String?
     let nutrients: Nutrients?
     let category: Category?
-    let categoryLabel: CategoryLabel?
+    let categoryLabel: String?
     let image: String?
     
     enum CodingKeys: String, CodingKey {

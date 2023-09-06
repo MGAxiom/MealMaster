@@ -49,6 +49,9 @@ extension UIViewController {
         case .failedDeletion:
             alertText = "Error"
             alertMessage = "Error occured while trying to delete recipe"
+        case .failedCheck:
+            alertText = "Error"
+            alertMessage = "Error occured while trying to check"
         }
         let alert = UIAlertController(title: alertText, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
         

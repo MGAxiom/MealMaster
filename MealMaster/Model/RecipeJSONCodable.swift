@@ -69,7 +69,7 @@ struct RecipeDecodable: Codable {
     let source: String?
     let url: String?
     let shareAs: String?
-    let yield: Int?
+    let yield: Double?
     let dietLabels, healthLabels: [String]?
     let cautions: [String]?
     let ingredientLines: [String]?
