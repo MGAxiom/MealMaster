@@ -277,7 +277,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="In my fridge, I have ... ?" translatesAutoresizingMaskIntoConstraints="NO" id="8bP-uc-BR0">
-                                <rect key="frame" x="15" y="113" width="276" height="56"/>
+                                <rect key="frame" x="15" y="113" width="363" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="MGZ-kL-GYA" id="ZQA-ts-cEC"/>
@@ -411,17 +411,6 @@
                                     <outlet property="delegate" destination="MGZ-kL-GYA" id="LJL-eM-FHV"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwt-7Q-FP9">
-                                <rect key="frame" x="303" y="123" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <action selector="searchButtonAction:" destination="MGZ-kL-GYA" eventType="touchUpInside" id="PZJ-64-oPB"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="yju-LD-OBy">
-                                <rect key="frame" x="330" y="131" width="20" height="20"/>
-                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="1. Start by adding ingredients, or meal names in the search bar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IH7-P9-f64">
                                 <rect key="frame" x="15" y="233" width="363" height="452"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -434,26 +423,19 @@
                         <constraints>
                             <constraint firstItem="IH7-P9-f64" firstAttribute="leading" secondItem="Jcs-I6-GDd" secondAttribute="leading" constant="15" id="3Tj-gJ-THF"/>
                             <constraint firstItem="Jcs-I6-GDd" firstAttribute="bottom" secondItem="IH7-P9-f64" secondAttribute="bottom" constant="35" id="3hy-LB-bWu"/>
-                            <constraint firstItem="HUw-Df-Sjs" firstAttribute="top" secondItem="uwt-7Q-FP9" secondAttribute="bottom" constant="36" id="3lv-iA-2aG"/>
                             <constraint firstItem="HUw-Df-Sjs" firstAttribute="top" secondItem="8bP-uc-BR0" secondAttribute="bottom" constant="25" id="5s3-wj-a8c"/>
                             <constraint firstItem="t9m-7O-kQh" firstAttribute="top" secondItem="HUw-Df-Sjs" secondAttribute="bottom" constant="15" id="7Ld-LH-aTA"/>
                             <constraint firstItem="IH7-P9-f64" firstAttribute="top" secondItem="HUw-Df-Sjs" secondAttribute="bottom" constant="15" id="7o0-YH-rcp"/>
-                            <constraint firstItem="uwt-7Q-FP9" firstAttribute="leading" secondItem="8bP-uc-BR0" secondAttribute="trailing" constant="12" id="9NC-RG-TzV"/>
+                            <constraint firstItem="Jcs-I6-GDd" firstAttribute="trailing" secondItem="8bP-uc-BR0" secondAttribute="trailing" constant="15" id="9N7-jE-7bx"/>
                             <constraint firstItem="HUw-Df-Sjs" firstAttribute="leading" secondItem="Jcs-I6-GDd" secondAttribute="leading" constant="15" id="Avb-Vn-JCp"/>
                             <constraint firstItem="Jcs-I6-GDd" firstAttribute="trailing" secondItem="HUw-Df-Sjs" secondAttribute="trailing" constant="15" id="BUD-GC-yW2"/>
-                            <constraint firstItem="Jcs-I6-GDd" firstAttribute="trailing" secondItem="uwt-7Q-FP9" secondAttribute="trailing" constant="15" id="CTt-Oz-pWp"/>
                             <constraint firstItem="Jcs-I6-GDd" firstAttribute="trailing" secondItem="t9m-7O-kQh" secondAttribute="trailing" id="Hhj-mC-PJo"/>
                             <constraint firstItem="8bP-uc-BR0" firstAttribute="top" secondItem="Jcs-I6-GDd" secondAttribute="top" constant="10" id="Jib-yo-Tfn"/>
-                            <constraint firstItem="yju-LD-OBy" firstAttribute="leading" secondItem="8bP-uc-BR0" secondAttribute="trailing" constant="39" id="Kc7-96-4Uw"/>
-                            <constraint firstItem="yju-LD-OBy" firstAttribute="top" secondItem="Jcs-I6-GDd" secondAttribute="top" constant="28" id="Owg-cI-aBz"/>
                             <constraint firstItem="t9m-7O-kQh" firstAttribute="bottom" secondItem="Jcs-I6-GDd" secondAttribute="bottom" id="Zhs-sF-Y1n"/>
                             <constraint firstItem="Jcs-I6-GDd" firstAttribute="trailing" secondItem="IH7-P9-f64" secondAttribute="trailing" constant="15" id="dM8-zm-RGy"/>
                             <constraint firstItem="t9m-7O-kQh" firstAttribute="leading" secondItem="Jcs-I6-GDd" secondAttribute="leading" id="exx-Bu-NfJ"/>
-                            <constraint firstItem="Jcs-I6-GDd" firstAttribute="trailing" secondItem="yju-LD-OBy" secondAttribute="trailing" constant="43" id="jyd-a6-dBc"/>
-                            <constraint firstItem="HUw-Df-Sjs" firstAttribute="top" secondItem="yju-LD-OBy" secondAttribute="bottom" constant="43" id="o3t-J6-SMK"/>
                             <constraint firstItem="8bP-uc-BR0" firstAttribute="leading" secondItem="Jcs-I6-GDd" secondAttribute="leading" constant="15" id="qdb-uC-ZeQ"/>
                             <constraint firstItem="IH7-P9-f64" firstAttribute="centerX" secondItem="ITS-B8-zbb" secondAttribute="centerX" id="wMw-Yx-1oC"/>
-                            <constraint firstItem="uwt-7Q-FP9" firstAttribute="top" secondItem="Jcs-I6-GDd" secondAttribute="top" constant="20" id="zMs-kh-pgv"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Fridge" image="refrigerator" catalog="system" selectedImage="refrigerator.fill" id="aGD-g0-633"/>
@@ -468,9 +450,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="foodTableView" destination="t9m-7O-kQh" id="Ouz-Ye-TcY"/>
-                        <outlet property="searchActivity" destination="yju-LD-OBy" id="2i6-sf-L9w"/>
                         <outlet property="searchBar" destination="8bP-uc-BR0" id="Kby-2q-2jA"/>
-                        <outlet property="searchButton" destination="uwt-7Q-FP9" id="vR8-ME-12A"/>
                         <outlet property="tutorialLabel" destination="IH7-P9-f64" id="M3X-bK-19G"/>
                         <segue destination="qMO-yi-NrT" kind="presentation" identifier="foodSearchTV" id="ngm-gy-t2e"/>
                     </connections>
@@ -488,26 +468,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Butter, Chicken, Tomato..." translatesAutoresizingMaskIntoConstraints="NO" id="zMa-Jg-3rN">
-                                <rect key="frame" x="6" y="77" width="276" height="56"/>
+                                <rect key="frame" x="15" y="77" width="363" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="MGZ-kL-GYA" id="Hfe-5K-RLk"/>
                                 </connections>
                             </searchBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gc8-QV-1dh">
-                                <rect key="frame" x="302" y="88" width="75" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Search">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="searchButtonAction:" destination="MGZ-kL-GYA" eventType="touchUpInside" id="6Ta-lK-G3J"/>
-                                    <action selector="searchButtonAction:" destination="qMO-yi-NrT" eventType="touchUpInside" id="UZx-kr-Qcx"/>
-                                </connections>
-                            </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="wqr-2n-hxo">
-                                <rect key="frame" x="329" y="95" width="20" height="20"/>
-                            </activityIndicatorView>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="emM-Ib-WCP">
                                 <rect key="frame" x="0.0" y="167" width="393" height="582"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -654,23 +620,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="emM-Ib-WCP" firstAttribute="leading" secondItem="G3G-uE-ATC" secondAttribute="leading" id="0Za-wQ-8B5"/>
-                            <constraint firstItem="G3G-uE-ATC" firstAttribute="trailing" secondItem="gc8-QV-1dh" secondAttribute="trailing" constant="16" id="7aU-5m-ezZ"/>
+                            <constraint firstItem="G3G-uE-ATC" firstAttribute="trailing" secondItem="zMa-Jg-3rN" secondAttribute="trailing" constant="15" id="8mA-TT-2V2"/>
                             <constraint firstItem="uK7-ml-nwR" firstAttribute="top" secondItem="zMa-Jg-3rN" secondAttribute="bottom" constant="34" id="F0G-GK-Crg"/>
                             <constraint firstItem="emM-Ib-WCP" firstAttribute="trailing" secondItem="G3G-uE-ATC" secondAttribute="trailing" id="J9M-JN-xrc"/>
-                            <constraint firstItem="gc8-QV-1dh" firstAttribute="top" secondItem="G3G-uE-ATC" secondAttribute="top" constant="88" id="O87-Af-Sk8"/>
                             <constraint firstItem="zMa-Jg-3rN" firstAttribute="top" secondItem="G3G-uE-ATC" secondAttribute="top" constant="77" id="OjN-1Y-Eht"/>
-                            <constraint firstItem="zMa-Jg-3rN" firstAttribute="leading" secondItem="G3G-uE-ATC" secondAttribute="leading" constant="6" id="OyN-L6-pIt"/>
-                            <constraint firstItem="emM-Ib-WCP" firstAttribute="top" secondItem="gc8-QV-1dh" secondAttribute="bottom" constant="44" id="QZs-hv-n0z"/>
-                            <constraint firstItem="gc8-QV-1dh" firstAttribute="leading" secondItem="zMa-Jg-3rN" secondAttribute="trailing" constant="20" id="Rwg-zW-E4Z"/>
-                            <constraint firstItem="wqr-2n-hxo" firstAttribute="leading" secondItem="zMa-Jg-3rN" secondAttribute="trailing" constant="47" id="T0a-yq-lXS"/>
+                            <constraint firstItem="zMa-Jg-3rN" firstAttribute="leading" secondItem="G3G-uE-ATC" secondAttribute="leading" constant="15" id="OyN-L6-pIt"/>
                             <constraint firstItem="emM-Ib-WCP" firstAttribute="top" secondItem="zMa-Jg-3rN" secondAttribute="bottom" constant="34" id="X2I-pI-z5p"/>
-                            <constraint firstItem="wqr-2n-hxo" firstAttribute="top" secondItem="G3G-uE-ATC" secondAttribute="top" constant="95" id="XlM-Xi-5jv"/>
                             <constraint firstItem="5BH-Qe-2IO" firstAttribute="top" secondItem="emM-Ib-WCP" secondAttribute="bottom" constant="23" id="dUR-pI-qsq"/>
                             <constraint firstItem="G3G-uE-ATC" firstAttribute="trailing" secondItem="5BH-Qe-2IO" secondAttribute="trailing" constant="72" id="db0-ba-Mmk"/>
-                            <constraint firstItem="emM-Ib-WCP" firstAttribute="top" secondItem="wqr-2n-hxo" secondAttribute="bottom" constant="52" id="eCl-JE-85A"/>
                             <constraint firstAttribute="trailing" secondItem="uK7-ml-nwR" secondAttribute="trailing" constant="6" id="eWT-zX-DE2"/>
                             <constraint firstItem="5BH-Qe-2IO" firstAttribute="leading" secondItem="G3G-uE-ATC" secondAttribute="leading" constant="71" id="h6r-Wb-s4t"/>
-                            <constraint firstItem="G3G-uE-ATC" firstAttribute="trailing" secondItem="wqr-2n-hxo" secondAttribute="trailing" constant="44" id="joe-4u-bVD"/>
                             <constraint firstItem="uK7-ml-nwR" firstAttribute="leading" secondItem="G3G-uE-ATC" secondAttribute="leading" constant="6" id="jwi-2z-iiZ"/>
                             <constraint firstItem="uK7-ml-nwR" firstAttribute="centerX" secondItem="GGj-kv-7bM" secondAttribute="centerX" id="lqb-7U-D9g"/>
                             <constraint firstItem="5BH-Qe-2IO" firstAttribute="top" secondItem="uK7-ml-nwR" secondAttribute="bottom" constant="23" id="vdX-4Y-EdJ"/>
@@ -679,9 +638,7 @@
                     </view>
                     <connections>
                         <outlet property="foodSearchTableView" destination="emM-Ib-WCP" id="hbx-5K-nha"/>
-                        <outlet property="searchActivityWheel" destination="wqr-2n-hxo" id="ESn-vg-z2Y"/>
                         <outlet property="searchBar" destination="zMa-Jg-3rN" id="SYx-h6-YiQ"/>
-                        <outlet property="searchButton" destination="gc8-QV-1dh" id="pha-Ol-g3l"/>
                         <outlet property="tutorialLabel" destination="uK7-ml-nwR" id="dVN-2Y-Cg3"/>
                     </connections>
                 </viewController>

@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "DF346E51-92C2-4DE2-95A8-E5A0EA02104A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:MealMaster.xcodeproj",
+        "identifier" : "89D3A7F22A57023800BE11DD",
+        "name" : "MealMasterTests"
+      }
+    }
+  ],
+  "version" : 1
+}

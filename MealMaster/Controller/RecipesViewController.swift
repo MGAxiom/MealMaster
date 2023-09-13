@@ -74,7 +74,7 @@ class RecipesViewController: UIViewController {
                 self.activityIndicatorW.isHidden = true
             case .failure(let error):
                 self.resetSearchButton()
-                self.handleApiError(error: error)
+                self.handleApiError(error: error as! HTTPError)
             }
         }
     }
@@ -92,7 +92,7 @@ class RecipesViewController: UIViewController {
                 self.randomDescription.text = self.randomAPIResult[0].foods?.capitalized
                 self.randomeTime.text = self.randomAPIResult[0].time
             case .failure(let error):
-                self.handleApiError(error: error)
+                self.handleApiError(error: error as! HTTPError)
             }
         }
     }

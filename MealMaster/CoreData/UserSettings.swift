@@ -22,7 +22,6 @@ class UserSettings: NSManagedObject {
             do {
                 try CoreDataStack.sharedInstance.viewContext.save()
             } catch {
-                print("can't update")
             }
         }
     }
@@ -51,7 +50,6 @@ private static func createUserSettings() -> UserSettings {
         do {
             try CoreDataStack.sharedInstance.viewContext.save()
         } catch {
-            print("can't create usersettings")
         }
     return userSetting
     }
@@ -63,6 +61,11 @@ private static func createUserSettings() -> UserSettings {
     
     func add(photo: String) throws {
         self.userphoto = photo
+        try CoreDataStack.sharedInstance.viewContext.save()
+    }
+    
+    func add(index: String) throws {
+        self.index = index
         try CoreDataStack.sharedInstance.viewContext.save()
     }
     

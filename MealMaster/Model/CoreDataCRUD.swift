@@ -38,11 +38,11 @@ final class CoreDataCRUD {
         return try coreDataStack.viewContext.fetch(request)
     }
     
-    func getFridgeDetails(name: String) throws -> Food {
+    func getFridgeDetails(name: String) throws -> Food? {
         let request: NSFetchRequest<Food> = Food.fetchRequest()
         request.fetchLimit = 1
         request.predicate = NSPredicate(format: "label == %@", name)
-        return try coreDataStack.viewContext.fetch(request).first!
+        return try coreDataStack.viewContext.fetch(request).first
     }
     
     func getMealsPlanned() throws -> [PlanningDay] {
@@ -87,14 +87,17 @@ final class CoreDataCRUD {
         return false
     }
     
-    func checkIfInFridge(name: String, brand: String) throws -> Bool {
+    func getFoodIfInFridge(name: String, brand: String) throws -> Food? {
         let request:  NSFetchRequest<Food> = Food.fetchRequest()
-        request.predicate = NSPredicate(format: "label == %@", name)
-        let count = try coreDataStack.viewContext.count(for: request)
-        if count > 0 {
-            return true
+        let predicateIsTitle = NSPredicate(format: "label == %@", name)
+        let predicateIsBrand = NSPredicate(format: "brand == %@", brand)
+        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [predicateIsTitle, predicateIsBrand])
+        if brand == "" {
+            request.predicate = predicateIsTitle
+        } else {
+            request.predicate = andPredicate
         }
-        return false
+        return try coreDataStack.viewContext.fetch(request).first
     }
     
     func add(meal: String, date: String, for recipe: Recipe) throws {
@@ -147,7 +150,7 @@ final class CoreDataCRUD {
         try coreDataStack.viewContext.save()
     }
     
-    func update(name: String, with quantity: String) throws {
+    func update(food name: String, with quantity: String) throws {
         let request: NSFetchRequest<Food> = Food.fetchRequest()
         request.predicate = NSPredicate(format: "label = %@", name as String)
         let result = try? coreDataStack.viewContext.fetch(request)

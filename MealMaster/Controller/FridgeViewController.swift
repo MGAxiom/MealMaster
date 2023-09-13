@@ -10,9 +10,7 @@ import UIKit
 class FridgeViewController: UIViewController, UISearchBarDelegate, UITextFieldDelegate {
     
     @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet var searchButton: UIButton!
     @IBOutlet var foodTableView: UITableView!
-    @IBOutlet var searchActivity: UIActivityIndicatorView!
     @IBOutlet var tutorialLabel: UILabel!
     
     var foodUserData = [Food]()
@@ -20,7 +18,7 @@ class FridgeViewController: UIViewController, UISearchBarDelegate, UITextFieldDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchActivity.isHidden = true
+        
         tutorialLabel.text = """
             1. This is your fridge
             
@@ -28,8 +26,6 @@ class FridgeViewController: UIViewController, UISearchBarDelegate, UITextFieldDe
             
             3. Any food that you add, will then be shown here
             """
-        tutorialLabel.isHidden = false
-        foodTableView.isHidden = true
         searchBar.delegate = self
         searchBar.searchTextField.delegate = self
     }
@@ -37,6 +33,13 @@ class FridgeViewController: UIViewController, UISearchBarDelegate, UITextFieldDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchFridgeInventory()
+        if foodUserData.isEmpty {
+            tutorialLabel.isHidden = false
+            foodTableView.isHidden = true
+        } else {
+            tutorialLabel.isHidden = true
+            foodTableView.isHidden = false
+        }
         foodTableView.reloadData()
     }
     
@@ -49,19 +52,11 @@ class FridgeViewController: UIViewController, UISearchBarDelegate, UITextFieldDe
         self.performSegue(withIdentifier: "foodSearchTV", sender: self)
     }
     
-    @IBAction func searchButtonAction(_ sender: UIButton) {
-        self.searchButton.isHidden = true
-        self.searchActivity.isHidden = false
-        fetchFoods(with: searchBar.text!)
-    }
-    
     func fetchFoods(with text: String) {
         do {
             let result = try repository.readFridgeDetails(name: text)
             foodUserData = result
             foodTableView.reloadData()
-            self.searchButton.isHidden = false
-            self.searchActivity.isHidden = true
         } catch {
             self.handleCoreDataErrorAlert(error: .failedAllFetch)
         }
@@ -89,11 +84,6 @@ class FridgeViewController: UIViewController, UISearchBarDelegate, UITextFieldDe
             self.tutorialLabel.isHidden = false
             self.foodTableView.isHidden = true
         }
-    }
-    
-    func resetSearchButton() {
-        searchButton.isHidden = false
-        searchActivity.isHidden = true
     }
     
     func readFData() -> [Food] {
@@ -127,6 +117,7 @@ extension FridgeViewController: UITableViewDelegate, UITableViewDataSource {
         let food = foodUserData[indexPath.row]
         cell.configureCell(food: food, delegate: self, name: food.label ?? "", brand: food.brand ?? "", category: food.category ?? "", quantity: food.quantity ?? "", image: food.image ?? "")
         cell.delegate = self
+        cell.selectionStyle = .none
         return cell
     }
 }
@@ -134,7 +125,7 @@ extension FridgeViewController: UITableViewDelegate, UITableViewDataSource {
 extension FridgeViewController: UpdateCustomCell {
     func updateFood(name: String, quantity: String, cell: UITableViewCell) {
         do {
-            try repository.update(name: name, with: quantity)
+            try repository.update(food: name, with: quantity)
             fetchFridgeInventory()
             foodTableView.reloadData()
         } catch {

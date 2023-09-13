@@ -100,10 +100,6 @@ extension UIViewController {
         case .invalidJson:
             alertText = "Error !"
             alertMessage = "Could not decode the json file"
-        case .commonError(let errorString):
-            alertText = "Error !"
-            alertMessage = "The error \(errorString) occured during the api call"
-            
         }
         let alert = UIAlertController(title: alertText, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
         

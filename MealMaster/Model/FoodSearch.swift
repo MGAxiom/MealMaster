@@ -23,7 +23,7 @@ class FoodSearch {
         self.session = session
     }
     
-    func foodAPI(userInput: String, callback: @escaping (Result<[Food], HTTPError>) -> Void ) {
+    func foodAPI(userInput: String, callback: @escaping (Result<[Food], Error>) -> Void ) {
         let url = "https://api.edamam.com/api/food-database/v2/parser"
         var parameters = [
             "ingr": [userInput],
@@ -36,7 +36,6 @@ class FoodSearch {
         let encodingParameters = URLEncoding(destination: .methodDependent, arrayEncoding: .noBrackets, boolEncoding: .numeric)
         
         session.request(with: url, method: .get, parameters: parameters, encoding: encodingParameters) { response in
-            print(response.request?.url)
             switch response.result {
             case .success(let data):
                 do {
@@ -54,13 +53,10 @@ class FoodSearch {
                     }
                     callback(.success(foods))
                 } catch {
-                    print(error)
                     callback(.failure(HTTPError.invalidJson))
                 }
             case .failure(let error):
-                print(AF.request.self)
-                print(error)
-                callback(.failure(HTTPError.commonError(error)))
+                callback(.failure(error))
             }
         }
     }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
@@ -19,6 +20,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet var dietSegment: UISegmentedControl!
     private var diet: Diet?
     var selectedImage: UIImage?
+    var currentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +49,16 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
             dietSegment.insertSegment(
                 action: UIAction(title:diet.info) { (action) in
                     UserSettings.currentSettings.add(diet: diet)
+                    self.currentIndex = self.dietSegment.selectedSegmentIndex
+                    self.checkIndex(index: "\(self.currentIndex)")
                 },
                 at: dietSegment.numberOfSegments,
                 animated: false
             )
             dietSegment.apportionsSegmentWidthsByContent = true
         }
+        let index = UserSettings.currentSettings.index
+        dietSegment.selectedSegmentIndex = Int("\(index ?? "0")") ?? 0
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let text = userName.text
@@ -70,7 +76,15 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         vc.sourceType = .photoLibrary
         vc.delegate = self
         vc.allowsEditing = true
-        present(vc, animated: true)
+        present(vc, animated: true, completion: nil)
+    }
+    
+    func checkIndex(index: String) {
+        do {
+            try UserSettings.currentSettings.add(index: index)
+        } catch {
+            self.handleCoreDataErrorAlert(error: .failedDetailsFetch)
+        }
     }
     
     @IBAction func favouriteListButton(_ sender: Any) {

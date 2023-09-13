@@ -10,9 +10,7 @@ import UIKit
 class FridgeSearchViewController: UIViewController, UISearchBarDelegate, UITextFieldDelegate {
 
     @IBOutlet var searchBar: UISearchBar!
-    @IBOutlet var searchButton: UIButton!
     @IBOutlet var foodSearchTableView: UITableView!
-    @IBOutlet var searchActivityWheel: UIActivityIndicatorView!
     @IBOutlet var tutorialLabel: UILabel!
     
     var foodAPIResult: [Food] = []
@@ -20,7 +18,6 @@ class FridgeSearchViewController: UIViewController, UISearchBarDelegate, UITextF
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchActivityWheel.isHidden = true
         tutorialLabel.text = """
             1. Here you can search some food to add to your fridge
             
@@ -36,25 +33,15 @@ class FridgeSearchViewController: UIViewController, UISearchBarDelegate, UITextF
         searchBar.searchTextField.delegate = self
     }
     
-    @IBAction func searchButtonAction(_ sender: UIButton) {
-        self.tutorialLabel.isHidden = true
-        self.searchButton.isHidden = true
-        self.searchActivityWheel.isHidden = false
-        fetchFoods(with: searchBar.text!)
-    }
-    
     func fetchFoods(with text: String) {
         FoodSearch.shared.foodAPI(userInput: text) { response in
             switch response {
             case .success(let result):
                 self.foodAPIResult = result
                 self.foodSearchTableView.reloadData()
-                self.searchButton.isHidden = false
                 self.foodSearchTableView.isHidden = false
-                self.searchActivityWheel.isHidden = true
             case .failure(let error):
-                self.resetSearchButton()
-                self.handleApiError(error: error)
+                self.handleApiError(error: error as! HTTPError)
             }
         }
     }
@@ -74,12 +61,6 @@ class FridgeSearchViewController: UIViewController, UISearchBarDelegate, UITextF
             self.tutorialLabel.isHidden = true
             fetchFoods(with: searchText)
         }
-    }
-    
-    
-    func resetSearchButton() {
-        searchButton.isHidden = false
-        searchActivityWheel.isHidden = true
     }
     
     @IBAction func goBack(_ sender: Any) {
@@ -110,6 +91,8 @@ extension FridgeSearchViewController: UITableViewDelegate, UITableViewDataSource
         }
         let food = foodAPIResult[indexPath.row]
         cell.configureCell(food: food)
+        cell.delegate = self
+        cell.selectionStyle = .none
         return cell
     }
 }
@@ -119,11 +102,19 @@ extension FridgeSearchViewController: UpdateFoodCell {
     func getFoodQuantity(name: String) -> String {
         do {
             let foodOfFridge = try repository.getFridgeDetails(name: name)
-            print(foodOfFridge)
-            return foodOfFridge.quantity ?? ""
+            return (foodOfFridge?.quantity)!
         } catch {
             self.handleCoreDataErrorAlert(error: .failedDetailsFetch)
             return "1"
+        }
+    }
+    
+    func updateFood(name: String, quantity: String, cell: UITableViewCell) {
+        do {
+            try repository.update(food: name, with: quantity)
+            foodSearchTableView.reloadData()
+        } catch {
+            self.handleCoreDataErrorAlert(error: .failedDeletion)
         }
     }
 }

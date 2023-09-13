@@ -9,7 +9,6 @@ import Foundation
 
 enum HTTPError: Error {
     case invalidJson
-    case commonError(Error)
 }
 
 enum CoreDataError: Error {

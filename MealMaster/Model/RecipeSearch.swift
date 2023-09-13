@@ -23,7 +23,7 @@ class RecipeSearch {
         self.session = session
     }
     
-    func recipeAPI(userInput: String, callback: @escaping (Result<[Recipe], HTTPError>) -> Void ) {
+    func recipeAPI(userInput: String, callback: @escaping (Result<[Recipe], Error>) -> Void ) {
         let url = "https://api.edamam.com/api/recipes/v2"
         let healthParameters = UserSettings.currentSettings.allergySet
         var parameters = [
@@ -42,7 +42,6 @@ class RecipeSearch {
         let encodingParameters = URLEncoding(destination: .methodDependent, arrayEncoding: .noBrackets, boolEncoding: .numeric)
         
         session.request(with: url, method: .get, parameters: parameters, encoding: encodingParameters) { response in
-            print(response.request?.url)
             switch response.result {
             case .success(let data):
                 do {
@@ -63,18 +62,15 @@ class RecipeSearch {
                     }
                     callback(.success(recipes))
                 } catch {
-                    print(error)
                     callback(.failure(HTTPError.invalidJson))
                 }
             case .failure(let error):
-                print(AF.request.self)
-                print(error)
-                callback(.failure(HTTPError.commonError(error)))
+                callback(.failure(error))
             }
         }
     }
     
-    func randomRecipeAPI(callback: @escaping (Result<[Recipe], HTTPError>) -> Void ) {
+    func randomRecipeAPI(callback: @escaping (Result<[Recipe], Error>) -> Void ) {
         let url = "https://api.edamam.com/api/recipes/v2"
         let healthParameters = UserSettings.currentSettings.allergySet
         var parameters = [
@@ -93,7 +89,6 @@ class RecipeSearch {
         let encodingParameters = URLEncoding(destination: .methodDependent, arrayEncoding: .noBrackets, boolEncoding: .numeric)
         
         session.request(with: url, method: .get, parameters: parameters, encoding: encodingParameters) { response in
-            print(response.request?.url)
             switch response.result {
             case .success(let data):
                 do {
@@ -114,13 +109,10 @@ class RecipeSearch {
                     }
                     callback(.success(recipes))
                 } catch {
-                    print(error)
                     callback(.failure(HTTPError.invalidJson))
                 }
             case .failure(let error):
-                print(AF.request.self)
-                print(error)
-                callback(.failure(HTTPError.commonError(error)))
+                callback(.failure(error))
             }
         }
     }

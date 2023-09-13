@@ -22,7 +22,6 @@ final class PlanningViewController: UIViewController, UICollectionViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(planningPerDay)
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -10,6 +10,7 @@ import AlamofireImage
 
 protocol UpdateFoodCell: AnyObject {
     func getFoodQuantity(name: String) -> String
+    func updateFood(name: String, quantity: String, cell: UITableViewCell)
 }
 
 class FoodTableViewCell: UITableViewCell {
@@ -34,16 +35,15 @@ class FoodTableViewCell: UITableViewCell {
         foodTitle.text = food?.label
         brandLabel.text = food?.brand
         categoryLabel.text = food?.category
-        isInFridge = checkIfSaved(name: food?.label ?? "", brand: food?.brand ?? "")
+        checkIfInFridge(name: food?.label ?? "", brand: food?.brand ?? "")
         if isInFridge {
-            quantityLabel.text = self.delegate?.getFoodQuantity(name: foodTitle.text ?? "")
+            quantityLabel.text = self.delegate?.getFoodQuantity(name: foodTitle.text ?? "") ?? "nil"
         } else {
             quantityLabel.text = String(defaultQuantity)
         }
         toggleButtonImage()
         if food?.image == nil {
             foodImage.image = UIImage(named: "unknown-image-food")
-        } else {
             guard let url = URL(string: food?.image ?? "") else {
                 return
             }
@@ -54,20 +54,21 @@ class FoodTableViewCell: UITableViewCell {
         }
         foodImage.af.setImage(withURL: url)
     }
-    
-    func checkIfSaved(name: String, brand: String) -> Bool {
+
+    func checkIfInFridge(name: String, brand: String) {
         do {
-            if try repository.checkIfInFridge(name: name, brand: brand) == true {
-                return true
+            guard let existingFood = try repository.getFoodIfInFridge(name: name, brand: brand) else {
+                isInFridge = false
+                return
             }
+            tempFood = existingFood
+            isInFridge = true
         } catch {
-            return false
         }
-        return false
     }
     
     func setupQuantity() {
-        if checkIfSaved(name: foodTitle.text ?? "", brand: brandLabel.text ?? "") == true {
+        if isInFridge {
             quantityLabel.text = self.delegate?.getFoodQuantity(name: foodTitle.text ?? "")
         } else {
             quantityLabel.text = String(defaultQuantity)
@@ -75,26 +76,28 @@ class FoodTableViewCell: UITableViewCell {
     }
     
     @IBAction func fridgeButtonAction(_ sender: Any) {
-        checkIfFridged()
+        updateFridge()
     }
     
     @IBAction func minusButtonAction(_ sender: Any) {
-        var newValue = Int(quantityLabel.text!)
+        let newValue = Int(quantityLabel.text!)
         if newValue! <= 1 {
             quantityLabel.text = "1"
         } else {
             let finalValue = newValue! - 1
             quantityLabel.text = String(finalValue)
         }
+        self.delegate?.updateFood(name: foodTitle.text ?? "", quantity: quantityLabel.text ?? "", cell: self)
     }
     
     @IBAction func addButtonAction(_ sender: Any) {
-        var newValue = Int(quantityLabel.text!)
+        let newValue = Int(quantityLabel.text!)
         let finalValue = newValue! + 1
         quantityLabel.text = String(finalValue)
+        self.delegate?.updateFood(name: foodTitle.text ?? "", quantity: quantityLabel.text ?? "", cell: self)
     }
     
-    func checkIfFridged() {
+    func updateFridge() {
         guard let simpleFood = tempFood else { return }
         if !isInFridge {
             addFood(food: simpleFood)

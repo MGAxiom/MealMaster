@@ -1,0 +1,1380 @@
+{
+    "text": "Butter",
+    "parsed": [
+        {
+            "food": {
+                "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+                "label": "Butter",
+                "knownAs": "butter",
+                "nutrients": {
+                    "ENERC_KCAL": 717.0,
+                    "PROCNT": 0.85,
+                    "FAT": 81.1,
+                    "CHOCDF": 0.06,
+                    "FIBTG": 0.0
+                },
+                "category": "Generic foods",
+                "categoryLabel": "food",
+                "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+            }
+        }
+    ],
+    "hints": [
+        {
+            "food": {
+                "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+                "label": "Butter",
+                "knownAs": "butter",
+                "nutrients": {
+                    "ENERC_KCAL": 717.0,
+                    "PROCNT": 0.85,
+                    "FAT": 81.1,
+                    "CHOCDF": 0.06,
+                    "FIBTG": 0.0
+                },
+                "category": "Generic foods",
+                "categoryLabel": "food",
+                "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 10.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_unit",
+                    "label": "Whole",
+                    "weight": 113.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_stick",
+                    "label": "Stick",
+                    "weight": 113.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cube",
+                    "label": "Cube",
+                    "weight": 28.4
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_knob",
+                    "label": "Knob",
+                    "weight": 28.4
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_piece",
+                    "label": "Piece",
+                    "weight": 14.2
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pat",
+                    "label": "Pat",
+                    "weight": 5.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_slice",
+                    "label": "Slice",
+                    "weight": 5.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_tablespoon",
+                    "label": "Tablespoon",
+                    "weight": 14.2
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cup",
+                    "label": "Cup",
+                    "weight": 227.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_default",
+                    "weight": 0.0136
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_awz3iefajbk1fwahq9logahmgltj",
+                "label": "Unsalted Butter",
+                "knownAs": "butter",
+                "nutrients": {
+                    "ENERC_KCAL": 717.0,
+                    "PROCNT": 0.85,
+                    "FAT": 81.1,
+                    "CHOCDF": 0.06,
+                    "FIBTG": 0.0
+                },
+                "category": "Generic foods",
+                "categoryLabel": "food",
+                "image": "https://www.edamam.com/food-img/713/71397239b670d88c04faa8d05035cab4.jpg"
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 10.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_unit",
+                    "label": "Whole",
+                    "weight": 113.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_stick",
+                    "label": "Stick",
+                    "weight": 113.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cube",
+                    "label": "Cube",
+                    "weight": 28.4
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_knob",
+                    "label": "Knob",
+                    "weight": 28.4
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_piece",
+                    "label": "Piece",
+                    "weight": 14.2
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pat",
+                    "label": "Pat",
+                    "weight": 5.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_slice",
+                    "label": "Slice",
+                    "weight": 5.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_tablespoon",
+                    "label": "Tablespoon",
+                    "weight": 14.2
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cup",
+                    "label": "Cup",
+                    "weight": 227.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_default",
+                    "weight": 0.0136
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_attlvhbbj5fyqbboavlvuayaoxml",
+                "label": "Butter, Clarified Butter (Ghee)",
+                "knownAs": "Butter, Clarified butter (ghee)",
+                "nutrients": {
+                    "ENERC_KCAL": 900.0,
+                    "PROCNT": 0.0,
+                    "FAT": 100.0,
+                    "CHOCDF": 0.0,
+                    "FIBTG": 0.0
+                },
+                "category": "Generic foods",
+                "categoryLabel": "food"
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_a2n74euakdjy87axf1rvnascbg4l",
+                "label": "Butter Cookies, Butter",
+                "knownAs": "BUTTER COOKIES, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 500.0,
+                    "PROCNT": 6.670000076293945,
+                    "FAT": 26.670000076293945,
+                    "CHOCDF": 66.66999816894531,
+                    "FIBTG": 3.299999952316284
+                },
+                "brand": "Bauducco",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "WHEAT FLOUR; SUGAR; PALM OIL; BUTTER (CREAM); GRATED COCONUT; CHOCOLATE CHIPS (SUGAR; COCOA PASTE; COCOA BUTTER AND SOY LECITHIN); CORN STARCH; DEXTROSE; GLUCOSE-FRUCTOSE SYRUP; SALT; NATURAL FLAVORS; BAKING SODA; AMMONIUM BICARBONATE.",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 30.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cookie",
+                        "label": "Cookie",
+                        "quantity": 3.5
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 30.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cookie",
+                    "label": "Cookie",
+                    "weight": 8.571428571428571
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_bigxbjpbmbhgoqbqbxnwqbzteiqp",
+                "label": "Butter Popcorn, Butter",
+                "knownAs": "BUTTER POPCORN, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 536.0,
+                    "PROCNT": 10.710000038146973,
+                    "FAT": 28.56999969482422,
+                    "CHOCDF": 57.13999938964844,
+                    "FIBTG": 10.699999809265137
+                },
+                "brand": "Dishaka, LLC",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "POPCORN; BUTTER; SUNFLOWER AND/OR SAFFLOWER OIL; ORGANIC BUTTER FLAVOR; SEA SALT.",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                        "label": "Ounce",
+                        "quantity": 1.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 28.0
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_blf80hzaucfdz6ampaszob8bdzup",
+                "label": "Butter Popcorn, Butter",
+                "knownAs": "BUTTER POPCORN, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 500.0,
+                    "PROCNT": 10.710000038146973,
+                    "FAT": 28.56999969482422,
+                    "CHOCDF": 53.56999969482422,
+                    "FIBTG": 10.699999809265137
+                },
+                "brand": "SkinnyPop",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "POPCORN; SUNFLOWER OIL; ORGANIC WHEY; ORGANIC BUTTER; ORGANIC NON-FAT DRY MILK; SALT; NATURAL FLAVORS.",
+                "image": "https://www.edamam.com/food-img/74b/74b4013d6c12eabb74d62905ebe1ea5c.jpg",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 28.0
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 28.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cup",
+                    "label": "Cup",
+                    "weight": 8.615384615384615
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_bjs6r1oam8wb11brjx3q6au61t3w",
+                "label": "Butter Popcorn, Butter",
+                "knownAs": "BUTTER POPCORN, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 469.0,
+                    "PROCNT": 6.25,
+                    "FAT": 25.0,
+                    "CHOCDF": 53.119998931884766,
+                    "FIBTG": 6.199999809265137
+                },
+                "brand": "SkinnyPop",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "POPCORN; SUNFLOWER OIL; PALM OIL; SEA SALT; NATURAL NON-DAIRY BUTTER FLAVOR AND LACTIC ACID (FOR FLAVOR)",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_tablespoon",
+                        "label": "Tablespoon",
+                        "quantity": 2.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 32.0
+                    }
+                ],
+                "servingsPerContainer": 15.0
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 32.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_package",
+                    "label": "Package",
+                    "weight": 480.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_container",
+                    "label": "Container",
+                    "weight": 80.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_tablespoon",
+                    "label": "Tablespoon",
+                    "weight": 16.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_b2zavwubd8o1zia0h58fpaas1j6b",
+                "label": "Butter Popcorn, Butter",
+                "knownAs": "BUTTER POPCORN, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 469.0,
+                    "PROCNT": 6.25,
+                    "FAT": 25.0,
+                    "CHOCDF": 53.119998931884766,
+                    "FIBTG": 6.199999809265137
+                },
+                "brand": "SkinnyPop",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "POPCORN; SUNFLOWER OIL; PALM OIL; SEA SALT; NATURAL NON-DAIRY BUTTER FLAVOR AND LACTIC ACID (FOR FLAVOR)",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_tablespoon",
+                        "label": "Tablespoon",
+                        "quantity": 2.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 32.0
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 32.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_tablespoon",
+                    "label": "Tablespoon",
+                    "weight": 16.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_auef98nb8yh3v0bub2usmbfrs5tw",
+                "label": "Popcorn, Butter, Butter",
+                "knownAs": "POPCORN, BUTTER, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 607.0,
+                    "PROCNT": 7.139999866485596,
+                    "FAT": 46.43000030517578,
+                    "CHOCDF": 42.86000061035156,
+                    "FIBTG": 7.099999904632568
+                },
+                "brand": "OPEN ROAD SNACKS",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "POPCORN; BUTTER FLAVORED CORN OIL (CORN OIL; BETA CAROTENE [ADDED FOR COLOR]; NATURAL BUTTER FLAVOR); SALT.",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cup",
+                        "label": "Cup",
+                        "quantity": 2.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 28.0
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 28.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cup",
+                    "label": "Cup",
+                    "weight": 14.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_a8v1wx4bcmadxnbehc612b3duhmv",
+                "label": "Butter Popcorn, Butter",
+                "knownAs": "BUTTER POPCORN, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 536.0,
+                    "PROCNT": 7.139999866485596,
+                    "FAT": 32.13999938964844,
+                    "CHOCDF": 53.56999969482422,
+                    "FIBTG": 10.699999809265137
+                },
+                "brand": "The Kroger Co.",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "POPCORN VEGETABLE OIL (CONTAINS ONE OR MORE OF THE FOLLOWING: CORN; SUNFLOWER; OR CANOLA OIL); SALT; NATURAL BUTTER FLAVOR.",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 28.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                        "label": "Ounce",
+                        "quantity": 1.0
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_byzx9brbc4uwo4aq0mnkvby5aye8",
+                "label": "Butter Cookies, Butter",
+                "knownAs": "BUTTER COOKIES, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 500.0,
+                    "PROCNT": 6.670000076293945,
+                    "FAT": 23.329999923706055,
+                    "CHOCDF": 66.66999816894531,
+                    "FIBTG": 3.299999952316284
+                },
+                "brand": "Wal-Mart Stores, Inc.",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "WHEAT FLOUR; BUTTER (PASTEURIZED CREAM); SUGAR; CORNSTARCH GRATED COCONUT; GLUCOSE SYRUP; SALT; DEXTROSE; NATURAL FLAVORS; LEAVENING (AMMONIUM BICARBONATE; SODIUM BICARBONATE).",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 30.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cookie",
+                        "label": "Cookie",
+                        "quantity": 4.0
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 30.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cookie",
+                    "label": "Cookie",
+                    "weight": 7.5
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_b68fj9faswq8qnb0s1wh6bqrde27",
+                "label": "Butter Beans, Butter",
+                "knownAs": "BUTTER BEANS, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 77.0,
+                    "PROCNT": 4.619999885559082,
+                    "FAT": 0.7699999809265137,
+                    "CHOCDF": 13.850000381469727,
+                    "FIBTG": 4.599999904632568
+                },
+                "brand": "Eve Sales Company",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "BUTTER BEANS; WATER; SALT.",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cup",
+                        "label": "Cup",
+                        "quantity": 0.5
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 130.0
+                    }
+                ],
+                "servingsPerContainer": 3.0
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 130.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_package",
+                    "label": "Package",
+                    "weight": 390.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cup",
+                    "label": "Cup",
+                    "weight": 260.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_ac4jr5xbb9v3nob0tlrmlape27h7",
+                "label": "Butter Popcorn, Butter",
+                "knownAs": "BUTTER POPCORN, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 607.0,
+                    "PROCNT": 7.139999866485596,
+                    "FAT": 53.56999969482422,
+                    "CHOCDF": 35.709999084472656,
+                    "FIBTG": 10.699999809265137
+                },
+                "brand": "UTZ Quality Foods, Inc.",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "POPCORN; VEGETABLE OIL (CONTAINS ONE OR MORE OF THE FOLLOWING: COTTONSEED OIL; CORN OIL; CANOLA OIL OR SUNFLOWER OIL); SALT; NATURAL BUTTER FLAVOR; BETA CAROTENE (FOR COLOR).",
+                "image": "https://www.edamam.com/food-img/6e0/6e03a24561b7e319b6d88d83c71aad10.png",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 28.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                        "label": "Ounce",
+                        "quantity": 1.0
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_b1ouduaa15n9hqbt2nkqrbjs0iai",
+                "label": "Butter Pretzels, Butter",
+                "knownAs": "BUTTER PRETZELS, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 393.0,
+                    "PROCNT": 7.139999866485596,
+                    "FAT": 5.360000133514404,
+                    "CHOCDF": 75.0,
+                    "FIBTG": 3.5999999046325684
+                },
+                "brand": "UTZ Quality Foods, LLC",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "WHEAT FLOUR; VEGETABLE OIL (CORN OIL; SUNFLOWER OIL; OR CANOLA OIL); SALT; MALT SYRUP (DERIVED FROM CORN AND MALTED BARLEY); ARTIFICIAL BUTTER FLAVOR; YEAST; OLEORESIN PAPRIKA (COLOR); BAKING SODA.",
+                "image": "https://www.edamam.com/food-img/c73/c73ab74218545cdef1b9a7925058dc8f.jpg",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                        "label": "Ounce",
+                        "quantity": 1.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 28.0
+                    }
+                ],
+                "servingsPerContainer": 12.000000000000002
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_package",
+                    "label": "Package",
+                    "weight": 340.19427750000006
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_blt0htaa3y0py4bskh0bfaywkcx2",
+                "label": "Butter Crackers, Butter",
+                "knownAs": "BUTTER CRACKERS, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 414.0,
+                    "PROCNT": 6.900000095367432,
+                    "FAT": 10.34000015258789,
+                    "CHOCDF": 75.86000061035156,
+                    "FIBTG": 3.4000000953674316
+                },
+                "brand": "Hy-Vee, Inc.",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "UNBLEACHED WHEAT FLOUR; EXPELLER PRESSED CANOLA OIL; SUGAR; MALT; SEA SALT; AMMONIUM CARBONATE; SODIUM BICARBONATE; NATURAL BUTTER FLAVOR (MODIFIED CORN STARCH; CORN MALTODEXTRIN; FRACTIONATED COCONUT OIL); MONOCALCIUM PHOSPHATE; PROTEASE (DOUGH CONDITIONER).",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 29.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cracker",
+                        "label": "Cracker",
+                        "quantity": 8.0
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 29.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cracker",
+                    "label": "Cracker",
+                    "weight": 3.625
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_ajiwk84bsyw02jbxj8d5gbb51cbb",
+                "label": "Butter Popcorn, Butter",
+                "knownAs": "BUTTER POPCORN, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 450.0,
+                    "PROCNT": 10.0,
+                    "FAT": 30.0,
+                    "CHOCDF": 50.0,
+                    "FIBTG": 10.0
+                },
+                "brand": "FARMER JON'S",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "POPCORN; COCONUT OIL; SALT; BETA CAROTENE AND ARTIFICIAL BUTTER FLAVOR.",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cup",
+                        "label": "Cup",
+                        "quantity": 1.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 10.0
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 10.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_cup",
+                    "label": "Cup",
+                    "weight": 10.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_audpgkbau8gj49al3ljadaluwgd5",
+                "label": "Butter Mints, Butter",
+                "knownAs": "BUTTER MINTS, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 364.0,
+                    "PROCNT": 0.0,
+                    "FAT": 0.0,
+                    "CHOCDF": 90.91000366210938
+                },
+                "brand": "Dillon Companies, Inc.",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "SUGAR; WATER; INVERT SUGAR; CORN SYRUP; CONTAINS LESS THAN 2% OF EACH OF THE FOLLOWING: PALM OIL; SORBITOL; BUTTER WITH NATURAL FLAVOR (PASTEURIZED CREAM; NATURAL FLAVORINGS); SALT; PEPPERMINT OIL; SOY LECITHIN; SODIUM BENZOATE; AND TBHQ (PRESERVATIVES).",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 11.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_piece",
+                        "label": "Piece",
+                        "quantity": 3.0
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 11.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_piece",
+                    "label": "Piece",
+                    "weight": 3.6666666666666665
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_bymoi5cbj1roc7by25s7abdx0skk",
+                "label": "Buttered Spinzels, Buttered",
+                "knownAs": "BUTTERED SPINZELS, BUTTERED",
+                "nutrients": {
+                    "ENERC_KCAL": 393.0,
+                    "PROCNT": 10.710000038146973,
+                    "FAT": 5.360000133514404,
+                    "CHOCDF": 78.56999969482422,
+                    "FIBTG": 3.5999999046325684
+                },
+                "brand": "Kitchen Cooked",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "ENRICHED WHEAT FLOUR (WHEAT FLOUR; NIACIN; REDUCED IRON; THIAMINE MONONITRATE; RIBOFLAVIN; FOLIC ACID); VEGETABLE OIL (MAY CONTAIN ONE OR MORE OF THE FOLLOWING: CORN; CANOLA; COTTONSEED; SOYBEAN); SALT; ARTIFICIAL BUTTER FLAVOR; CORN SYRUP; YEAST.",
+                "image": "https://www.edamam.com/food-img/bc9/bc9f5aa477c9dfb59f09b9d01f7ea609.jpg",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 28.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                        "label": "Ounce",
+                        "quantity": 1.0
+                    }
+                ],
+                "servingsPerContainer": 15.0
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_piece",
+                    "label": "Piece",
+                    "weight": 1.2886146875
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_package",
+                    "label": "Package",
+                    "weight": 425.242846875
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_axf96w9aehd74qbutwcnsainjau4",
+                "label": "Butter Popcorn, Butter",
+                "knownAs": "BUTTER POPCORN, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 500.0,
+                    "PROCNT": 10.710000038146973,
+                    "FAT": 28.56999969482422,
+                    "CHOCDF": 53.56999969482422,
+                    "FIBTG": 10.699999809265137
+                },
+                "brand": "Amplify Snack Brands, Inc.",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "POPCORN; SUNFLOWER OIL; ORGANIC WHEY; ORGANIC BUTTER; ORGANIC NON-FAT DRY MILK; SALT; NATURAL FLAVORS.",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 28.0
+                    }
+                ],
+                "servingsPerContainer": 1.0
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 28.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_package",
+                    "label": "Package",
+                    "weight": 28.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_atbrcbibrduirvajvxmjwa4p8e9s",
+                "label": "Butter Croissants, Butter",
+                "knownAs": "BUTTER CROISSANTS, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 352.0,
+                    "PROCNT": 7.039999961853027,
+                    "FAT": 19.719999313354492,
+                    "CHOCDF": 38.029998779296875,
+                    "FIBTG": 1.399999976158142
+                },
+                "brand": "Target Stores",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "ENRICHED WHEAT FLOUR (WHEAT FLOUR; NIACIN; REDUCED IRON; THIAMINE MONONITRATE; RIBOFLAVIN; FOLIC ACID); WATER; BUTTER (CREAM); SUGAR; YEAST; EGGS; NONFAT DRY MILK; SALT; NATURAL FLAVOR; WHEAT GLUTEN; WHEY PROTEIN CONCENTRATE; DATEM; INACTIVATED YEAST; MONO- AND DIGLYCERIDES; XANTHAN GUM; L-CYSTEINE HYDROCHLORIDE; ENZYME; CANOLA OIL; ASCORBIC ACID; SODIUM CASEINATE.",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_croissant",
+                        "label": "Croissant",
+                        "quantity": 1.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 71.0
+                    }
+                ]
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_croissant",
+                    "label": "Croissant",
+                    "weight": 71.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 71.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        },
+        {
+            "food": {
+                "foodId": "food_bffjcy7auezn0sbg25qgdamzfbkf",
+                "label": "Butter Bread, Butter",
+                "knownAs": "BUTTER BREAD, BUTTER",
+                "nutrients": {
+                    "ENERC_KCAL": 269.0,
+                    "PROCNT": 7.690000057220459,
+                    "FAT": 1.9199999570846558,
+                    "CHOCDF": 50.0,
+                    "FIBTG": 0.0
+                },
+                "brand": "Bimbo Bakeries USA, Inc.",
+                "category": "Packaged foods",
+                "categoryLabel": "food",
+                "foodContentsLabel": "INGREDIENTS: ENRICHED WHEAT FLOUR [FLOUR; MALTED BARLEY FLOUR; REDUCED IRON; NIACIN; THIAMIN MONONITRATE (VITAMIN B1); RIBOFLAVIN (VITAMIN B2); FOLIC ACID]; WATER; SUGAR; YEAST; WHEAT GLUTEN; SALT; BUTTER (CREAM; SALT)**; PRESERVATIVES (CALCIUM PROPIONATE; SORBIC ACID); DATEM; MONOGLYCERIDES; NATURAL FLAVORS; CELLULOSE GUM; MONOCALCIUM PHOSPHATE; CORN FLOUR; SOY LECITHIN; CITRIC ACID; GRAIN VINEGAR; ANNATTO AND TURMERIC.",
+                "image": "https://www.edamam.com/food-img/a88/a88bccf362fae2d2871ce92802061405.jpg",
+                "servingSizes": [
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_slice",
+                        "label": "Slice",
+                        "quantity": 1.0
+                    },
+                    {
+                        "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                        "label": "Gram",
+                        "quantity": 26.0
+                    }
+                ],
+                "servingsPerContainer": 22.0
+            },
+            "measures": [
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_serving",
+                    "label": "Serving",
+                    "weight": 26.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_slice",
+                    "label": "Slice",
+                    "weight": 26.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_package",
+                    "label": "Package",
+                    "weight": 572.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_gram",
+                    "label": "Gram",
+                    "weight": 1.0
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_ounce",
+                    "label": "Ounce",
+                    "weight": 28.349523125
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
+                    "label": "Pound",
+                    "weight": 453.59237
+                },
+                {
+                    "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
+                    "label": "Kilogram",
+                    "weight": 1000.0
+                }
+            ]
+        }
+    ],
+    "_links": {
+        "next": {
+            "title": "Next page",
+            "href": "https://api.edamam.com/api/food-database/v2/parser?session=42&app_id=8798566c&app_key=b906cefffc4ebe498b42d62c5f9e556d&ingr=Butter&nutrition-type=cooking"
+        }
+    }
+}
