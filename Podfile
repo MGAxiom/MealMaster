@@ -6,11 +6,8 @@ target 'MealMaster' do
   use_frameworks!
 
   # Pods for MealMaster
-	pod 'SwiftLint'
 	pod 'Alamofire'
 	pod 'AlamofireImage', '~> 4.1'
-	pod 'SwiftLint'
-	pod 'Firebase/Core'
 
   target 'MealMasterTests' do
     inherit! :search_paths

@@ -64,6 +64,7 @@
 		89D3A8022A57023900BE11DD /* MealMasterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A8012A57023900BE11DD /* MealMasterUITests.swift */; };
 		89D3A8042A57023900BE11DD /* MealMasterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A8032A57023900BE11DD /* MealMasterUITestsLaunchTests.swift */; };
 		89D3A8172A5703D500BE11DD /* Main Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A8162A5703D500BE11DD /* Main Storyboard.storyboard */; };
+		89FED4B52AB48FDD009B652D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 89FED4B42AB48FDD009B652D /* FirebaseCrashlytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3F565817FE067C085D413E /* Pods_MealMaster.framework in Frameworks */,
+				89FED4B52AB48FDD009B652D /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +377,9 @@
 			dependencies = (
 			);
 			name = MealMaster;
+			packageProductDependencies = (
+				89FED4B42AB48FDD009B652D /* FirebaseCrashlytics */,
+			);
 			productName = MealMaster;
 			productReference = 89D3A7DA2A57023700BE11DD /* MealMaster.app */;
 			productType = "com.apple.product-type.application";
@@ -450,6 +455,9 @@
 				Base,
 			);
 			mainGroup = 89D3A7D12A57023700BE11DD;
+			packageReferences = (
+				89FED4B32AB48FDD009B652D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 89D3A7DB2A57023700BE11DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -541,6 +549,11 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(BUILT_PRODUCTS_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH)",
 			);
 			outputFileListPaths = (
 			);
@@ -548,7 +561,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 		A3F08D2493B57F801B739301 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -830,6 +843,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7366265M49;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
@@ -858,6 +872,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7366265M49;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
@@ -998,6 +1013,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		89FED4B32AB48FDD009B652D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		89FED4B42AB48FDD009B652D /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89FED4B32AB48FDD009B652D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		89D3A7E62A57023700BE11DD /* MealMaster.xcdatamodeld */ = {
