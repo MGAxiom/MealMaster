@@ -42,14 +42,22 @@ class PlanningCollectionViewCell: UICollectionViewCell {
                 self,
                 action: #selector(mealButtonPressed),
                 for: .touchUpInside)
-            button.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
-                var outgoing = incoming
-                outgoing.font = UIFont.systemFont(ofSize: 13)
-                return outgoing
+            if #available(iOS 15.0, *) {
+                button.configuration?.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+                    var outgoing = incoming
+                    outgoing.font = UIFont.systemFont(ofSize: 13)
+                    return outgoing
+                }
+            } else {
+                // Fallback on earlier versions
             }
             button.clipsToBounds = true
             button.titleLabel?.clipsToBounds = true
-            button.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+            if #available(iOS 15.0, *) {
+                button.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+            } else {
+                // Fallback on earlier versions
+            }
         }
         
         deleteButton.forEach { button in
