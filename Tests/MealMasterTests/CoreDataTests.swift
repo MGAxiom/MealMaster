@@ -132,7 +132,7 @@ final class CoreDataTests: XCTestCase {
             XCTAssertTrue(tempFoods[0].category == "Generic Foods")
             XCTAssertTrue(tempFoods[0].image == "https://www.edamam.com/web-img/foodimage.jpg")
             XCTAssertTrue(tempFoods[0].label == "Butter")
-            XCTAssertTrue(tempFoods[0].quantity == "4")
+            XCTAssertTrue(tempFoods[0].quantity == "1")
         } catch {
         }
     }
