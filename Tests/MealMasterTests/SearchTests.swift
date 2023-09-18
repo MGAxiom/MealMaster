@@ -11,17 +11,23 @@ import Alamofire
 
 final class MealMasterTests: XCTestCase {
 
-//    override func setUp() {
-//        super.setUp()
-//    }
-//
+    override func setUp() {
+        super.setUp()
+        UserSettings.currentSettings.add(diet: Diet.vegan)
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        UserSettings.currentSettings.add(diet: Diet.omnivore)
+    }
+
     //MARK: RecipeAPI tests
     
     func testGetRecipeShouldPostSuccessCallBackIfNoErrorAndCorrectData() {
         let fakeResponse = FakeResponse(response: FakeResponseData.responseOK, data: FakeResponseData.correctRecipeData, error: nil)
         let recipeSessionFake = RecipeSessionFake(fakeResponse: fakeResponse)
         let recipeSearchService = RecipeSearch(session: recipeSessionFake)
-        UserSettings.currentSettings.add(diet: Diet.vegan)
+        
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         recipeSearchService.recipeAPI(userInput: "tomato") { (result) in
             switch result {
