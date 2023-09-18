@@ -26,13 +26,33 @@ class PlanningCollectionViewCell: UICollectionViewCell {
         self.delegate?.mealDeleteBtnTapped(meal: sender.meal, cell: self)
     }
     
+    enum planningCases {
+        case Breakfast
+        case Lunch
+        case Break
+        case Dinner
+        var info: String {
+            switch self {
+                
+            case .Breakfast:
+                return "Breakfast"
+            case .Lunch:
+                return "Lunch"
+            case .Break:
+                return "Break"
+            case .Dinner:
+                return "Dinner"
+            }
+        }
+    }
+    
     func configurePlanningCell(day: PlanningDay?, date: String, delegate: PlanningCellDelegate) {
         self.delegate = delegate
         self.day = day
-        mealLabels[0].text = "Breakfast"
-        mealLabels[1].text = "Lunch"
-        mealLabels[2].text = "Break"
-        mealLabels[3].text = "Dinner"
+        mealLabels[0].text = planningCases.Breakfast.info
+        mealLabels[1].text = planningCases.Lunch.info
+        mealLabels[2].text = planningCases.Break.info
+        mealLabels[3].text = planningCases.Dinner.info
         mealLabels.forEach { label in
             label.font = UIFont.systemFont(ofSize: 16)
         }
@@ -78,16 +98,16 @@ class PlanningCollectionViewCell: UICollectionViewCell {
         }
         for planningMeal in meals.allObjects as! [PlanningMeal] {
             switch planningMeal.meal {
-            case "Breakfast":
+            case planningCases.Breakfast.info:
                 mealButton[0].recipe = planningMeal.recipe
                 deleteButton[0].meal = planningMeal
-            case "Lunch":
+            case planningCases.Lunch.info:
                 mealButton[1].recipe = planningMeal.recipe
                 deleteButton[1].meal = planningMeal
-            case "Break":
+            case planningCases.Break.info:
                 mealButton[2].recipe = planningMeal.recipe
                 deleteButton[2].meal = planningMeal
-            case "Dinner":
+            case planningCases.Dinner.info:
                 mealButton[3].recipe = planningMeal.recipe
                 deleteButton[3].meal = planningMeal
             default:

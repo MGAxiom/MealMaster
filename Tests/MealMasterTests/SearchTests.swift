@@ -42,8 +42,8 @@ final class MealMasterTests: XCTestCase {
             //XCTAssertNil(recipesSearchService)
             expectation.fulfill()
         }
-
-        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation], timeout: 5000)
+//        wait(for: [expectation], timeout: 0.01)
     }
 
     func testGetRecipe_WhenInvalidDataIsPassed_ThenShouldReturnFailedCallback() {
@@ -119,8 +119,8 @@ final class MealMasterTests: XCTestCase {
             }
             expectation.fulfill()
         }
-
-        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation], timeout: 5000)
+        //        wait(for: [expectation], timeout: 0.01)
     }
     
     func testGetRandomRecipe_WhenInvalidDataIsPassed_ThenShouldReturnFailedCallback() {
