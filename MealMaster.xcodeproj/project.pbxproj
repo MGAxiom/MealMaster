@@ -65,6 +65,8 @@
 		89D3A8042A57023900BE11DD /* MealMasterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D3A8032A57023900BE11DD /* MealMasterUITestsLaunchTests.swift */; };
 		89D3A8172A5703D500BE11DD /* Main Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D3A8162A5703D500BE11DD /* Main Storyboard.storyboard */; };
 		89FED4B52AB48FDD009B652D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 89FED4B42AB48FDD009B652D /* FirebaseCrashlytics */; };
+		89FED4B72AB8940F009B652D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 89FED4B62AB8940F009B652D /* FirebaseAnalytics */; };
+		89FED4B92AB89418009B652D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 89FED4B82AB89418009B652D /* FirebaseCrashlytics */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +169,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89FED4B92AB89418009B652D /* FirebaseCrashlytics in Frameworks */,
+				89FED4B72AB8940F009B652D /* FirebaseAnalytics in Frameworks */,
 				385F2837E89E6EBC6174EF93 /* Pods_MealMasterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +403,10 @@
 				89D3A7F52A57023900BE11DD /* PBXTargetDependency */,
 			);
 			name = MealMasterTests;
+			packageProductDependencies = (
+				89FED4B62AB8940F009B652D /* FirebaseAnalytics */,
+				89FED4B82AB89418009B652D /* FirebaseCrashlytics */,
+			);
 			productName = MealMasterTests;
 			productReference = 89D3A7F32A57023800BE11DD /* MealMasterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -903,6 +911,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7366265M49;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AlamofireImage/AlamofireImage.framework/Headers\"",
+					HEADER_SEARCH_PATHS,
+					"=",
+					"\"${PODS_ROOT}/Firebase/CoreOnly/Sources\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.maximegirard.MealMasterTests;
@@ -924,6 +940,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7366265M49;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AlamofireImage/AlamofireImage.framework/Headers\"",
+					HEADER_SEARCH_PATHS,
+					"=",
+					"\"${PODS_ROOT}/Firebase/CoreOnly/Sources\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.maximegirard.MealMasterTests;
@@ -1027,6 +1051,16 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		89FED4B42AB48FDD009B652D /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89FED4B32AB48FDD009B652D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		89FED4B62AB8940F009B652D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89FED4B32AB48FDD009B652D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		89FED4B82AB89418009B652D /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 89FED4B32AB48FDD009B652D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;

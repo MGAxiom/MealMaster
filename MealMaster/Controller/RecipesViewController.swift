@@ -60,6 +60,7 @@ class RecipesViewController: UIViewController {
         self.recipesListTV.isHidden = false
         self.searchButton.isHidden = true
         self.activityIndicatorW.isHidden = false
+        fatalError("Triggered crash")
         fetchRecipes()
     }
     

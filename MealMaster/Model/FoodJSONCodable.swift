@@ -20,8 +20,6 @@ struct FoodSearchResult: Codable {
         }
     }
     
-//    let links: Links?
-    
     enum CodingKeys: String, CodingKey {
         case text, parsed, hints
 //        case links
@@ -87,17 +85,6 @@ struct Measure: Codable {
     let label: String?
     let weight: Double?
 }
-
-//// MARK: - Links
-//struct Links: Codable {
-//    let next: Next?
-//}
-//
-//// MARK: - Next
-//struct Next: Codable {
-//    let title: String?
-//    let href: String?
-//}
 
 // MARK: - Parsed
 struct Parsed: Codable {

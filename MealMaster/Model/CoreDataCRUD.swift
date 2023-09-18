@@ -69,11 +69,7 @@ final class CoreDataCRUD {
     
     func checkIfPlanned(date: String, meal: String) throws -> Bool {
         var tempDay: PlanningDay?
-        do {
-            tempDay = try get(date: date)
-        } catch {
-            tempDay = nil
-        }
+        tempDay = try get(date: date)
         if tempDay != nil {
             let request:  NSFetchRequest<PlanningMeal> = PlanningMeal.fetchRequest()
             request.predicate = NSPredicate(format: "meal == %@", meal)
