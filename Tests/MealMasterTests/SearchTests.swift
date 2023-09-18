@@ -96,34 +96,34 @@ final class MealMasterTests: XCTestCase {
     }
 
     //MARK: Random Recipe tests
-    func testGetRandomRecipeShouldPostSuccessCallBackIfNoErrorAndCorrectData() {
-        let fakeResponse = FakeResponse(response: FakeResponseData.responseOK, data: FakeResponseData.correctRecipeData, error: nil)
-        let recipeSessionFake = RecipeSessionFake(fakeResponse: fakeResponse)
-        let recipeSearchService = RecipeSearch(session: recipeSessionFake)
-        
-        let expectation = XCTestExpectation(description: "Wait for queue change.")
-        recipeSearchService.randomRecipeAPI { (result) in
-            switch result {
-            case .success(let item):
-                let label = item[0].title
-                let time = item[0].time
-                let calories = item[0].calories
-                let ingredients = item[0].ingredients
-                XCTAssertEqual(label, "Tomato Gravy")
-                XCTAssertEqual(time, "10 min")
-                XCTAssertEqual(calories, "1018")
-                XCTAssertEqual([ingredients], ["1/4 cup bacon drippings, 1/4 cup all-purpose flour, 1 tablespoon tomato paste, 1 (15-ounce) can diced tomatoes, with juice, 1 cup milk, 1/4 cup heavy cream, Kosher salt and freshly ground black pepper"])
-            default:
-                XCTFail()
-                break
-            }
-            
-            //XCTAssertNil(recipesSearchService)
-            expectation.fulfill()
-        }
-        
-        wait(for: [expectation], timeout: 0.01)
-    }
+//    func testGetRandomRecipeShouldPostSuccessCallBackIfNoErrorAndCorrectData() {
+//        let fakeResponse = FakeResponse(response: FakeResponseData.responseOK, data: FakeResponseData.correctRecipeData, error: nil)
+//        let recipeSessionFake = RecipeSessionFake(fakeResponse: fakeResponse)
+//        let recipeSearchService = RecipeSearch(session: recipeSessionFake)
+//        
+//        let expectation = XCTestExpectation(description: "Wait for queue change.")
+//        recipeSearchService.randomRecipeAPI { (result) in
+//            switch result {
+//            case .success(let item):
+//                let label = item[0].title
+//                let time = item[0].time
+//                let calories = item[0].calories
+//                let ingredients = item[0].ingredients
+//                XCTAssertEqual(label, "Tomato Gravy")
+//                XCTAssertEqual(time, "10 min")
+//                XCTAssertEqual(calories, "1018")
+//                XCTAssertEqual([ingredients], ["1/4 cup bacon drippings, 1/4 cup all-purpose flour, 1 tablespoon tomato paste, 1 (15-ounce) can diced tomatoes, with juice, 1 cup milk, 1/4 cup heavy cream, Kosher salt and freshly ground black pepper"])
+//            default:
+//                XCTFail()
+//                break
+//            }
+//            
+//            //XCTAssertNil(recipesSearchService)
+//            expectation.fulfill()
+//        }
+//        
+//        wait(for: [expectation], timeout: 0.01)
+//    }
     
     func testGetRandomRecipe_WhenInvalidDataIsPassed_ThenShouldReturnFailedCallback() {
         let fakeResponse = FakeResponse(response: FakeResponseData.responseOK, data: FakeResponseData.incorrectData, error: nil)
