@@ -1361,7 +1361,7 @@
                 {
                     "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_pound",
                     "label": "Pound",
-                    "weight": 453.59237
+                    "weight": 453.59232
                 },
                 {
                     "uri": "http://www.edamam.com/ontologies/edamam.owl#Measure_kilogram",
