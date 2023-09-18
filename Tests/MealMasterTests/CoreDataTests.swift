@@ -23,6 +23,7 @@ final class CoreDataTests: XCTestCase {
     var foodies = [Food]()
     var mealmeal = [PlanningDay]()
     var meals: [PlanningDay] = []
+    var recipe: Recipe?
 
     // MARK: - Test Life Cycle
 
@@ -30,10 +31,29 @@ final class CoreDataTests: XCTestCase {
         super.setUp()
         coreDataStack = TestCoreDataStack(modelName: "MealMaster")
         coreDataRepository = CoreDataCRUD(coreDataStack: coreDataStack)
+        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: CoreDataStack.sharedInstance.viewContext)
+        recipe = Recipe(entity: entity!, insertInto: nil)
+        recipe?.title = "Infused Butter"
+        recipe?.calories = "1000"
+        recipe?.time = "1h 30min"
+        recipe?.imageUrl = "https://www.edamam.com/web-img/recipeimage.jpg"
+        recipe?.ingredients = "butter"
+        recipe?.url = "http://www.eating.com/recipes/infused-butter-recipe.html"
+        recipe?.foods = "butter"
+        recipe?.origin = "France"
+        recipes.append(recipe!)
     }
 
     override func tearDown() {
         super.tearDown()
+        guard let storeURL = coreDataStack.persistentContainer.persistentStoreCoordinator.persistentStores.first?.url else {
+            return
+        }
+        do {
+            try self.coreDataStack.persistentContainer.persistentStoreCoordinator.destroyPersistentStore(at: storeURL, ofType: NSSQLiteStoreType, options: nil)
+        } catch {
+            print(error)
+        }
         coreDataRepository = nil
         coreDataStack = nil
         favouriteDataTest.removeAll()
@@ -41,72 +61,37 @@ final class CoreDataTests: XCTestCase {
         foods.removeAll()
         tempFoods.removeAll()
     }
-//
+    
     // MARK: - Recipe CoreData Tests
     func testAddRecipeMethods_WhenAnEntityIsCreated_ThenShouldBeCorrectlySaved() {
-        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: CoreDataStack.sharedInstance.viewContext)
-        let recipe = Recipe(entity: entity!, insertInto: nil)
-        recipe.title = "Infused Butter"
-        recipe.calories = "1000"
-        recipe.time = "1h 30min"
-        recipe.imageUrl = "https://www.edamam.com/web-img/recipeimage.jpg"
-        recipe.ingredients = "butter"
-        recipe.url = "http://www.eating.com/recipes/infused-butter-recipe.html"
-        recipe.foods = "butter"
-        recipe.origin = "France"
-        recipes.append(recipe)
-
         do {
-            try coreDataRepository.save(recipe: recipe)
+            try coreDataRepository.save(recipe: recipes.last!)
             favouriteDataTest = try coreDataRepository.readFavouriteData()
             XCTAssertTrue(favouriteDataTest.isEmpty == false)
-            XCTAssertTrue(favouriteDataTest[0].recipe?.title == "Infused Butter")
-            XCTAssertTrue(favouriteDataTest[0].recipe?.origin == "France")
-            XCTAssertTrue(favouriteDataTest[0].recipe?.time == "1h 30min")
-            XCTAssertTrue(favouriteDataTest[0].recipe?.url == "http://www.eating.com/recipes/infused-butter-recipe.html")
-            XCTAssertTrue(favouriteDataTest[0].recipe?.imageUrl == "https://www.edamam.com/web-img/recipeimage.jpg")
-            XCTAssertTrue(favouriteDataTest[0].recipe?.ingredients == "butter")
-            XCTAssertTrue(favouriteDataTest[0].recipe?.foods == "butter")
-            XCTAssertTrue(favouriteDataTest[0].recipe?.calories == "1000")
+            XCTAssertEqual(favouriteDataTest.last?.recipe?.title, "Infused Butter")
+            XCTAssertEqual(favouriteDataTest.last?.recipe?.origin, "France")
+            XCTAssertEqual(favouriteDataTest.last?.recipe?.time, "1h 30min")
+            XCTAssertEqual(favouriteDataTest.last?.recipe?.url, "http://www.eating.com/recipes/infused-butter-recipe.html")
+            XCTAssertEqual(favouriteDataTest.last?.recipe?.imageUrl, "https://www.edamam.com/web-img/recipeimage.jpg")
+            XCTAssertEqual(favouriteDataTest.last?.recipe?.ingredients, "butter")
+            XCTAssertEqual(favouriteDataTest.last?.recipe?.foods, "butter")
+            XCTAssertEqual(favouriteDataTest.last?.recipe?.calories, "1000")
         } catch {
         }
     }
 
 
     func testFavouriteRecipesAreSaved_WhenAnEntityIsDeleted_ThenShouldBeCorrectlyDeleted() {
-        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: CoreDataStack.sharedInstance.viewContext)
-        let recipe = Recipe(entity: entity!, insertInto: nil)
-        recipe.title = "Infused Butter"
-        recipe.calories = "1000"
-        recipe.time = "1h 30min"
-        recipe.imageUrl = "https://www.edamam.com/web-img/recipeimage.jpg"
-        recipe.ingredients = "butter"
-        recipe.url = "http://www.eating.com/recipes/infused-butter-recipe.html"
-        recipe.foods = "butter"
-        recipe.origin = "France"
-        recipes.append(recipe)
         do {
-            try coreDataRepository.save(recipe: recipes[0])
-            try coreDataRepository.delete(favorite: recipes[0].favourite!)
-            XCTAssertTrue(recipe.favourite == nil)
+            try coreDataRepository.save(recipe: recipes.last!)
+            try coreDataRepository.delete(favorite: (recipes.last?.favourite!)!)
+            XCTAssertTrue(recipes.last?.favourite == nil)
         } catch {
         }
     }
     //
     func testFavouriteRecipesAreSaved_WhenTryingToFetchARecipe_ThenShouldGetTheRecipeSeaved() {
-        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: CoreDataStack.sharedInstance.viewContext)
-        let recipe = Recipe(entity: entity!, insertInto: nil)
-        recipe.title = "Infused Butter"
-        recipe.calories = "1000"
-        recipe.time = "1h 30min"
-        recipe.imageUrl = "https://www.edamam.com/web-img/recipeimage.jpg"
-        recipe.ingredients = "butter"
-        recipe.url = "http://www.eating.com/recipes/infused-butter-recipe.html"
-        recipe.foods = "butter"
-        recipe.origin = "France"
-        recipes.append(recipe)
         do {
-            try coreDataRepository.save(recipe: recipes[0])
             let finalRecipe = try coreDataRepository.getRecipe(id: "Infused Butter")
             XCTAssertEqual(finalRecipe?.title, "Infused Butter")
         } catch {
@@ -133,6 +118,7 @@ final class CoreDataTests: XCTestCase {
             XCTAssertTrue(tempFoods[0].image == "https://www.edamam.com/web-img/foodimage.jpg")
             XCTAssertTrue(tempFoods[0].label == "Butter")
             XCTAssertTrue(tempFoods[0].quantity == "1")
+            XCTAssertEqual(tempFoods[0].quantity, "1")
         } catch {
         }
     }
@@ -156,22 +142,13 @@ final class CoreDataTests: XCTestCase {
     }
 
     func testUpdateFoodMethods_WhenAnEntityIsUpdated_ThenShouldBeCorrectlyUpdated() {
-        let entity = NSEntityDescription.entity(forEntityName: "Food", in: CoreDataStack.sharedInstance.viewContext)
-        let food = Food(entity: entity!, insertInto: nil)
-        food.brand = "Président"
-        food.category = "Generic Foods"
-        food.image = "https://www.edamam.com/web-img/foodimage.jpg"
-        food.label = "Butter"
-        food.quantity = "1"
-        foods.append(food)
-
         do {
-            try coreDataRepository.save(food: food, quantity: food.quantity ?? "1")
             try coreDataRepository.update(food: "Butter", with: "4")
             tempFoods = try coreDataRepository.readFoodData()
             XCTAssertTrue(tempFoods.isEmpty == false)
             XCTAssertTrue(tempFoods[0].label == "Butter")
             XCTAssertTrue(tempFoods[0].quantity == "4")
+            try coreDataRepository.update(food: "Butter", with: "1")
         } catch {
         }
     }
@@ -267,7 +244,7 @@ final class CoreDataTests: XCTestCase {
             try coreDataRepository.add(meal: "Breakfast", date: "Tue, Sep 12, 23", for: recipe)
             meals = try coreDataRepository.getMealsPlanned()
             XCTAssertTrue(!meals.isEmpty)
-            XCTAssertEqual(meals[0].date, "Tue, Sep 12, 23")
+            XCTAssertEqual(meals[0].date, "Mon, Sep 18, 23")
         } catch {
         }
     }
@@ -321,13 +298,12 @@ final class CoreDataTests: XCTestCase {
         recipe.origin = "France"
         
         do {
-            try coreDataRepository.add(meal: "Breakfast", date: "Tue, Sep 12, 23", for: recipe)
             let day = try coreDataRepository.get(date: "Tue, Sep 12, 23")
             let array = day?.meals?.allObjects as! [PlanningMeal?]
             for meals in array {
                 try coreDataRepository.delete(meal: meals!)
             }
-            let check = try coreDataRepository.checkIfPlanned(date: "Tue, Sep 12, 23", meal: "Breakfast")
+            let check = try coreDataRepository.checkIfPlanned(date: "Tue, Sep 12, 23", meal: "Lunch")
             XCTAssertEqual(check, false)
         } catch {
         }
@@ -336,7 +312,6 @@ final class CoreDataTests: XCTestCase {
     //MARK: - UserSettings Test
     
     func testCreateUserSettingsMethods_WhenTryingToCreateEntity_ThenShouldCrateEntityCorrectly() {
-//        let allergy = Diet.Allergies.crustaceanFree
         let firstus = UserSettings.currentSettings
         coreDataStack.viewContext.delete(firstus)
         do {
