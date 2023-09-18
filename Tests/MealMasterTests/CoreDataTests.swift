@@ -229,25 +229,15 @@ final class CoreDataTests: XCTestCase {
     }
 
     // MARK: - Meals CoreData Tests
-//    func testSaveMealMethods_WhenTryingToSaveEntity_ThenShouldSaveCorrectly() {
-//        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: CoreDataStack.sharedInstance.viewContext)
-//        let recipe = Recipe(entity: entity!, insertInto: nil)
-//        recipe.title = "Infused Butter"
-//        recipe.calories = "1000"
-//        recipe.time = "1h 30min"
-//        recipe.imageUrl = "https://www.edamam.com/web-img/recipeimage.jpg"
-//        recipe.ingredients = "butter"
-//        recipe.url = "http://www.eating.com/recipes/infused-butter-recipe.html"
-//        recipe.foods = "butter"
-//        recipe.origin = "France"
-//        do {
-//            try coreDataRepository.add(meal: "Breakfast", date: "Tue, Sep 12, 23", for: recipe)
-//            meals = try coreDataRepository.getMealsPlanned()
-//            XCTAssertTrue(!meals.isEmpty)
-//            XCTAssertEqual(meals[0].date, "Mon, Sep 18, 23")
-//        } catch {
-//        }
-//    }
+    func testSaveMealMethods_WhenTryingToSaveEntity_ThenShouldSaveCorrectly() {
+        do {
+            try coreDataRepository.add(meal: "Breakfast", date: "Tue, Sep 12, 23", for: recipes.last!)
+            meals = try coreDataRepository.getMealsPlanned()
+            XCTAssertTrue(!meals.isEmpty)
+            XCTAssertEqual(meals[0].date, "Mon, Sep 18, 23")
+        } catch {
+        }
+    }
 
     func testCheckMealMethods_WhenTryingToReadEntity_ThenShouldReturnTrue() {
         let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: CoreDataStack.sharedInstance.viewContext)
@@ -261,7 +251,7 @@ final class CoreDataTests: XCTestCase {
         recipe.foods = "butter"
         recipe.origin = "France"
         do {
-            try coreDataRepository.add(meal: "Breakfast", date: "Tue, Sep 12, 23", for: recipe)
+            try coreDataRepository.add(meal: "Breakfast", date: "Tue, Sep 12, 23", for: recipes.last!)
             let check = try coreDataRepository.checkIfPlanned(date: "Tue, Sep 12, 23", meal: "Breakfast")
             XCTAssertEqual(check, true)
         } catch {
@@ -285,29 +275,18 @@ final class CoreDataTests: XCTestCase {
         }
     }
     
-//    func testCheckMealMethods_WhenTryingToDeleteEntity_ThenShouldDeleteEntityCorrectly() {
-//        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: CoreDataStack.sharedInstance.viewContext)
-//        let recipe = Recipe(entity: entity!, insertInto: nil)
-//        recipe.title = "Infused Butter"
-//        recipe.calories = "1000"
-//        recipe.time = "1h 30min"
-//        recipe.imageUrl = "https://www.edamam.com/web-img/recipeimage.jpg"
-//        recipe.ingredients = "butter"
-//        recipe.url = "http://www.eating.com/recipes/infused-butter-recipe.html"
-//        recipe.foods = "butter"
-//        recipe.origin = "France"
-//        
-//        do {
-//            let day = try coreDataRepository.get(date: "Tue, Sep 12, 23")
-//            let array = day?.meals?.allObjects as! [PlanningMeal?]
-//            for meals in array {
-//                try coreDataRepository.delete(meal: meals!)
-//            }
-//            let check = try coreDataRepository.checkIfPlanned(date: "Tue, Sep 12, 23", meal: "Lunch")
-//            XCTAssertEqual(check, false)
-//        } catch {
-//        }
-//    }
+    func testCheckMealMethods_WhenTryingToDeleteEntity_ThenShouldDeleteEntityCorrectly() {
+        do {
+            let day = try coreDataRepository.get(date: "Tue, Sep 12, 23")
+            let array = day?.meals?.allObjects as! [PlanningMeal?]
+            for meals in array {
+                try coreDataRepository.delete(meal: meals!)
+            }
+            let check = try coreDataRepository.checkIfPlanned(date: "Tue, Sep 12, 23", meal: "Lunch")
+            XCTAssertEqual(check, false)
+        } catch {
+        }
+    }
     
     //MARK: - UserSettings Test
     
