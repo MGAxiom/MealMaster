@@ -34,5 +34,18 @@ class FakeResponseData {
         return data
     }
     
+    static var correctData: Data {
+        let bundle = Bundle(for: FakeResponseData.self)
+        let path = Bundle.main.path(forResource: "RecipesSearch", ofType: "json")
+        let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path!))
+//        let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! Data
+        return jsonData
+//        guard let url = bundle.url(forResource: "FoodsSearch", withExtension: "json") else {
+//            fatalError("Could not find FoodsSearch.json.")
+//        }
+//        guard let data = try? Data(contentsOf: url) else { return Data() }
+//        return data
+    }
+    
     static let incorrectData = "error".data(using: .utf8)!
 }

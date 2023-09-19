@@ -24,7 +24,7 @@ final class MealMasterTests: XCTestCase {
     //MARK: RecipeAPI tests
     
     func testGetRecipeShouldPostSuccessCallBackIfNoErrorAndCorrectData() {
-        let fakeResponse = FakeResponse(response: FakeResponseData.responseOK, data: FakeResponseData.correctRecipeData, error: nil)
+        let fakeResponse = FakeResponse(response: FakeResponseData.responseOK, data: FakeResponseData.correctData, error: nil)
         let recipeSessionFake = RecipeSessionFake(fakeResponse: fakeResponse)
         let recipeSearchService = RecipeSearch(session: recipeSessionFake)
         
@@ -37,7 +37,7 @@ final class MealMasterTests: XCTestCase {
                 let calories = item[0].calories
                 let ingredients = item[0].ingredients
                 XCTAssertEqual(label, "Tomato Gravy")
-                XCTAssertEqual(time, "10 min")
+                XCTAssertEqual(time, "10min")
                 XCTAssertEqual(calories, "1018")
                 XCTAssertEqual([ingredients], ["1/4 cup bacon drippings, 1/4 cup all-purpose flour, 1 tablespoon tomato paste, 1 (15-ounce) can diced tomatoes, with juice, 1 cup milk, 1/4 cup heavy cream, Kosher salt and freshly ground black pepper"])
             default:
@@ -48,7 +48,7 @@ final class MealMasterTests: XCTestCase {
             //XCTAssertNil(recipesSearchService)
             expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5000)
+        wait(for: [expectation], timeout: 0.5000)
 //        wait(for: [expectation], timeout: 0.01)
     }
 
@@ -116,7 +116,7 @@ final class MealMasterTests: XCTestCase {
                 let calories = item[0].calories
                 let ingredients = item[0].ingredients
                 XCTAssertEqual(label, "Tomato Gravy")
-                XCTAssertEqual(time, "10 min")
+                XCTAssertEqual(time, "10min")
                 XCTAssertEqual(calories, "1018")
                 XCTAssertEqual([ingredients], ["1/4 cup bacon drippings, 1/4 cup all-purpose flour, 1 tablespoon tomato paste, 1 (15-ounce) can diced tomatoes, with juice, 1 cup milk, 1/4 cup heavy cream, Kosher salt and freshly ground black pepper"])
             default:
