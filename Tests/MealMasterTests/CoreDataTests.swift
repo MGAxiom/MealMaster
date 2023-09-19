@@ -234,22 +234,12 @@ final class CoreDataTests: XCTestCase {
             try coreDataRepository.add(meal: "Breakfast", date: "Tue, Sep 12, 23", for: recipes.last!)
             meals = try coreDataRepository.getMealsPlanned()
             XCTAssertTrue(!meals.isEmpty)
-            XCTAssertEqual(meals[0].date, "Mon, Sep 18, 23")
+            XCTAssertEqual(meals.last?.date, "Tue, Sep 12, 23")
         } catch {
         }
     }
 
     func testCheckMealMethods_WhenTryingToReadEntity_ThenShouldReturnTrue() {
-        let entity = NSEntityDescription.entity(forEntityName: "Recipe", in: CoreDataStack.sharedInstance.viewContext)
-        let recipe = Recipe(entity: entity!, insertInto: nil)
-        recipe.title = "Infused Butter"
-        recipe.calories = "1000"
-        recipe.time = "1h 30min"
-        recipe.imageUrl = "https://www.edamam.com/web-img/recipeimage.jpg"
-        recipe.ingredients = "butter"
-        recipe.url = "http://www.eating.com/recipes/infused-butter-recipe.html"
-        recipe.foods = "butter"
-        recipe.origin = "France"
         do {
             try coreDataRepository.add(meal: "Breakfast", date: "Tue, Sep 12, 23", for: recipes.last!)
             let check = try coreDataRepository.checkIfPlanned(date: "Tue, Sep 12, 23", meal: "Breakfast")
@@ -277,13 +267,29 @@ final class CoreDataTests: XCTestCase {
     
     func testCheckMealMethods_WhenTryingToDeleteEntity_ThenShouldDeleteEntityCorrectly() {
         do {
-            let day = try coreDataRepository.get(date: "Tue, Sep 12, 23")
-            let array = day?.meals?.allObjects as! [PlanningMeal?]
-            for meals in array {
-                try coreDataRepository.delete(meal: meals!)
-            }
-            let check = try coreDataRepository.checkIfPlanned(date: "Tue, Sep 12, 23", meal: "Lunch")
+            try coreDataRepository.add(meal: "Breakfast", date: "Tue, Sep 19, 23", for: recipes.last!)
+            let day = try coreDataRepository.get(date: "Tue, Sep 19, 23")
+            let array = day?.meals?.allObjects as! [PlanningMeal]
+            let meal2Delete = day?.meals?.first(where: { meal in
+                return (meal as! PlanningMeal).meal == "Breakfast"
+            })
+            try coreDataRepository.delete(meal: meal2Delete as! PlanningMeal)
+            let mealPlanned = try coreDataRepository.getMealsPlanned()
+            let newArray = mealPlanned
+            for day in newArray {
+                let nnn = day.meals?.allObjects as! [PlanningMeal]
+                for meal in nnn {
+                    try coreDataRepository.delete(meal: meal)
+                }
+            } 
+            let check = try coreDataRepository.checkIfPlanned(date: "Tue, Sep 19, 23", meal: "Lunch")
+            let check2 = try coreDataRepository.checkIfPlanned(date: "Tue, Sep 19, 23", meal: "Break")
+            let check3 = try coreDataRepository.checkIfPlanned(date: "Tue, Sep 19, 23", meal: "Breakfast")
+            let check4 = try coreDataRepository.checkIfPlanned(date: "Tue, Sep 19, 23", meal: "Dinner")
             XCTAssertEqual(check, false)
+            XCTAssertEqual(check2, false)
+            XCTAssertEqual(check3, false)
+            XCTAssertEqual(check4, false)
         } catch {
         }
     }
