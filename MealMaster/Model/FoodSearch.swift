@@ -25,7 +25,7 @@ class FoodSearch {
     
     func foodAPI(userInput: String, callback: @escaping (Result<[Food], Error>) -> Void ) {
         let url = "https://api.edamam.com/api/food-database/v2/parser"
-        var parameters = [
+        let parameters = [
             "ingr": [userInput],
             "app_key": ["b906cefffc4ebe498b42d62c5f9e556d"],
             "app_id": ["8798566c"],
