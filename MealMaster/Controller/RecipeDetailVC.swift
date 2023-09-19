@@ -12,6 +12,7 @@ class RecipeDetailVC: UIViewController {
 
     var data: Recipe?
     private let repository = CoreDataCRUD()
+    @IBOutlet var instructionsButton: UIButton!
     var ingredientsArray: [String] {
         get {
             if let recipeData = data, let ingredientsData: String = recipeData.ingredients {
@@ -33,6 +34,8 @@ class RecipeDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpRecipeDetails()
+        instructionsButton.layer.cornerRadius = 10
+        timeLabel.lineBreakStrategy = .standard
     }
     
     override func viewWillAppear(_ animated: Bool) {

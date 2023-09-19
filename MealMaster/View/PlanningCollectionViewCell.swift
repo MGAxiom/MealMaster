@@ -58,6 +58,7 @@ class PlanningCollectionViewCell: UICollectionViewCell {
         }
         mealButton.forEach { button in
             button.setTitle("Add Meal", for: .normal)
+            button.layer.cornerRadius = 10
             button.addTarget(
                 self,
                 action: #selector(mealButtonPressed),
@@ -82,6 +83,7 @@ class PlanningCollectionViewCell: UICollectionViewCell {
         
         deleteButton.forEach { button in
             button.setTitle("Remove", for: .normal)
+            button.layer.cornerRadius = 10
             button.addTarget(
                 self,
                 action: #selector(mealDelButtonPressed),

@@ -36,6 +36,7 @@ class RecipesViewController: UIViewController {
         randomImage.layer.cornerRadius = 10
         randomRecipeView.layer.cornerRadius = 10
         recipesListTV.layer.cornerRadius = 10
+        searchButton.layer.cornerRadius = 10
         searchTextField.searchBarStyle = .minimal
         tutorialLabel1.text = """
             1. Start by adding ingredients, or meal names in the search bar

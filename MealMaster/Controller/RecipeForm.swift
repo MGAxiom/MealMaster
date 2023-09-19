@@ -16,12 +16,15 @@ class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var mealPicker: UIPickerView!
+    @IBOutlet var confirmButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         datePicker?.locale = .current
         datePicker?.minimumDate = Date()
-        
+        confirmButton.layer.cornerRadius = 10
+        cancelButton.layer.cornerRadius = 10
     }
 
     @IBAction func confirmButton(_ sender: Any) {

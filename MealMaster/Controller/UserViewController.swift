@@ -18,6 +18,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet var userIconButton: UIButton!
     @IBOutlet var userName: UITextField!
     @IBOutlet var dietSegment: UISegmentedControl!
+    @IBOutlet var favouriteButton: UIButton!
     private var diet: Diet?
     var selectedImage: UIImage?
     var currentIndex = 0
@@ -29,6 +30,7 @@ class UserViewController: UIViewController, UICollectionViewDelegate, UICollecti
         roundViews.forEach { UIView in
             UIView?.layer.cornerRadius = 10
         }
+        favouriteButton.layer.cornerRadius = 10
         userName.text = UserSettings.currentSettings.username
         userPic.layer.cornerRadius = 75
         userIconButton.layer.cornerRadius = 75

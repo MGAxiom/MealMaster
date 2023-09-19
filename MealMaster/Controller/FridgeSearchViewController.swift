@@ -12,12 +12,14 @@ class FridgeSearchViewController: UIViewController, UISearchBarDelegate, UITextF
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var foodSearchTableView: UITableView!
     @IBOutlet var tutorialLabel: UILabel!
+    @IBOutlet var goBackButton: UIButton!
     
     var foodAPIResult: [Food] = []
     private let repository = CoreDataCRUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        goBackButton.layer.cornerRadius = 10
         tutorialLabel.text = """
             1. Here you can search some food to add to your fridge
             

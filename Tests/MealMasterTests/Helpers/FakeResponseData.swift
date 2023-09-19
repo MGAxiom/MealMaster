@@ -35,7 +35,7 @@ class FakeResponseData {
     }
     
     static var correctData: Data {
-        let bundle = Bundle(for: FakeResponseData.self)
+//        let bundle = Bundle(for: FakeResponseData.self)
         let path = Bundle.main.path(forResource: "RecipesSearch", ofType: "json")
         let jsonData = try! Data(contentsOf: URL(fileURLWithPath: path!))
 //        let jsonResult = try! JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as! Data
