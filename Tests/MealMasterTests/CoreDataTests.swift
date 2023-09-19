@@ -269,7 +269,7 @@ final class CoreDataTests: XCTestCase {
         do {
             try coreDataRepository.add(meal: "Breakfast", date: "Tue, Sep 19, 23", for: recipes.last!)
             let day = try coreDataRepository.get(date: "Tue, Sep 19, 23")
-            let array = day?.meals?.allObjects as! [PlanningMeal]
+            _ = day?.meals?.allObjects as! [PlanningMeal]
             let meal2Delete = day?.meals?.first(where: { meal in
                 return (meal as! PlanningMeal).meal == "Breakfast"
             })
