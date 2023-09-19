@@ -42,14 +42,8 @@ class FoodTableViewCell: UITableViewCell {
             quantityLabel.text = String(defaultQuantity)
         }
         toggleButtonImage()
-        if food?.image == nil {
+        guard let url = URL(string: food?.image ?? ""), food?.image != "" else {
             foodImage.image = UIImage(named: "unknown-image-food")
-            guard let url = URL(string: food?.image ?? "") else {
-                return
-            }
-            foodImage.af.setImage(withURL: url)
-        }
-        guard let url = URL(string: food?.image ?? "") else {
             return
         }
         foodImage.af.setImage(withURL: url)

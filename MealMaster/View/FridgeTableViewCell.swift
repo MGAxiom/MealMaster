@@ -70,9 +70,9 @@ class FridgeTableViewCell: UITableViewCell {
             self,
             action: #selector(minusButtonPressed),
             for: .touchUpInside)
-        
-        guard image == "", let url = URL(string: image) else {
-            return foodImage.image = UIImage(named: "unknown-image-food")
+        guard let url = URL(string: image), image != "" else {
+            foodImage.image = UIImage(named: "unknown-image-food")
+            return
         }
             foodImage.af.setImage(withURL: url)
     }
