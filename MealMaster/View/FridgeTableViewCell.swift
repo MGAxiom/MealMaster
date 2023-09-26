@@ -8,12 +8,14 @@
 import UIKit
 import AlamofireImage
 
+//Protocol used to setup a Delegate in FridgeViewController
 protocol UpdateCustomCell: AnyObject {
     func foodDelete(food: Food?, cell: UITableViewCell)
     
     func updateFood(name: String, quantity: String, cell: UITableViewCell)
 }
 
+//Class used to setup custom FridgeTableViewCell
 class FridgeTableViewCell: UITableViewCell {
     
     @IBOutlet var foodImage: UIImageView!

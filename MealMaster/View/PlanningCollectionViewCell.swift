@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 
+//Class used to setup custom PlanningCollectionViewCells
 class PlanningCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet var mealLabels: [UILabel] = []

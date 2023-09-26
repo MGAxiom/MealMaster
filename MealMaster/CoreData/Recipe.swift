@@ -9,4 +9,5 @@ import Foundation
 
 import CoreData
 
+//Class necessary when entity is declared as Extension/Category
 class Recipe: NSManagedObject {}

@@ -1,10 +1,12 @@
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
 //
-//   let food = try? JSONDecoder().decode(Food.self, from: jsonData)
-
+//  FoodJSONDecodable.swift
+//  MealMaster
+//
+//  Created by Maxime Girard on 17/07/2023.
+//
 import Foundation
 
+//File used to read the response sent by the Edaman API when doing an APICall
 // MARK: - Food
 struct FoodSearchResult: Codable {
     let text: String?

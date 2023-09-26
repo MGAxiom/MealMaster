@@ -8,6 +8,7 @@
 import UIKit
 import Photos
 
+//Class used to setup and customize UserViewController
 class UserViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var userViews: UIView!

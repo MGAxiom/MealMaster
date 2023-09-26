@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+//Class used to initialize and setup CoreData
 open class CoreDataStack {
     // MARK: - Properties
     private let modelName: String

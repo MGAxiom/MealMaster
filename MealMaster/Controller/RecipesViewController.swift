@@ -8,6 +8,7 @@
 import UIKit
 import AlamofireImage
 
+//Class used to setup and customize RecipesViewController
 class RecipesViewController: UIViewController {
     
     var apiResult: [Recipe] = []

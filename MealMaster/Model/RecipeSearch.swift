@@ -10,6 +10,7 @@ import Alamofire
 import AlamofireImage
 import CoreData
 
+//Class dedicated to the APICall used to search recipes, using the protocol AFSession
 class RecipeSearch {
     
     //MARK: - Properties

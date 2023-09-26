@@ -8,6 +8,7 @@
 import Foundation
 import Alamofire
 
+//Class used to initialize SearchSession for APICalls
 protocol AFSession {
     func request(with url: String, method: HTTPMethod, parameters: Parameters?, encoding: ParameterEncoding, callback: @escaping (AFDataResponse<Data?>) -> Void)
 }

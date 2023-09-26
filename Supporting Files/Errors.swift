@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Enums used to define cases for CoreDataErrors and Successes, as well as one Error in APICalls
 enum HTTPError: Error {
     case invalidJson
 }
@@ -20,13 +21,4 @@ enum CoreDataError: Error {
     case failedDeletion
     case failedMealSave
     case failedCheck
-}
-
-enum CoreDataSuccess {
-    case successfullPlanningSave
-    case successfullFavouriteSave
-    case successfullPhotoSave
-    case successfullNameSave
-    case successfullFavouriteDeletion
-    case successfullPlanningDeletion
 }

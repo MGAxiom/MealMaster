@@ -7,6 +7,7 @@
 
 import UIKit
 
+//Class used to setup custom UserCollectionViewCells
 class UserCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellImage: UIImageView!

@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+//Class necessary when entity is declared as Extension/Category
 class PlanningDay: NSManagedObject {
     
 }

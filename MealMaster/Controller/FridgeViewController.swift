@@ -7,6 +7,7 @@
 
 import UIKit
 
+//Class used to setup and customize FridgeViewController
 class FridgeViewController: UIViewController, UISearchBarDelegate, UITextFieldDelegate {
     
     @IBOutlet var searchBar: UISearchBar!

@@ -1,5 +1,5 @@
 //
-//  RecipeSearch.swift
+//  FoodSearch.swift
 //  MealMaster
 //
 //  Created by Maxime Girard on 17/07/2023.
@@ -10,8 +10,8 @@ import Alamofire
 import AlamofireImage
 import CoreData
 
+//Class dedicated to the APICall used to search food, using the protocol AFSession
 class FoodSearch {
-    
     //MARK: - Properties
     
     private let session: AFSession

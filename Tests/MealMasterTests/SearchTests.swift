@@ -252,4 +252,11 @@ final class MealMasterTests: XCTestCase {
         
         wait(for: [expectation], timeout: 0.01)
     }
+    
+    //MARK: - Extensions Tests
+    func testGetCorrectDate_WhenTryingToGetStringOfCurrentDate_ShouldReturnCorrectDateString() {
+        let falseCurrentDate = Date(timeIntervalSince1970: 1695652843).noon
+        let strDate = Formatter.date.string(from: falseCurrentDate)
+        XCTAssertEqual(strDate, "Mon, Sep 25, 23")
+    }
 }

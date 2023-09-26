@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+//NSManagedObject UserSettings, used to save name, photo and allergies of User. Static because there can be only one UserSetting
 class UserSettings: NSManagedObject {
     
     private var internalAllergySet: Set<String> {

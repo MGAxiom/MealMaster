@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//Classes used to setup custom UIButtons which contain Recipes or Meals
 class MealButton: UIButton {
     private var internalRecipe: Recipe?
     var recipe: Recipe? {

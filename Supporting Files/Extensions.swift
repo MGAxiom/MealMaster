@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//Extension of Formatter used to create specific date format as a String
 extension Formatter {
     static let date: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -18,12 +19,14 @@ extension Formatter {
     }()
 }
 
+//Extension of Date used to create a Date() of current date starting at noon to evade risks of wrong dates
 extension Date {
     var noon: Date {
         return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
     }
 }
 
+//Extension of UIViewController used to create specific UIAlerts depending on error cases for CoreDataError Enum
 extension UIViewController {
     func handleCoreDataErrorAlert(error: CoreDataError) {
         var alertText, alertMessage: String
@@ -61,38 +64,7 @@ extension UIViewController {
     }
 }
 
-extension UIViewController {
-    func handleCoreDataSuccessAlert(success: CoreDataSuccess) {
-        var alertText, alertMessage: String
-        switch success {
-        case .successfullPlanningSave:
-            alertText = "Success !"
-            alertMessage = "We've added this recipe to your planning"
-        case .successfullFavouriteSave:
-            alertText = "Success !"
-            alertMessage = "We've added this recipe to your favourites"
-        case .successfullNameSave:
-            alertText = "Success !"
-            alertMessage = "We've saved your name successfully"
-        case .successfullPhotoSave:
-            alertText = "Success !"
-            alertMessage = "We've saved your photo successfully"
-        case .successfullFavouriteDeletion:
-            alertText = "Success !"
-            alertMessage = "This recipe has been deleted from your favourite"
-        case .successfullPlanningDeletion:
-            alertText = "Success !"
-            alertMessage = "This recipe has been deleted from your planning"
-
-        }
-        let alert = UIAlertController(title: alertText, message: alertMessage, preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-}
-
+//Extension of UIViewController used to create specific UIAlerts depending on error cases for APIErrors Enum
 extension UIViewController {
     func handleApiError(error: HTTPError) {
         var alertText, alertMessage: String

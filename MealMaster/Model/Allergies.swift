@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//Enums dedicated to Allergies and Diet, used in UserSettings, and to make precise APICalls for RecipeSearch
 enum Diet: CaseIterable {
     
     case omnivore

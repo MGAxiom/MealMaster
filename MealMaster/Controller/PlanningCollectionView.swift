@@ -7,6 +7,7 @@
 
 import UIKit
 
+//Class used to setup and customize PlanningCollectionView
 class PlanningCollectionView: UICollectionView {
 
 

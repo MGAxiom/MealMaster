@@ -8,6 +8,7 @@
 import UIKit
 import AlamofireImage
 
+//Class used to setup and customize RecipeDetailVC
 class RecipeDetailVC: UIViewController {
 
     var data: Recipe?

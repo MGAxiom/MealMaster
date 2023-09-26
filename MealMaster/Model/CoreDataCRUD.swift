@@ -9,8 +9,8 @@ import Foundation
 import CoreData
 import UIKit
 
+//Class dedicated to CoreData and specifically methods to use, save and delete objects in CoreData
 final class CoreDataCRUD {
-
     // MARK: - Properties
     private let coreDataStack: CoreDataStack
     

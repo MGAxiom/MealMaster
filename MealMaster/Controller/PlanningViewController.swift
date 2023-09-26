@@ -7,7 +7,7 @@
 
 import UIKit
 
-
+//Class used to setup and customize PlanningViewController
 final class PlanningViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     // MARK: - Properties

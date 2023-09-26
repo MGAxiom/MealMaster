@@ -8,6 +8,7 @@
 import UIKit
 import AlamofireImage
 
+//Class used to setup custom RecipeTableViewCell
 class RecipesTVCell: UITableViewCell {
 
     @IBOutlet weak var cellImageView: UIImageView!

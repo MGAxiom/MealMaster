@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 
+//Class used to setup and customize RecipeForm
 class RecipeForm: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var recipeData: Recipe?
     let repository = CoreDataCRUD()

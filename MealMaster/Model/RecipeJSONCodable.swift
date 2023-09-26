@@ -7,6 +7,7 @@
 
 import Foundation
 
+//File used to read the response sent by the Edaman API when doing an APICall
 // MARK: - RecipeSearchResult
 struct RecipeSearchResult: Codable {
     let from, to, count: Int?

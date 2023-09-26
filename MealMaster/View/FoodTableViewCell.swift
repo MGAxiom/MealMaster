@@ -8,11 +8,13 @@
 import UIKit
 import AlamofireImage
 
+//Protocol used to setup a Delegate in FridgeSearchController
 protocol UpdateFoodCell: AnyObject {
     func getFoodQuantity(name: String) -> String
     func updateFood(name: String, quantity: String, cell: UITableViewCell)
 }
 
+//Class used to setup custom FoodTableViewCell
 class FoodTableViewCell: UITableViewCell {
     
     @IBOutlet var foodImage: UIImageView!
@@ -35,7 +37,13 @@ class FoodTableViewCell: UITableViewCell {
         foodTitle.text = food?.label
         brandLabel.text = food?.brand
         categoryLabel.text = food?.category
-        checkIfInFridge(name: food?.label ?? "", brand: food?.brand ?? "")
+        checkIfInFridge(name: food?.label ?? "", brand: food?.brand ?? "") { success in
+            if success {
+                self.isInFridge = true
+            } else {
+                self.isInFridge = false
+            }
+        }
         if isInFridge {
             quantityLabel.text = self.delegate?.getFoodQuantity(name: foodTitle.text ?? "") ?? "nil"
         } else {
@@ -49,14 +57,14 @@ class FoodTableViewCell: UITableViewCell {
         foodImage.af.setImage(withURL: url)
     }
 
-    func checkIfInFridge(name: String, brand: String) {
+    func checkIfInFridge(name: String, brand: String, completionHandler:@escaping (Bool) -> ()) {
         do {
             guard let existingFood = try repository.getFoodIfInFridge(name: name, brand: brand) else {
-                isInFridge = false
+                completionHandler(false)
                 return
             }
             tempFood = existingFood
-            isInFridge = true
+            completionHandler(true)
         } catch {
         }
     }
