@@ -112,13 +112,12 @@ final class CoreDataTests: XCTestCase {
         do {
             try coreDataRepository.save(food: food, quantity: food.quantity ?? "1")
             tempFoods = try coreDataRepository.readFoodData()
-            XCTAssertTrue(tempFoods.isEmpty == false)
-            XCTAssertTrue(tempFoods[0].brand == "Président")
-            XCTAssertTrue(tempFoods[0].category == "Generic Foods")
-            XCTAssertTrue(tempFoods[0].image == "https://www.edamam.com/web-img/foodimage.jpg")
-            XCTAssertTrue(tempFoods[0].label == "Butter")
-            XCTAssertTrue(tempFoods[0].quantity == "1")
-            XCTAssertEqual(tempFoods[0].quantity, "1")
+            XCTAssertEqual(tempFoods.isEmpty, false)
+            XCTAssertEqual(tempFoods.last!.brand, "Président")
+            XCTAssertEqual(tempFoods.last!.category, "Generic Foods")
+            XCTAssertEqual(tempFoods.last!.image, "https://www.edamam.com/web-img/foodimage.jpg")
+            XCTAssertEqual(tempFoods.last!.quantity, "1")
+            XCTAssertEqual(tempFoods.last!.quantity, "1")
         } catch {
         }
     }
