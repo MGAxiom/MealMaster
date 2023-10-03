@@ -34,6 +34,8 @@ class RecipesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchTextField.searchTextField.textColor = .label
+        searchTextField.searchTextField.backgroundColor = UIColor(named: "SearchbarColor")
         randomImage.layer.cornerRadius = 10
         randomRecipeView.layer.cornerRadius = 10
         recipesListTV.layer.cornerRadius = 10

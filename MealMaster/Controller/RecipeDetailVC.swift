@@ -113,7 +113,7 @@ extension RecipeDetailVC: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.numberOfLines = 5
         cell.textLabel?.text = " - \(ingredientsArray[indexPath.row].capitalized)"
         cell.textLabel?.font = UIFont(name: "System", size: 15)
-        cell.textLabel?.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        cell.textLabel?.textColor = UIColor(named: "MyBlackColor")
         return cell
     }
 }

@@ -46,7 +46,6 @@ class FridgeViewController: UIViewController, UISearchBarDelegate, UITextFieldDe
     
     private func fetchFridgeInventory() {
         self.foodUserData = readFData()
-        foodTableView.reloadData()
     }
     
     @IBAction func goToFoodSearch(_ sender: Any) {
@@ -128,7 +127,6 @@ extension FridgeViewController: UpdateCustomCell {
         do {
             try repository.update(food: name, with: quantity)
             fetchFridgeInventory()
-            foodTableView.reloadData()
         } catch {
             self.handleCoreDataErrorAlert(error: .failedDeletion)
         }

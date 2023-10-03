@@ -38,14 +38,10 @@ class FoodTableViewCell: UITableViewCell {
         brandLabel.text = food?.brand
         categoryLabel.text = food?.category
         checkIfInFridge(name: food?.label ?? "", brand: food?.brand ?? "") { success in
-            if success {
-                self.isInFridge = true
-            } else {
-                self.isInFridge = false
-            }
+            self.isInFridge = success
         }
         if isInFridge {
-            quantityLabel.text = self.delegate?.getFoodQuantity(name: foodTitle.text ?? "") ?? "nil"
+            quantityLabel.text = self.delegate?.getFoodQuantity(name: foodTitle.text ?? "") ?? "1"
         } else {
             quantityLabel.text = String(defaultQuantity)
         }
@@ -66,6 +62,7 @@ class FoodTableViewCell: UITableViewCell {
             tempFood = existingFood
             completionHandler(true)
         } catch {
+            completionHandler(false)
         }
     }
     

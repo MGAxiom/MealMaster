@@ -115,7 +115,6 @@ extension FridgeSearchViewController: UpdateFoodCell {
     func updateFood(name: String, quantity: String, cell: UITableViewCell) {
         do {
             try repository.update(food: name, with: quantity)
-            foodSearchTableView.reloadData()
         } catch {
             self.handleCoreDataErrorAlert(error: .failedDeletion)
         }
